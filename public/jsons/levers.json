@@ -1,0 +1,1736 @@
+[
+    {
+        "lever": 1,
+        "gats_position": [
+            {
+                "img": "",
+                "name": "gat1",
+                "point": {
+                    "x": 1,
+                    "y": 5
+                }
+            },
+            {
+                "img": "",
+                "name": "gat2",
+                "point": {
+                    "x": 2,
+                    "y": 2
+                }
+            },
+            {
+                "img": "",
+                "name": "gat3",
+                "point": {
+                    "x": 3,
+                    "y": 4
+                }
+            },
+            {
+                "img": "",
+                "name": "gat4",
+                "point": {
+                    "x": 5,
+                    "y": 1
+                }
+            },
+            {
+                "img": "",
+                "name": "gat5",
+                "point": {
+                    "x": 5,
+                    "y": 4
+                }
+            }
+        ],
+                "boxes_position": [
+            {
+                "name": "t",
+                "tiles": [
+                    {
+                        "x": 1,
+                        "y": 2
+                    },
+                    {
+                        "x": 2,
+                        "y": 1
+                    },
+                    {
+                        "x": 3,
+                        "y": 2
+                    }
+                ],
+                "box": [
+                    {
+                        "x": 2,
+                        "y": 2
+                    }
+                ]
+            },
+            {
+                "name": "l",
+                "tiles": [
+                    {
+                        "x": 1,
+                        "y": 2
+                    },
+                    {
+                        "x": 3,
+                        "y": 2
+                    },
+                    {
+                        "x": 3,
+                        "y": 1
+                    }
+                ],
+                "box": [
+                    {
+                        "x": 2,
+                        "y": 2
+                    }
+                ]
+            },
+            {
+                "name": "li",
+                "tiles": [
+                    {
+                        "x": 1,
+                        "y": 3
+                    },
+                    {
+                        "x": 1,
+                        "y": 2
+                    },
+                    {
+                        "x": 2,
+                        "y": 1
+                    }
+                ],
+                "box": [
+                    {
+                        "x": 1,
+                        "y": 1
+                    }
+                ]
+            },
+            {
+                "name": "z",
+                "tiles": [
+                    {
+                        "x": 2,
+                        "y": 3
+                    },
+                    {
+                        "x": 2,
+                        "y": 2
+                    },
+                    {
+                        "x": 2,
+                        "y": 1
+                    }
+                ],
+                "box": [
+                    {
+                        "x": 1,
+                        "y": 3
+                    },
+                    {
+                        "x": 3,
+                        "y": 2
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "lever": 2,
+        "gats_position": [
+            {
+                "img": "",
+                "name": "gat1",
+                "point": {
+                    "x": 1,
+                    "y": 2
+                }
+            },
+            {
+                "img": "",
+                "name": "gat2",
+                "point": {
+                    "x": 2,
+                    "y": 4
+                }
+            },
+            {
+                "img": "",
+                "name": "gat3",
+                "point": {
+                    "x": 3,
+                    "y": 3
+                }
+            },
+            {
+                "img": "",
+                "name": "gat4",
+                "point": {
+                    "x": 5,
+                    "y": 2
+                }
+            },
+            {
+                "img": "",
+                "name": "gat5",
+                "point": {
+                    "x": 5,
+                    "y": 4
+                }
+            }
+        ]
+    },
+    {
+        "lever": 3,
+        "gats_position": [
+            {
+                "img": "",
+                "name": "gat1",
+                "point": {
+                    "x": 1,
+                    "y": 2
+                }
+            },
+            {
+                "img": "",
+                "name": "gat2",
+                "point": {
+                    "x": 3,
+                    "y": 1
+                }
+            },
+            {
+                "img": "",
+                "name": "gat3",
+                "point": {
+                    "x": 3,
+                    "y": 3
+                }
+            },
+            {
+                "img": "",
+                "name": "gat4",
+                "point": {
+                    "x": 3,
+                    "y": 4
+                }
+            },
+            {
+                "img": "",
+                "name": "gat5",
+                "point": {
+                    "x": 5,
+                    "y": 2
+                }
+            }
+        ]
+    },
+    {
+        "lever": 4,
+        "gats_position": [
+            {
+                "img": "",
+                "name": "gat1",
+                "point": {
+                    "x": 1,
+                    "y": 5
+                }
+            },
+            {
+                "img": "",
+                "name": "gat2",
+                "point": {
+                    "x": 1,
+                    "y": 2
+                }
+            },
+            {
+                "img": "",
+                "name": "gat3",
+                "point": {
+                    "x": 3,
+                    "y": 3
+                }
+            },
+            {
+                "img": "",
+                "name": "gat4",
+                "point": {
+                    "x": 5,
+                    "y": 4
+                }
+            },
+            {
+                "img": "",
+                "name": "gat5",
+                "point": {
+                    "x": 5,
+                    "y": 2
+                }
+            }
+        ]
+    },
+    {
+        "lever": 5,
+        "gats_position": [
+            {
+                "img": "",
+                "name": "gat1",
+                "point": {
+                    "x": 1,
+                    "y": 4
+                }
+            },
+            {
+                "img": "",
+                "name": "gat2",
+                "point": {
+                    "x": 2,
+                    "y": 1
+                }
+            },
+            {
+                "img": "",
+                "name": "gat3",
+                "point": {
+                    "x": 2,
+                    "y": 3
+                }
+            },
+            {
+                "img": "",
+                "name": "gat4",
+                "point": {
+                    "x": 4,
+                    "y": 1
+                }
+            },
+            {
+                "img": "",
+                "name": "gat5",
+                "point": {
+                    "x": 5,
+                    "y": 3
+                }
+            }
+        ]
+    },
+    {
+        "lever": 6,
+        "gats_position": [
+            {
+                "img": "",
+                "name": "gat1",
+                "point": {
+                    "x": 1,
+                    "y": 4
+                }
+            },
+            {
+                "img": "",
+                "name": "gat2",
+                "point": {
+                    "x": 2,
+                    "y": 1
+                }
+            },
+            {
+                "img": "",
+                "name": "gat3",
+                "point": {
+                    "x": 3,
+                    "y": 4
+                }
+            },
+            {
+                "img": "",
+                "name": "gat4",
+                "point": {
+                    "x": 4,
+                    "y": 2
+                }
+            },
+            {
+                "img": "",
+                "name": "gat5",
+                "point": {
+                    "x": 4,
+                    "y": 4
+                }
+            }
+        ]
+    },
+    {
+        "lever": 7,
+        "gats_position": [
+            {
+                "img": "",
+                "name": "gat1",
+                "point": {
+                    "x": 1,
+                    "y": 3
+                }
+            },
+            {
+                "img": "",
+                "name": "gat2",
+                "point": {
+                    "x": 2,
+                    "y": 1
+                }
+            },
+            {
+                "img": "",
+                "name": "gat3",
+                "point": {
+                    "x": 3,
+                    "y": 4
+                }
+            },
+            {
+                "img": "",
+                "name": "gat4",
+                "point": {
+                    "x": 4,
+                    "y": 1
+                }
+            },
+            {
+                "img": "",
+                "name": "gat5",
+                "point": {
+                    "x": 5,
+                    "y": 3
+                }
+            }
+        ]
+    },
+    {
+        "lever": 8,
+        "gats_position": [
+            {
+                "img": "",
+                "name": "gat1",
+                "point": {
+                    "x": 1,
+                    "y": 3
+                }
+            },
+            {
+                "img": "",
+                "name": "gat2",
+                "point": {
+                    "x": 3,
+                    "y": 3
+                }
+            },
+            {
+                "img": "",
+                "name": "gat3",
+                "point": {
+                    "x": 4,
+                    "y": 1
+                }
+            },
+            {
+                "img": "",
+                "name": "gat4",
+                "point": {
+                    "x": 4,
+                    "y": 5
+                }
+            },
+            {
+                "img": "",
+                "name": "gat5",
+                "point": {
+                    "x": 5,
+                    "y": 3
+                }
+            }
+        ]
+    },
+    {
+        "lever": 9,
+        "gats_position": [
+            {
+                "img": "",
+                "name": "gat1",
+                "point": {
+                    "x": 1,
+                    "y": 2
+                }
+            },
+            {
+                "img": "",
+                "name": "gat2",
+                "point": {
+                    "x": 2,
+                    "y": 3
+                }
+            },
+            {
+                "img": "",
+                "name": "gat3",
+                "point": {
+                    "x": 4,
+                    "y": 2
+                }
+            },
+            {
+                "img": "",
+                "name": "gat4",
+                "point": {
+                    "x": 5,
+                    "y": 2
+                }
+            },
+            {
+                "img": "",
+                "name": "gat5",
+                "point": {
+                    "x": 5,
+                    "y": 4
+                }
+            }
+        ]
+    },
+    {
+        "lever": 10,
+        "gats_position": [
+            {
+                "img": "",
+                "name": "gat1",
+                "point": {
+                    "x": 1,
+                    "y": 2
+                }
+            },
+            {
+                "img": "",
+                "name": "gat2",
+                "point": {
+                    "x": 3,
+                    "y": 1
+                }
+            },
+            {
+                "img": "",
+                "name": "gat3",
+                "point": {
+                    "x": 3,
+                    "y": 3
+                }
+            },
+            {
+                "img": "",
+                "name": "gat4",
+                "point": {
+                    "x": 4,
+                    "y": 5
+                }
+            },
+            {
+                "img": "",
+                "name": "gat5",
+                "point": {
+                    "x": 5,
+                    "y": 4
+                }
+            }
+        ]
+    },
+    {
+        "lever": 11,
+        "gats_position": [
+            {
+                "img": "",
+                "name": "gat1",
+                "point": {
+                    "x": 1,
+                    "y": 4
+                }
+            },
+            {
+                "img": "",
+                "name": "gat2",
+                "point": {
+                    "x": 2,
+                    "y": 2
+                }
+            },
+            {
+                "img": "",
+                "name": "gat3",
+                "point": {
+                    "x": 4,
+                    "y": 1
+                }
+            },
+            {
+                "img": "",
+                "name": "gat4",
+                "point": {
+                    "x": 5,
+                    "y": 2
+                }
+            },
+            {
+                "img": "",
+                "name": "gat5",
+                "point": {
+                    "x": 5,
+                    "y": 4
+                }
+            }
+        ]
+    },
+    {
+        "lever": 12,
+        "gats_position": [
+            {
+                "img": "",
+                "name": "gat1",
+                "point": {
+                    "x": 1,
+                    "y": 1
+                }
+            },
+            {
+                "img": "",
+                "name": "gat2",
+                "point": {
+                    "x": 3,
+                    "y": 1
+                }
+            },
+            {
+                "img": "",
+                "name": "gat3",
+                "point": {
+                    "x": 3,
+                    "y": 2
+                }
+            },
+            {
+                "img": "",
+                "name": "gat4",
+                "point": {
+                    "x": 4,
+                    "y": 4
+                }
+            },
+            {
+                "img": "",
+                "name": "gat5",
+                "point": {
+                    "x": 5,
+                    "y": 2
+                }
+            }
+        ]
+    },
+    {
+        "lever": 13,
+        "gats_position": [
+            {
+                "img": "",
+                "name": "gat1",
+                "point": {
+                    "x": 1,
+                    "y": 4
+                }
+            },
+            {
+                "img": "",
+                "name": "gat2",
+                "point": {
+                    "x": 3,
+                    "y": 1
+                }
+            },
+            {
+                "img": "",
+                "name": "gat3",
+                "point": {
+                    "x": 3,
+                    "y": 2
+                }
+            },
+            {
+                "img": "",
+                "name": "gat4",
+                "point": {
+                    "x": 4,
+                    "y": 4
+                }
+            },
+            {
+                "img": "",
+                "name": "gat5",
+                "point": {
+                    "x": 5,
+                    "y": 2
+                }
+            }
+        ]
+    },
+    {
+        "lever": 14,
+        "gats_position": [
+            {
+                "img": "",
+                "name": "gat1",
+                "point": {
+                    "x": 1,
+                    "y": 3
+                }
+            },
+            {
+                "img": "",
+                "name": "gat2",
+                "point": {
+                    "x": 1,
+                    "y": 5
+                }
+            },
+            {
+                "img": "",
+                "name": "gat3",
+                "point": {
+                    "x": 3,
+                    "y": 2
+                }
+            },
+            {
+                "img": "",
+                "name": "gat4",
+                "point": {
+                    "x": 4,
+                    "y": 4
+                }
+            },
+            {
+                "img": "",
+                "name": "gat5",
+                "point": {
+                    "x": 5,
+                    "y": 3
+                }
+            }
+        ]
+    },
+    {
+        "lever": 15,
+        "gats_position": [
+            {
+                "img": "",
+                "name": "gat1",
+                "point": {
+                    "x": 1,
+                    "y": 5
+                }
+            },
+            {
+                "img": "",
+                "name": "gat2",
+                "point": {
+                    "x": 2,
+                    "y": 2
+                }
+            },
+            {
+                "img": "",
+                "name": "gat3",
+                "point": {
+                    "x": 3,
+                    "y": 4
+                }
+            },
+            {
+                "img": "",
+                "name": "gat4",
+                "point": {
+                    "x": 4,
+                    "y": 1
+                }
+            },
+            {
+                "img": "",
+                "name": "gat5",
+                "point": {
+                    "x": 5,
+                    "y": 5
+                }
+            }
+        ]
+    },
+    {
+        "lever": 16,
+        "gats_position": [
+            {
+                "img": "",
+                "name": "gat1",
+                "point": {
+                    "x": 2,
+                    "y": 1
+                }
+            },
+            {
+                "img": "",
+                "name": "gat2",
+                "point": {
+                    "x": 2,
+                    "y": 4
+                }
+            },
+            {
+                "img": "",
+                "name": "gat3",
+                "point": {
+                    "x": 3,
+                    "y": 3
+                }
+            },
+            {
+                "img": "",
+                "name": "gat4",
+                "point": {
+                    "x": 4,
+                    "y": 1
+                }
+            },
+            {
+                "img": "",
+                "name": "gat5",
+                "point": {
+                    "x": 5,
+                    "y": 3
+                }
+            }
+        ]
+    },
+    {
+        "lever": 17,
+        "gats_position": [
+            {
+                "img": "",
+                "name": "gat1",
+                "point": {
+                    "x": 1,
+                    "y": 5
+                }
+            },
+            {
+                "img": "",
+                "name": "gat2",
+                "point": {
+                    "x": 2,
+                    "y": 2
+                }
+            },
+            {
+                "img": "",
+                "name": "gat3",
+                "point": {
+                    "x": 3,
+                    "y": 1
+                }
+            },
+            {
+                "img": "",
+                "name": "gat4",
+                "point": {
+                    "x": 3,
+                    "y": 4
+                }
+            },
+            {
+                "img": "",
+                "name": "gat5",
+                "point": {
+                    "x": 5,
+                    "y": 4
+                }
+            }
+        ]
+    },
+    {
+        "lever": 18,
+        "gats_position": [
+            {
+                "img": "",
+                "name": "gat1",
+                "point": {
+                    "x": 1,
+                    "y": 1
+                }
+            },
+            {
+                "img": "",
+                "name": "gat2",
+                "point": {
+                    "x": 2,
+                    "y": 1
+                }
+            },
+            {
+                "img": "",
+                "name": "gat3",
+                "point": {
+                    "x": 3,
+                    "y": 3
+                }
+            },
+            {
+                "img": "",
+                "name": "gat4",
+                "point": {
+                    "x": 4,
+                    "y": 2
+                }
+            },
+            {
+                "img": "",
+                "name": "gat5",
+                "point": {
+                    "x": 5,
+                    "y": 4
+                }
+            }
+        ]
+    },
+    {
+        "lever": 19,
+        "gats_position": [
+            {
+                "img": "",
+                "name": "gat1",
+                "point": {
+                    "x": 1,
+                    "y": 1
+                }
+            },
+            {
+                "img": "",
+                "name": "gat2",
+                "point": {
+                    "x": 1,
+                    "y": 2
+                }
+            },
+            {
+                "img": "",
+                "name": "gat3",
+                "point": {
+                    "x": 3,
+                    "y": 4
+                }
+            },
+            {
+                "img": "",
+                "name": "gat4",
+                "point": {
+                    "x": 4,
+                    "y": 5
+                }
+            },
+            {
+                "img": "",
+                "name": "gat5",
+                "point": {
+                    "x": 5,
+                    "y": 1
+                }
+            }
+        ]
+    },
+    {
+        "lever": 20,
+        "gats_position": [
+            {
+                "img": "",
+                "name": "gat1",
+                "point": {
+                    "x": 1,
+                    "y": 1
+                }
+            },
+            {
+                "img": "",
+                "name": "gat2",
+                "point": {
+                    "x": 1,
+                    "y": 2
+                }
+            },
+            {
+                "img": "",
+                "name": "gat3",
+                "point": {
+                    "x": 3,
+                    "y": 2
+                }
+            },
+            {
+                "img": "",
+                "name": "gat4",
+                "point": {
+                    "x": 4,
+                    "y": 1
+                }
+            },
+            {
+                "img": "",
+                "name": "gat5",
+                "point": {
+                    "x": 4,
+                    "y": 4
+                }
+            }
+        ]
+    },
+    {
+        "lever": 21,
+        "gats_position": [
+            {
+                "img": "",
+                "name": "gat1",
+                "point": {
+                    "x": 1,
+                    "y": 2
+                }
+            },
+            {
+                "img": "",
+                "name": "gat2",
+                "point": {
+                    "x": 2,
+                    "y": 2
+                }
+            },
+            {
+                "img": "",
+                "name": "gat3",
+                "point": {
+                    "x": 4,
+                    "y": 1
+                }
+            },
+            {
+                "img": "",
+                "name": "gat4",
+                "point": {
+                    "x": 4,
+                    "y": 5
+                }
+            },
+            {
+                "img": "",
+                "name": "gat5",
+                "point": {
+                    "x": 4,
+                    "y": 2
+                }
+            }
+        ]
+    },
+    {
+        "lever": 22,
+        "gats_position": [
+            {
+                "img": "",
+                "name": "gat1",
+                "point": {
+                    "x": 1,
+                    "y": 2
+                }
+            },
+            {
+                "img": "",
+                "name": "gat2",
+                "point": {
+                    "x": 2,
+                    "y": 2
+                }
+            },
+            {
+                "img": "",
+                "name": "gat3",
+                "point": {
+                    "x": 3,
+                    "y": 4
+                }
+            },
+            {
+                "img": "",
+                "name": "gat4",
+                "point": {
+                    "x": 4,
+                    "y": 1
+                }
+            },
+            {
+                "img": "",
+                "name": "gat5",
+                "point": {
+                    "x": 5,
+                    "y": 2
+                }
+            }
+        ]
+    },
+    {
+        "lever": 23,
+        "gats_position": [
+            {
+                "img": "",
+                "name": "gat1",
+                "point": {
+                    "x": 1,
+                    "y": 2
+                }
+            },
+            {
+                "img": "",
+                "name": "gat2",
+                "point": {
+                    "x": 1,
+                    "y": 5
+                }
+            },
+            {
+                "img": "",
+                "name": "gat3",
+                "point": {
+                    "x": 2,
+                    "y": 1
+                }
+            },
+            {
+                "img": "",
+                "name": "gat4",
+                "point": {
+                    "x": 3,
+                    "y": 3
+                }
+            },
+            {
+                "img": "",
+                "name": "gat5",
+                "point": {
+                    "x": 5,
+                    "y": 3
+                }
+            }
+        ]
+    },
+    {
+        "lever": 24,
+        "gats_position": [
+            {
+                "img": "",
+                "name": "gat1",
+                "point": {
+                    "x": 1,
+                    "y": 2
+                }
+            },
+            {
+                "img": "",
+                "name": "gat2",
+                "point": {
+                    "x": 1,
+                    "y": 4
+                }
+            },
+            {
+                "img": "",
+                "name": "gat3",
+                "point": {
+                    "x": 3,
+                    "y": 5
+                }
+            },
+            {
+                "img": "",
+                "name": "gat4",
+                "point": {
+                    "x": 4,
+                    "y": 1
+                }
+            },
+            {
+                "img": "",
+                "name": "gat5",
+                "point": {
+                    "x": 5,
+                    "y": 4
+                }
+            }
+        ]
+    },
+    {
+        "lever": 25,
+        "gats_position": [
+            {
+                "img": "",
+                "name": "gat1",
+                "point": {
+                    "x": 1,
+                    "y": 2
+                }
+            },
+            {
+                "img": "",
+                "name": "gat2",
+                "point": {
+                    "x": 2,
+                    "y": 4
+                }
+            },
+            {
+                "img": "",
+                "name": "gat3",
+                "point": {
+                    "x": 3,
+                    "y": 4
+                }
+            },
+            {
+                "img": "",
+                "name": "gat4",
+                "point": {
+                    "x": 4,
+                    "y": 1
+                }
+            },
+            {
+                "img": "",
+                "name": "gat5",
+                "point": {
+                    "x": 5,
+                    "y": 3
+                }
+            }
+        ]
+    },
+    {
+        "lever": 26,
+        "gats_position": [
+            {
+                "img": "",
+                "name": "gat1",
+                "point": {
+                    "x": 1,
+                    "y": 2
+                }
+            },
+            {
+                "img": "",
+                "name": "gat2",
+                "point": {
+                    "x": 1,
+                    "y": 5
+                }
+            },
+            {
+                "img": "",
+                "name": "gat3",
+                "point": {
+                    "x": 2,
+                    "y": 2
+                }
+            },
+            {
+                "img": "",
+                "name": "gat4",
+                "point": {
+                    "x": 4,
+                    "y": 1
+                }
+            },
+            {
+                "img": "",
+                "name": "gat5",
+                "point": {
+                    "x": 4,
+                    "y": 3
+                }
+            }
+        ]
+    },
+    {
+        "lever": 27,
+        "gats_position": [
+            {
+                "img": "",
+                "name": "gat1",
+                "point": {
+                    "x": 1,
+                    "y": 4
+                }
+            },
+            {
+                "img": "",
+                "name": "gat2",
+                "point": {
+                    "x": 2,
+                    "y": 2
+                }
+            },
+            {
+                "img": "",
+                "name": "gat3",
+                "point": {
+                    "x": 3,
+                    "y": 3
+                }
+            },
+            {
+                "img": "",
+                "name": "gat4",
+                "point": {
+                    "x": 4,
+                    "y": 1
+                }
+            },
+            {
+                "img": "",
+                "name": "gat5",
+                "point": {
+                    "x": 5,
+                    "y": 2
+                }
+            }
+        ]
+    },
+    {
+        "lever": 28,
+        "gats_position": [
+            {
+                "img": "",
+                "name": "gat1",
+                "point": {
+                    "x": 1,
+                    "y": 5
+                }
+            },
+            {
+                "img": "",
+                "name": "gat2",
+                "point": {
+                    "x": 2,
+                    "y": 1
+                }
+            },
+            {
+                "img": "",
+                "name": "gat3",
+                "point": {
+                    "x": 2,
+                    "y": 4
+                }
+            },
+            {
+                "img": "",
+                "name": "gat4",
+                "point": {
+                    "x": 4,
+                    "y": 3
+                }
+            },
+            {
+                "img": "",
+                "name": "gat5",
+                "point": {
+                    "x": 5,
+                    "y": 3
+                }
+            }
+        ]
+    },
+    {
+        "lever": 29,
+        "gats_position": [
+            {
+                "img": "",
+                "name": "gat1",
+                "point": {
+                    "x": 1,
+                    "y": 2
+                }
+            },
+            {
+                "img": "",
+                "name": "gat2",
+                "point": {
+                    "x": 3,
+                    "y": 4
+                }
+            },
+            {
+                "img": "",
+                "name": "gat3",
+                "point": {
+                    "x": 3,
+                    "y": 5
+                }
+            },
+            {
+                "img": "",
+                "name": "gat4",
+                "point": {
+                    "x": 4,
+                    "y": 1
+                }
+            },
+            {
+                "img": "",
+                "name": "gat5",
+                "point": {
+                    "x": 5,
+                    "y": 4
+                }
+            }
+        ]
+    },
+    {
+        "lever": 30,
+        "gats_position": [
+            {
+                "img": "",
+                "name": "gat1",
+                "point": {
+                    "x": 1,
+                    "y": 2
+                }
+            },
+            {
+                "img": "",
+                "name": "gat2",
+                "point": {
+                    "x": 4,
+                    "y": 1
+                }
+            },
+            {
+                "img": "",
+                "name": "gat3",
+                "point": {
+                    "x": 4,
+                    "y": 2
+                }
+            },
+            {
+                "img": "",
+                "name": "gat4",
+                "point": {
+                    "x": 4,
+                    "y": 5
+                }
+            },
+            {
+                "img": "",
+                "name": "gat5",
+                "point": {
+                    "x": 5,
+                    "y": 4
+                }
+            }
+        ]
+    },
+    {
+        "lever": 31,
+        "gats_position": [
+            {
+                "img": "",
+                "name": "gat1",
+                "point": {
+                    "x": 1,
+                    "y": 2
+                }
+            },
+            {
+                "img": "",
+                "name": "gat2",
+                "point": {
+                    "x": 3,
+                    "y": 1
+                }
+            },
+            {
+                "img": "",
+                "name": "gat3",
+                "point": {
+                    "x": 3,
+                    "y": 3
+                }
+            },
+            {
+                "img": "",
+                "name": "gat4",
+                "point": {
+                    "x": 4,
+                    "y": 5
+                }
+            },
+            {
+                "img": "",
+                "name": "gat5",
+                "point": {
+                    "x": 5,
+                    "y": 2
+                }
+            }
+        ]
+        "boxes_position": [
+            {
+                "name": "t",
+                "tiles": [
+                    {
+                        "x": 1,
+                        "y": 2
+                    },
+                    {
+                        "x": 2,
+                        "y": 1
+                    },
+                    {
+                        "x": 3,
+                        "y": 2
+                    }
+                ],
+                "box": [
+                    {
+                        "x": 2,
+                        "y": 2
+                    }
+                ]
+            },
+            {
+                "name": "l",
+                "tiles": [
+                    {
+                        "x": 1,
+                        "y": 2
+                    },
+                    {
+                        "x": 3,
+                        "y": 2
+                    },
+                    {
+                        "x": 3,
+                        "y": 1
+                    }
+                ],
+                "box": [
+                    {
+                        "x": 2,
+                        "y": 2
+                    }
+                ]
+            },
+            {
+                "name": "li",
+                "tiles": [
+                    {
+                        "x": 1,
+                        "y": 3
+                    },
+                    {
+                        "x": 1,
+                        "y": 2
+                    },
+                    {
+                        "x": 2,
+                        "y": 1
+                    }
+                ],
+                "box": [
+                    {
+                        "x": 1,
+                        "y": 1
+                    }
+                ]
+            },
+            {
+                "name": "z",
+                "tiles": [
+                    {
+                        "x": 2,
+                        "y": 3
+                    },
+                    {
+                        "x": 2,
+                        "y": 2
+                    },
+                    {
+                        "x": 2,
+                        "y": 1
+                    }
+                ],
+                "box": [
+                    {
+                        "x": 1,
+                        "y": 3
+                    },
+                    {
+                        "x": 3,
+                        "y": 2
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "lever": 32,
+        "gats_position": [
+            {
+                "img": "",
+                "name": "gat1",
+                "point": {
+                    "x": 1,
+                    "y": 2
+                }
+            },
+            {
+                "img": "",
+                "name": "gat2",
+                "point": {
+                    "x": 1,
+                    "y": 5
+                }
+            },
+            {
+                "img": "",
+                "name": "gat3",
+                "point": {
+                    "x": 3,
+                    "y": 4
+                }
+            },
+            {
+                "img": "",
+                "name": "gat4",
+                "point": {
+                    "x": 5,
+                    "y": 1
+                }
+            },
+            {
+                "img": "",
+                "name": "gat5",
+                "point": {
+                    "x": 5,
+                    "y": 4
+                }
+            }
+        ],
+        "boxes_position": [
+            {
+                "name": "t",
+                "tiles": [
+                    {
+                        "x": 1,
+                        "y": 2
+                    },
+                    {
+                        "x": 2,
+                        "y": 1
+                    },
+                    {
+                        "x": 3,
+                        "y": 2
+                    }
+                ],
+                "box": [
+                    {
+                        "x": 2,
+                        "y": 2
+                    }
+                ]
+            },
+            {
+                "name": "l",
+                "tiles": [
+                    {
+                        "x": 1,
+                        "y": 2
+                    },
+                    {
+                        "x": 3,
+                        "y": 2
+                    },
+                    {
+                        "x": 3,
+                        "y": 1
+                    }
+                ],
+                "box": [
+                    {
+                        "x": 2,
+                        "y": 2
+                    }
+                ]
+            },
+            {
+                "name": "li",
+                "tiles": [
+                    {
+                        "x": 1,
+                        "y": 3
+                    },
+                    {
+                        "x": 1,
+                        "y": 2
+                    },
+                    {
+                        "x": 2,
+                        "y": 1
+                    }
+                ],
+                "box": [
+                    {
+                        "x": 1,
+                        "y": 1
+                    }
+                ]
+            },
+            {
+                "name": "z",
+                "tiles": [
+                    {
+                        "x": 2,
+                        "y": 3
+                    },
+                    {
+                        "x": 2,
+                        "y": 2
+                    },
+                    {
+                        "x": 2,
+                        "y": 1
+                    }
+                ],
+                "box": [
+                    {
+                        "x": 1,
+                        "y": 3
+                    },
+                    {
+                        "x": 3,
+                        "y": 2
+                    }
+                ]
+            }
+        ]
+    }
+]

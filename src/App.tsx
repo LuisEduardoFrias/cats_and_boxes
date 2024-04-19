@@ -1,35 +1,28 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import levers from "../public/jsons/levers.json"
+import { DndContext } from '@dnd-kit/core';
+import Gats from "./components/gats"
+import Tiles from "./components/tiles"
+import Board from "./components/board"
 import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
+export default function App() {
+    return (
+        <>
+            <h1>Gatos y Cajas</h1>
+            <DndContext onDragEnd={handleDragEnd}>
+                <div className="contenedor">
+                    <Board>
+                        <Tiles tilesPositions={levers[0].tiles_position} />
+                        <Gats gats={levers[0].gats_position} />
+                    </Board>
+                </div>
+            </DndContext>
+        </>
+    )
 
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    function handleDragEnd(event) {
+        if (event.over && event.over.id === 'droppable') {
+            setIsDropped(true);
+        }
+    }
 }
-
-export default App

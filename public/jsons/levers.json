@@ -3,151 +3,78 @@
         "lever": 1,
         "gats_position": [
             {
-                "img": "",
-                "name": "gat1",
+                "name": "gato1",
                 "point": {
                     "x": 1,
                     "y": 5
                 }
             },
             {
-                "img": "",
-                "name": "gat2",
+                "name": "gato2",
                 "point": {
                     "x": 2,
                     "y": 2
                 }
             },
             {
-                "img": "",
-                "name": "gat3",
+                "name": "gato3",
                 "point": {
                     "x": 3,
                     "y": 4
                 }
             },
             {
-                "img": "",
-                "name": "gat4",
+                "name": "gato4",
                 "point": {
                     "x": 5,
                     "y": 1
                 }
             },
             {
-                "img": "",
-                "name": "gat5",
+                "name": "gato5",
                 "point": {
                     "x": 5,
                     "y": 4
                 }
             }
         ],
-                "boxes_position": [
-            {
-                "name": "t",
-                "tiles": [
-                    {
-                        "x": 1,
-                        "y": 2
-                    },
-                    {
-                        "x": 2,
-                        "y": 1
-                    },
-                    {
-                        "x": 3,
-                        "y": 2
-                    }
-                ],
-                "box": [
-                    {
-                        "x": 2,
-                        "y": 2
-                    }
-                ]
+        "tiles_position": {
+            "t": {
+                "rotation": 180,
+                "point": {
+                    "x": 3,
+                    "y": 4
+                }
             },
-            {
-                "name": "l",
-                "tiles": [
-                    {
-                        "x": 1,
-                        "y": 2
-                    },
-                    {
-                        "x": 3,
-                        "y": 2
-                    },
-                    {
-                        "x": 3,
-                        "y": 1
-                    }
-                ],
-                "box": [
-                    {
-                        "x": 2,
-                        "y": 2
-                    }
-                ]
+            "l": {
+                "rotation": 0,
+                "point": {
+                    "x": 1,
+                    "y": 1
+                }
             },
-            {
-                "name": "li",
-                "tiles": [
-                    {
-                        "x": 1,
-                        "y": 3
-                    },
-                    {
-                        "x": 1,
-                        "y": 2
-                    },
-                    {
-                        "x": 2,
-                        "y": 1
-                    }
-                ],
-                "box": [
-                    {
-                        "x": 1,
-                        "y": 1
-                    }
-                ]
+            "li": {
+                "rotation": 90,
+                "point": {
+                    "x": 1,
+                    "y": 3
+                }
             },
-            {
-                "name": "z",
-                "tiles": [
-                    {
-                        "x": 2,
-                        "y": 3
-                    },
-                    {
-                        "x": 2,
-                        "y": 2
-                    },
-                    {
-                        "x": 2,
-                        "y": 1
-                    }
-                ],
-                "box": [
-                    {
-                        "x": 1,
-                        "y": 3
-                    },
-                    {
-                        "x": 3,
-                        "y": 2
-                    }
-                ]
+            "z": {
+                "rotation": 90,
+                "point": {
+                    "x": 3,
+                    "y": 1
+                }
             }
-        ]
+        }
     },
     {
         "lever": 2,
         "gats_position": [
             {
                 "img": "",
-                "name": "gat1",
+                "name": "gato1",
                 "point": {
                     "x": 1,
                     "y": 2
@@ -155,7 +82,7 @@
             },
             {
                 "img": "",
-                "name": "gat2",
+                "name": "gato2",
                 "point": {
                     "x": 2,
                     "y": 4
@@ -163,7 +90,7 @@
             },
             {
                 "img": "",
-                "name": "gat3",
+                "name": "gato3",
                 "point": {
                     "x": 3,
                     "y": 3
@@ -171,7 +98,7 @@
             },
             {
                 "img": "",
-                "name": "gat4",
+                "name": "gato4",
                 "point": {
                     "x": 5,
                     "y": 2
@@ -179,7 +106,7 @@
             },
             {
                 "img": "",
-                "name": "gat5",
+                "name": "gato5",
                 "point": {
                     "x": 5,
                     "y": 4
@@ -192,7 +119,7 @@
         "gats_position": [
             {
                 "img": "",
-                "name": "gat1",
+                "name": "gato1",
                 "point": {
                     "x": 1,
                     "y": 2
@@ -200,7 +127,7 @@
             },
             {
                 "img": "",
-                "name": "gat2",
+                "name": "gato2",
                 "point": {
                     "x": 3,
                     "y": 1
@@ -208,7 +135,7 @@
             },
             {
                 "img": "",
-                "name": "gat3",
+                "name": "gato3",
                 "point": {
                     "x": 3,
                     "y": 3
@@ -216,7 +143,7 @@
             },
             {
                 "img": "",
-                "name": "gat4",
+                "name": "gato4",
                 "point": {
                     "x": 3,
                     "y": 4
@@ -224,7 +151,7 @@
             },
             {
                 "img": "",
-                "name": "gat5",
+                "name": "gato5",
                 "point": {
                     "x": 5,
                     "y": 2
@@ -237,7 +164,7 @@
         "gats_position": [
             {
                 "img": "",
-                "name": "gat1",
+                "name": "gato1",
                 "point": {
                     "x": 1,
                     "y": 5
@@ -245,7 +172,7 @@
             },
             {
                 "img": "",
-                "name": "gat2",
+                "name": "gato2",
                 "point": {
                     "x": 1,
                     "y": 2
@@ -253,7 +180,7 @@
             },
             {
                 "img": "",
-                "name": "gat3",
+                "name": "gato3",
                 "point": {
                     "x": 3,
                     "y": 3
@@ -261,7 +188,7 @@
             },
             {
                 "img": "",
-                "name": "gat4",
+                "name": "gato4",
                 "point": {
                     "x": 5,
                     "y": 4
@@ -269,7 +196,7 @@
             },
             {
                 "img": "",
-                "name": "gat5",
+                "name": "gato5",
                 "point": {
                     "x": 5,
                     "y": 2
@@ -282,7 +209,7 @@
         "gats_position": [
             {
                 "img": "",
-                "name": "gat1",
+                "name": "gato1",
                 "point": {
                     "x": 1,
                     "y": 4
@@ -290,7 +217,7 @@
             },
             {
                 "img": "",
-                "name": "gat2",
+                "name": "gato2",
                 "point": {
                     "x": 2,
                     "y": 1
@@ -298,7 +225,7 @@
             },
             {
                 "img": "",
-                "name": "gat3",
+                "name": "gato3",
                 "point": {
                     "x": 2,
                     "y": 3
@@ -306,7 +233,7 @@
             },
             {
                 "img": "",
-                "name": "gat4",
+                "name": "gato4",
                 "point": {
                     "x": 4,
                     "y": 1
@@ -314,7 +241,7 @@
             },
             {
                 "img": "",
-                "name": "gat5",
+                "name": "gato5",
                 "point": {
                     "x": 5,
                     "y": 3
@@ -327,7 +254,7 @@
         "gats_position": [
             {
                 "img": "",
-                "name": "gat1",
+                "name": "gato1",
                 "point": {
                     "x": 1,
                     "y": 4
@@ -335,7 +262,7 @@
             },
             {
                 "img": "",
-                "name": "gat2",
+                "name": "gato2",
                 "point": {
                     "x": 2,
                     "y": 1
@@ -343,7 +270,7 @@
             },
             {
                 "img": "",
-                "name": "gat3",
+                "name": "gato3",
                 "point": {
                     "x": 3,
                     "y": 4
@@ -351,7 +278,7 @@
             },
             {
                 "img": "",
-                "name": "gat4",
+                "name": "gato4",
                 "point": {
                     "x": 4,
                     "y": 2
@@ -359,7 +286,7 @@
             },
             {
                 "img": "",
-                "name": "gat5",
+                "name": "gato5",
                 "point": {
                     "x": 4,
                     "y": 4
@@ -372,7 +299,7 @@
         "gats_position": [
             {
                 "img": "",
-                "name": "gat1",
+                "name": "gato1",
                 "point": {
                     "x": 1,
                     "y": 3
@@ -380,7 +307,7 @@
             },
             {
                 "img": "",
-                "name": "gat2",
+                "name": "gato2",
                 "point": {
                     "x": 2,
                     "y": 1
@@ -388,7 +315,7 @@
             },
             {
                 "img": "",
-                "name": "gat3",
+                "name": "gato3",
                 "point": {
                     "x": 3,
                     "y": 4
@@ -396,7 +323,7 @@
             },
             {
                 "img": "",
-                "name": "gat4",
+                "name": "gato4",
                 "point": {
                     "x": 4,
                     "y": 1
@@ -404,7 +331,7 @@
             },
             {
                 "img": "",
-                "name": "gat5",
+                "name": "gato5",
                 "point": {
                     "x": 5,
                     "y": 3
@@ -417,7 +344,7 @@
         "gats_position": [
             {
                 "img": "",
-                "name": "gat1",
+                "name": "gato1",
                 "point": {
                     "x": 1,
                     "y": 3
@@ -425,7 +352,7 @@
             },
             {
                 "img": "",
-                "name": "gat2",
+                "name": "gato2",
                 "point": {
                     "x": 3,
                     "y": 3
@@ -433,7 +360,7 @@
             },
             {
                 "img": "",
-                "name": "gat3",
+                "name": "gato3",
                 "point": {
                     "x": 4,
                     "y": 1
@@ -441,7 +368,7 @@
             },
             {
                 "img": "",
-                "name": "gat4",
+                "name": "gato4",
                 "point": {
                     "x": 4,
                     "y": 5
@@ -449,7 +376,7 @@
             },
             {
                 "img": "",
-                "name": "gat5",
+                "name": "gato5",
                 "point": {
                     "x": 5,
                     "y": 3
@@ -462,7 +389,7 @@
         "gats_position": [
             {
                 "img": "",
-                "name": "gat1",
+                "name": "gato1",
                 "point": {
                     "x": 1,
                     "y": 2
@@ -470,7 +397,7 @@
             },
             {
                 "img": "",
-                "name": "gat2",
+                "name": "gato2",
                 "point": {
                     "x": 2,
                     "y": 3
@@ -478,7 +405,7 @@
             },
             {
                 "img": "",
-                "name": "gat3",
+                "name": "gato3",
                 "point": {
                     "x": 4,
                     "y": 2
@@ -486,7 +413,7 @@
             },
             {
                 "img": "",
-                "name": "gat4",
+                "name": "gato4",
                 "point": {
                     "x": 5,
                     "y": 2
@@ -494,7 +421,7 @@
             },
             {
                 "img": "",
-                "name": "gat5",
+                "name": "gato5",
                 "point": {
                     "x": 5,
                     "y": 4
@@ -507,7 +434,7 @@
         "gats_position": [
             {
                 "img": "",
-                "name": "gat1",
+                "name": "gato1",
                 "point": {
                     "x": 1,
                     "y": 2
@@ -515,7 +442,7 @@
             },
             {
                 "img": "",
-                "name": "gat2",
+                "name": "gato2",
                 "point": {
                     "x": 3,
                     "y": 1
@@ -523,7 +450,7 @@
             },
             {
                 "img": "",
-                "name": "gat3",
+                "name": "gato3",
                 "point": {
                     "x": 3,
                     "y": 3
@@ -531,7 +458,7 @@
             },
             {
                 "img": "",
-                "name": "gat4",
+                "name": "gato4",
                 "point": {
                     "x": 4,
                     "y": 5
@@ -539,7 +466,7 @@
             },
             {
                 "img": "",
-                "name": "gat5",
+                "name": "gato5",
                 "point": {
                     "x": 5,
                     "y": 4
@@ -552,7 +479,7 @@
         "gats_position": [
             {
                 "img": "",
-                "name": "gat1",
+                "name": "gato1",
                 "point": {
                     "x": 1,
                     "y": 4
@@ -560,7 +487,7 @@
             },
             {
                 "img": "",
-                "name": "gat2",
+                "name": "gato2",
                 "point": {
                     "x": 2,
                     "y": 2
@@ -568,7 +495,7 @@
             },
             {
                 "img": "",
-                "name": "gat3",
+                "name": "gato3",
                 "point": {
                     "x": 4,
                     "y": 1
@@ -576,7 +503,7 @@
             },
             {
                 "img": "",
-                "name": "gat4",
+                "name": "gato4",
                 "point": {
                     "x": 5,
                     "y": 2
@@ -584,7 +511,7 @@
             },
             {
                 "img": "",
-                "name": "gat5",
+                "name": "gato5",
                 "point": {
                     "x": 5,
                     "y": 4
@@ -597,7 +524,7 @@
         "gats_position": [
             {
                 "img": "",
-                "name": "gat1",
+                "name": "gato1",
                 "point": {
                     "x": 1,
                     "y": 1
@@ -605,7 +532,7 @@
             },
             {
                 "img": "",
-                "name": "gat2",
+                "name": "gato2",
                 "point": {
                     "x": 3,
                     "y": 1
@@ -613,7 +540,7 @@
             },
             {
                 "img": "",
-                "name": "gat3",
+                "name": "gato3",
                 "point": {
                     "x": 3,
                     "y": 2
@@ -621,7 +548,7 @@
             },
             {
                 "img": "",
-                "name": "gat4",
+                "name": "gato4",
                 "point": {
                     "x": 4,
                     "y": 4
@@ -629,7 +556,7 @@
             },
             {
                 "img": "",
-                "name": "gat5",
+                "name": "gato5",
                 "point": {
                     "x": 5,
                     "y": 2
@@ -642,7 +569,7 @@
         "gats_position": [
             {
                 "img": "",
-                "name": "gat1",
+                "name": "gato1",
                 "point": {
                     "x": 1,
                     "y": 4
@@ -650,7 +577,7 @@
             },
             {
                 "img": "",
-                "name": "gat2",
+                "name": "gato2",
                 "point": {
                     "x": 3,
                     "y": 1
@@ -658,7 +585,7 @@
             },
             {
                 "img": "",
-                "name": "gat3",
+                "name": "gato3",
                 "point": {
                     "x": 3,
                     "y": 2
@@ -666,7 +593,7 @@
             },
             {
                 "img": "",
-                "name": "gat4",
+                "name": "gato4",
                 "point": {
                     "x": 4,
                     "y": 4
@@ -674,7 +601,7 @@
             },
             {
                 "img": "",
-                "name": "gat5",
+                "name": "gato5",
                 "point": {
                     "x": 5,
                     "y": 2
@@ -687,7 +614,7 @@
         "gats_position": [
             {
                 "img": "",
-                "name": "gat1",
+                "name": "gato1",
                 "point": {
                     "x": 1,
                     "y": 3
@@ -695,7 +622,7 @@
             },
             {
                 "img": "",
-                "name": "gat2",
+                "name": "gato2",
                 "point": {
                     "x": 1,
                     "y": 5
@@ -703,7 +630,7 @@
             },
             {
                 "img": "",
-                "name": "gat3",
+                "name": "gato3",
                 "point": {
                     "x": 3,
                     "y": 2
@@ -711,7 +638,7 @@
             },
             {
                 "img": "",
-                "name": "gat4",
+                "name": "gato4",
                 "point": {
                     "x": 4,
                     "y": 4
@@ -719,7 +646,7 @@
             },
             {
                 "img": "",
-                "name": "gat5",
+                "name": "gato5",
                 "point": {
                     "x": 5,
                     "y": 3
@@ -732,7 +659,7 @@
         "gats_position": [
             {
                 "img": "",
-                "name": "gat1",
+                "name": "gato1",
                 "point": {
                     "x": 1,
                     "y": 5
@@ -740,7 +667,7 @@
             },
             {
                 "img": "",
-                "name": "gat2",
+                "name": "gato2",
                 "point": {
                     "x": 2,
                     "y": 2
@@ -748,7 +675,7 @@
             },
             {
                 "img": "",
-                "name": "gat3",
+                "name": "gato3",
                 "point": {
                     "x": 3,
                     "y": 4
@@ -756,7 +683,7 @@
             },
             {
                 "img": "",
-                "name": "gat4",
+                "name": "gato4",
                 "point": {
                     "x": 4,
                     "y": 1
@@ -764,7 +691,7 @@
             },
             {
                 "img": "",
-                "name": "gat5",
+                "name": "gato5",
                 "point": {
                     "x": 5,
                     "y": 5
@@ -777,7 +704,7 @@
         "gats_position": [
             {
                 "img": "",
-                "name": "gat1",
+                "name": "gato1",
                 "point": {
                     "x": 2,
                     "y": 1
@@ -785,7 +712,7 @@
             },
             {
                 "img": "",
-                "name": "gat2",
+                "name": "gato2",
                 "point": {
                     "x": 2,
                     "y": 4
@@ -793,7 +720,7 @@
             },
             {
                 "img": "",
-                "name": "gat3",
+                "name": "gato3",
                 "point": {
                     "x": 3,
                     "y": 3
@@ -801,7 +728,7 @@
             },
             {
                 "img": "",
-                "name": "gat4",
+                "name": "gato4",
                 "point": {
                     "x": 4,
                     "y": 1
@@ -809,7 +736,7 @@
             },
             {
                 "img": "",
-                "name": "gat5",
+                "name": "gato5",
                 "point": {
                     "x": 5,
                     "y": 3
@@ -822,7 +749,7 @@
         "gats_position": [
             {
                 "img": "",
-                "name": "gat1",
+                "name": "gato1",
                 "point": {
                     "x": 1,
                     "y": 5
@@ -830,7 +757,7 @@
             },
             {
                 "img": "",
-                "name": "gat2",
+                "name": "gato2",
                 "point": {
                     "x": 2,
                     "y": 2
@@ -838,7 +765,7 @@
             },
             {
                 "img": "",
-                "name": "gat3",
+                "name": "gato3",
                 "point": {
                     "x": 3,
                     "y": 1
@@ -846,7 +773,7 @@
             },
             {
                 "img": "",
-                "name": "gat4",
+                "name": "gato4",
                 "point": {
                     "x": 3,
                     "y": 4
@@ -854,7 +781,7 @@
             },
             {
                 "img": "",
-                "name": "gat5",
+                "name": "gato5",
                 "point": {
                     "x": 5,
                     "y": 4
@@ -867,7 +794,7 @@
         "gats_position": [
             {
                 "img": "",
-                "name": "gat1",
+                "name": "gato1",
                 "point": {
                     "x": 1,
                     "y": 1
@@ -875,7 +802,7 @@
             },
             {
                 "img": "",
-                "name": "gat2",
+                "name": "gato2",
                 "point": {
                     "x": 2,
                     "y": 1
@@ -883,7 +810,7 @@
             },
             {
                 "img": "",
-                "name": "gat3",
+                "name": "gato3",
                 "point": {
                     "x": 3,
                     "y": 3
@@ -891,7 +818,7 @@
             },
             {
                 "img": "",
-                "name": "gat4",
+                "name": "gato4",
                 "point": {
                     "x": 4,
                     "y": 2
@@ -899,7 +826,7 @@
             },
             {
                 "img": "",
-                "name": "gat5",
+                "name": "gato5",
                 "point": {
                     "x": 5,
                     "y": 4
@@ -912,7 +839,7 @@
         "gats_position": [
             {
                 "img": "",
-                "name": "gat1",
+                "name": "gato1",
                 "point": {
                     "x": 1,
                     "y": 1
@@ -920,7 +847,7 @@
             },
             {
                 "img": "",
-                "name": "gat2",
+                "name": "gato2",
                 "point": {
                     "x": 1,
                     "y": 2
@@ -928,7 +855,7 @@
             },
             {
                 "img": "",
-                "name": "gat3",
+                "name": "gato3",
                 "point": {
                     "x": 3,
                     "y": 4
@@ -936,7 +863,7 @@
             },
             {
                 "img": "",
-                "name": "gat4",
+                "name": "gato4",
                 "point": {
                     "x": 4,
                     "y": 5
@@ -944,7 +871,7 @@
             },
             {
                 "img": "",
-                "name": "gat5",
+                "name": "gato5",
                 "point": {
                     "x": 5,
                     "y": 1
@@ -957,7 +884,7 @@
         "gats_position": [
             {
                 "img": "",
-                "name": "gat1",
+                "name": "gato1",
                 "point": {
                     "x": 1,
                     "y": 1
@@ -965,7 +892,7 @@
             },
             {
                 "img": "",
-                "name": "gat2",
+                "name": "gato2",
                 "point": {
                     "x": 1,
                     "y": 2
@@ -973,7 +900,7 @@
             },
             {
                 "img": "",
-                "name": "gat3",
+                "name": "gato3",
                 "point": {
                     "x": 3,
                     "y": 2
@@ -981,7 +908,7 @@
             },
             {
                 "img": "",
-                "name": "gat4",
+                "name": "gato4",
                 "point": {
                     "x": 4,
                     "y": 1
@@ -989,7 +916,7 @@
             },
             {
                 "img": "",
-                "name": "gat5",
+                "name": "gato5",
                 "point": {
                     "x": 4,
                     "y": 4
@@ -1002,7 +929,7 @@
         "gats_position": [
             {
                 "img": "",
-                "name": "gat1",
+                "name": "gato1",
                 "point": {
                     "x": 1,
                     "y": 2
@@ -1010,7 +937,7 @@
             },
             {
                 "img": "",
-                "name": "gat2",
+                "name": "gato2",
                 "point": {
                     "x": 2,
                     "y": 2
@@ -1018,7 +945,7 @@
             },
             {
                 "img": "",
-                "name": "gat3",
+                "name": "gato3",
                 "point": {
                     "x": 4,
                     "y": 1
@@ -1026,7 +953,7 @@
             },
             {
                 "img": "",
-                "name": "gat4",
+                "name": "gato4",
                 "point": {
                     "x": 4,
                     "y": 5
@@ -1034,7 +961,7 @@
             },
             {
                 "img": "",
-                "name": "gat5",
+                "name": "gato5",
                 "point": {
                     "x": 4,
                     "y": 2
@@ -1047,7 +974,7 @@
         "gats_position": [
             {
                 "img": "",
-                "name": "gat1",
+                "name": "gato1",
                 "point": {
                     "x": 1,
                     "y": 2
@@ -1055,7 +982,7 @@
             },
             {
                 "img": "",
-                "name": "gat2",
+                "name": "gato2",
                 "point": {
                     "x": 2,
                     "y": 2
@@ -1063,7 +990,7 @@
             },
             {
                 "img": "",
-                "name": "gat3",
+                "name": "gato3",
                 "point": {
                     "x": 3,
                     "y": 4
@@ -1071,7 +998,7 @@
             },
             {
                 "img": "",
-                "name": "gat4",
+                "name": "gato4",
                 "point": {
                     "x": 4,
                     "y": 1
@@ -1079,7 +1006,7 @@
             },
             {
                 "img": "",
-                "name": "gat5",
+                "name": "gato5",
                 "point": {
                     "x": 5,
                     "y": 2
@@ -1092,7 +1019,7 @@
         "gats_position": [
             {
                 "img": "",
-                "name": "gat1",
+                "name": "gato1",
                 "point": {
                     "x": 1,
                     "y": 2
@@ -1100,7 +1027,7 @@
             },
             {
                 "img": "",
-                "name": "gat2",
+                "name": "gato2",
                 "point": {
                     "x": 1,
                     "y": 5
@@ -1108,7 +1035,7 @@
             },
             {
                 "img": "",
-                "name": "gat3",
+                "name": "gato3",
                 "point": {
                     "x": 2,
                     "y": 1
@@ -1116,7 +1043,7 @@
             },
             {
                 "img": "",
-                "name": "gat4",
+                "name": "gato4",
                 "point": {
                     "x": 3,
                     "y": 3
@@ -1124,7 +1051,7 @@
             },
             {
                 "img": "",
-                "name": "gat5",
+                "name": "gato5",
                 "point": {
                     "x": 5,
                     "y": 3
@@ -1137,7 +1064,7 @@
         "gats_position": [
             {
                 "img": "",
-                "name": "gat1",
+                "name": "gato1",
                 "point": {
                     "x": 1,
                     "y": 2
@@ -1145,7 +1072,7 @@
             },
             {
                 "img": "",
-                "name": "gat2",
+                "name": "gato2",
                 "point": {
                     "x": 1,
                     "y": 4
@@ -1153,7 +1080,7 @@
             },
             {
                 "img": "",
-                "name": "gat3",
+                "name": "gato3",
                 "point": {
                     "x": 3,
                     "y": 5
@@ -1161,7 +1088,7 @@
             },
             {
                 "img": "",
-                "name": "gat4",
+                "name": "gato4",
                 "point": {
                     "x": 4,
                     "y": 1
@@ -1169,7 +1096,7 @@
             },
             {
                 "img": "",
-                "name": "gat5",
+                "name": "gato5",
                 "point": {
                     "x": 5,
                     "y": 4
@@ -1182,7 +1109,7 @@
         "gats_position": [
             {
                 "img": "",
-                "name": "gat1",
+                "name": "gato1",
                 "point": {
                     "x": 1,
                     "y": 2
@@ -1190,7 +1117,7 @@
             },
             {
                 "img": "",
-                "name": "gat2",
+                "name": "gato2",
                 "point": {
                     "x": 2,
                     "y": 4
@@ -1198,7 +1125,7 @@
             },
             {
                 "img": "",
-                "name": "gat3",
+                "name": "gato3",
                 "point": {
                     "x": 3,
                     "y": 4
@@ -1206,7 +1133,7 @@
             },
             {
                 "img": "",
-                "name": "gat4",
+                "name": "gato4",
                 "point": {
                     "x": 4,
                     "y": 1
@@ -1214,7 +1141,7 @@
             },
             {
                 "img": "",
-                "name": "gat5",
+                "name": "gato5",
                 "point": {
                     "x": 5,
                     "y": 3
@@ -1227,7 +1154,7 @@
         "gats_position": [
             {
                 "img": "",
-                "name": "gat1",
+                "name": "gato1",
                 "point": {
                     "x": 1,
                     "y": 2
@@ -1235,7 +1162,7 @@
             },
             {
                 "img": "",
-                "name": "gat2",
+                "name": "gato2",
                 "point": {
                     "x": 1,
                     "y": 5
@@ -1243,7 +1170,7 @@
             },
             {
                 "img": "",
-                "name": "gat3",
+                "name": "gato3",
                 "point": {
                     "x": 2,
                     "y": 2
@@ -1251,7 +1178,7 @@
             },
             {
                 "img": "",
-                "name": "gat4",
+                "name": "gato4",
                 "point": {
                     "x": 4,
                     "y": 1
@@ -1259,7 +1186,7 @@
             },
             {
                 "img": "",
-                "name": "gat5",
+                "name": "gato5",
                 "point": {
                     "x": 4,
                     "y": 3
@@ -1272,7 +1199,7 @@
         "gats_position": [
             {
                 "img": "",
-                "name": "gat1",
+                "name": "gato1",
                 "point": {
                     "x": 1,
                     "y": 4
@@ -1280,7 +1207,7 @@
             },
             {
                 "img": "",
-                "name": "gat2",
+                "name": "gato2",
                 "point": {
                     "x": 2,
                     "y": 2
@@ -1288,7 +1215,7 @@
             },
             {
                 "img": "",
-                "name": "gat3",
+                "name": "gato3",
                 "point": {
                     "x": 3,
                     "y": 3
@@ -1296,7 +1223,7 @@
             },
             {
                 "img": "",
-                "name": "gat4",
+                "name": "gato4",
                 "point": {
                     "x": 4,
                     "y": 1
@@ -1304,7 +1231,7 @@
             },
             {
                 "img": "",
-                "name": "gat5",
+                "name": "gato5",
                 "point": {
                     "x": 5,
                     "y": 2
@@ -1317,7 +1244,7 @@
         "gats_position": [
             {
                 "img": "",
-                "name": "gat1",
+                "name": "gato1",
                 "point": {
                     "x": 1,
                     "y": 5
@@ -1325,7 +1252,7 @@
             },
             {
                 "img": "",
-                "name": "gat2",
+                "name": "gato2",
                 "point": {
                     "x": 2,
                     "y": 1
@@ -1333,7 +1260,7 @@
             },
             {
                 "img": "",
-                "name": "gat3",
+                "name": "gato3",
                 "point": {
                     "x": 2,
                     "y": 4
@@ -1341,7 +1268,7 @@
             },
             {
                 "img": "",
-                "name": "gat4",
+                "name": "gato4",
                 "point": {
                     "x": 4,
                     "y": 3
@@ -1349,7 +1276,7 @@
             },
             {
                 "img": "",
-                "name": "gat5",
+                "name": "gato5",
                 "point": {
                     "x": 5,
                     "y": 3
@@ -1362,7 +1289,7 @@
         "gats_position": [
             {
                 "img": "",
-                "name": "gat1",
+                "name": "gato1",
                 "point": {
                     "x": 1,
                     "y": 2
@@ -1370,7 +1297,7 @@
             },
             {
                 "img": "",
-                "name": "gat2",
+                "name": "gato2",
                 "point": {
                     "x": 3,
                     "y": 4
@@ -1378,7 +1305,7 @@
             },
             {
                 "img": "",
-                "name": "gat3",
+                "name": "gato3",
                 "point": {
                     "x": 3,
                     "y": 5
@@ -1386,7 +1313,7 @@
             },
             {
                 "img": "",
-                "name": "gat4",
+                "name": "gato4",
                 "point": {
                     "x": 4,
                     "y": 1
@@ -1394,7 +1321,7 @@
             },
             {
                 "img": "",
-                "name": "gat5",
+                "name": "gato5",
                 "point": {
                     "x": 5,
                     "y": 4
@@ -1407,7 +1334,7 @@
         "gats_position": [
             {
                 "img": "",
-                "name": "gat1",
+                "name": "gato1",
                 "point": {
                     "x": 1,
                     "y": 2
@@ -1415,7 +1342,7 @@
             },
             {
                 "img": "",
-                "name": "gat2",
+                "name": "gato2",
                 "point": {
                     "x": 4,
                     "y": 1
@@ -1423,7 +1350,7 @@
             },
             {
                 "img": "",
-                "name": "gat3",
+                "name": "gato3",
                 "point": {
                     "x": 4,
                     "y": 2
@@ -1431,7 +1358,7 @@
             },
             {
                 "img": "",
-                "name": "gat4",
+                "name": "gato4",
                 "point": {
                     "x": 4,
                     "y": 5
@@ -1439,7 +1366,7 @@
             },
             {
                 "img": "",
-                "name": "gat5",
+                "name": "gato5",
                 "point": {
                     "x": 5,
                     "y": 4
@@ -1452,7 +1379,7 @@
         "gats_position": [
             {
                 "img": "",
-                "name": "gat1",
+                "name": "gato1",
                 "point": {
                     "x": 1,
                     "y": 2
@@ -1460,7 +1387,7 @@
             },
             {
                 "img": "",
-                "name": "gat2",
+                "name": "gato2",
                 "point": {
                     "x": 3,
                     "y": 1
@@ -1468,7 +1395,7 @@
             },
             {
                 "img": "",
-                "name": "gat3",
+                "name": "gato3",
                 "point": {
                     "x": 3,
                     "y": 3
@@ -1476,7 +1403,7 @@
             },
             {
                 "img": "",
-                "name": "gat4",
+                "name": "gato4",
                 "point": {
                     "x": 4,
                     "y": 5
@@ -1484,13 +1411,13 @@
             },
             {
                 "img": "",
-                "name": "gat5",
+                "name": "gato5",
                 "point": {
                     "x": 5,
                     "y": 2
                 }
             }
-        ]
+        ],
         "boxes_position": [
             {
                 "name": "t",
@@ -1595,7 +1522,7 @@
         "gats_position": [
             {
                 "img": "",
-                "name": "gat1",
+                "name": "gato1",
                 "point": {
                     "x": 1,
                     "y": 2
@@ -1603,7 +1530,7 @@
             },
             {
                 "img": "",
-                "name": "gat2",
+                "name": "gato2",
                 "point": {
                     "x": 1,
                     "y": 5
@@ -1611,7 +1538,7 @@
             },
             {
                 "img": "",
-                "name": "gat3",
+                "name": "gato3",
                 "point": {
                     "x": 3,
                     "y": 4
@@ -1619,7 +1546,7 @@
             },
             {
                 "img": "",
-                "name": "gat4",
+                "name": "gato4",
                 "point": {
                     "x": 5,
                     "y": 1
@@ -1627,7 +1554,7 @@
             },
             {
                 "img": "",
-                "name": "gat5",
+                "name": "gato5",
                 "point": {
                     "x": 5,
                     "y": 4
@@ -1639,8 +1566,8 @@
                 "name": "t",
                 "tiles": [
                     {
-                        "x": 1,
-                        "y": 2
+                        "x": 3,
+                        "y": 5
                     },
                     {
                         "x": 2,

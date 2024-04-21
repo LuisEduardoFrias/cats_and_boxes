@@ -1,29 +1,30 @@
+import Gat from "../models/gat"
+import { useSubscribeState } from "../subscribe_state/index";
 
-interface IGatProps {
-    gats: object[]
-}
-
-export default function Gats({ gats }: IGatProps) {
-    function Draw({ gat, key }) {
-
-        const _left = (gat.point.x - 1) * 64;
-        const _bottom = (gat.point.y - 1) * 64;
-
-        const _style = {
-            position: "absolute",
-            bottom: `${_bottom}px`,
-            left: `${_left}px`
-        }
-
-        return (
-            <div key={key} className="piece-gat" style={_style} >
-                <img src={`/images/${gat.name}.png`} className="img" />
-            </div>)
-    }
+export default function Gats() {
+    const [{ gats_position }, _] = useSubscribeState(["gats_position"])
 
     return (
         <>
-            {gats.map((e, i) => <Draw key={i} gat={e} />)}
+            {gats_position.map((gat: Gat, index: number) => <DrawGat index={index} gat={gat} />)}
         </>
     );
+}
+
+interface IDrawGatProps {
+    gat: Gat,
+    index: number
+}
+
+function DrawGat({ gat, index }: IDrawGatProps) {
+
+    const _style = {
+        position: "absolute",
+        bottom: `${(gat.point.y - 1) * 64}px`,
+        left: `${(gat.point.x - 1) * 64}px`
+    }
+
+    return (<div key={index} className="piece-gat" style={_style} >
+        <img src={`/images/${gat.name}.png`} className="img" />
+    </div>)
 }

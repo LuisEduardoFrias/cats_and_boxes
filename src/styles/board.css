@@ -1,0 +1,125 @@
+.board {
+    box-sizing: content-box;
+    touch-action: none;
+    border: 5px solid #080808;
+    
+    transform-style: preserve-3d;
+    
+    display: grid;
+    grid-template-areas:
+        "a1 a2 a3 a4 a5"
+        "b1 b2 b3 b4 b5"
+        "c1 c2 c3 c4 c5"
+        "d1 d2 d3 d4 d5"
+        "e1 e2 e3 e4 e5";
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    
+    >div:nth-child(1) {
+        grid-area: a1;
+    }
+    
+    >div:nth-child(2) {
+        grid-area: a2;
+    }
+    
+    >div:nth-child(3) {
+        grid-area: a3;
+    }
+    
+    >div:nth-child(4) {
+        grid-area: a4;
+    }
+    
+    >div:nth-child(5) {
+        grid-area: a5;
+    }
+    
+    >div:nth-child(6) {
+        grid-area: b1;
+    }
+    
+    >div:nth-child(7) {
+        grid-area: b2;
+    }
+    
+    >div:nth-child(8) {
+        grid-area: b3;
+    }
+    
+    >div:nth-child(9) {
+        grid-area: b4;
+    }
+    
+    >div:nth-child(10) {
+        grid-area: b5;
+    }
+    
+    >div:nth-child(11) {
+        grid-area: c1;
+    }
+    
+    >div:nth-child(12) {
+        grid-area: c2;
+    }
+    
+    >div:nth-child(13) {
+        grid-area: c3;
+    }
+    
+    >div:nth-child(14) {
+        grid-area: c4;
+    }
+    
+    >div:nth-child(15) {
+        grid-area: c5;
+    }
+    
+    >div:nth-child(16) {
+        grid-area: d1;
+    }
+    
+    >div:nth-child(17) {
+        grid-area: d2;
+    }
+    
+    >div:nth-child(18) {
+        grid-area: d3;
+    }
+    
+    >div:nth-child(19) {
+        grid-area: d4;
+    }
+    
+    >div:nth-child(20) {
+        grid-area: d5;
+    }
+    
+    >div:nth-child(21) {
+        grid-area: e1;
+    }
+    
+    >div:nth-child(22) {
+        grid-area: e2;
+    }
+    
+    >div:nth-child(23) {
+        grid-area: e3;
+    }
+    
+    >div:nth-child(24) {
+        grid-area: e4;
+    }
+    
+    >div:nth-child(25) {
+        grid-area: e5;
+    }
+}
+
+.tile {
+    border: 1px solid #716f6f;
+    box-shadow: inset 0px 0px 7px 1px #8b8b8b;
+    background-color: #005bf1;
+
+    place-content: center;
+}

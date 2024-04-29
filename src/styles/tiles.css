@@ -2,28 +2,28 @@
 */
 
 .tile-container {
-    width: 0px;
-    height: 0px;
-    z-index: 8;
-    border: 1px solid blue;
     perspective: 2000;
     perspective-origin: 200px 200px;
     transform-style: preserve-3d;
-    
-    display: flex;
-    justify-content: center;
-    
     transform: translateZ(30px);
 }
 
-.piece {
+.tile-select .tile-piece {
+    background-color: #d9b466;
+    opacity: 0.5;
+    
+    img {
+        transform: scale(.9);
+    }
+}
+
+.tile-piece {
     position: relative;
     width: 64px;
     height: 64px;
     padding: 4px;
-    border: 6px solid #805500;
-    background-color: #f5a3008c;
-    z-index: 0;
+    border: 1px solid #805500;
+    background-color: #7d54028c;
     
     display: grid;
     place-content: center;
@@ -34,16 +34,7 @@
     }
 }
 
-.select .piece {
-    background-color: #d9b466;
-
-    img {
-        transform: scale(1.2);
-    }
-}
-
-.box {
-    border: 0px solid blue;
+.tile-box {
     transform: translateZ(60px);
     border: 5px dashed transparent;
 }
@@ -77,25 +68,26 @@
     background-color: #d9b466;
 }*/
 
-.conatiner-btn {
+.tile-control-container {
     position: absolute;
     top: -60px;
-    width: 158px;
-    height: 56px;
+    width: 100px;
+    height: 46px;
     border-radius: 5px;
     box-shadow: 2px 2px 2px 0px #ba5400;
     background-color: #131313;
     padding: 2px;
-    z-index: 999;
     transform: translateZ(80px);
+    
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 2px;
 }
 
-.btn {
-    width: 100%;
+.tile-control-btn {
+    padding: 5px;
+    width: 50px;
     height: 100%;
     background-color: #57BEDDFF;
     color: black;
@@ -104,23 +96,44 @@
         inset -2px -2px 3px 1px #17657d;
 }
 
-.conatiner-btn .btn:nth-child(3) {
+.tile-control-btn svg {
+    width: 30px;
+}
+
+.tile-control-rotate {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tile-control-rotate div {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 3px;
+}
+
+.tile-control-rotate div:nth-child(2) {
+    transform: rotateX(180deg);
+}
+
+.tile-control-container .tile-control-btn:nth-child(3) {
     transform: rotateX(185deg);
 }
 
-.conatiner-btn .btn:nth-child(3):hover {
+.tile-control-container .tile-control-btn:nth-child(3):hover {
     background-color: #93d3e6;
 }
 
-.btn:hover {
+.tile-control-btn:hover {
     background-color: #93d3e6;
 }
 
-.conatiner-btn .btn:nth-child(3):active {
+.tile-control-container .tile-control-btn:nth-child(3):active {
     transform: rotateX(185deg) scale(0.9);
 }
 
-.btn:active {
+.tile-control-btn:active {
     box-shadow: inset 1px 1px 3px 1px #218eaf,
         inset -2px -2px 3px 1px #17657d;
     transform: scale(0.9);

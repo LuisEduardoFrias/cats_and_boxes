@@ -1,0 +1,12 @@
+.gat-container {
+    width: 64px;
+    height: 64px;
+    transform: translateZ(60px);
+    
+    display: grid;
+    place-content: center;
+}
+
+.gat-img {
+    filter: drop-shadow(2px 2px 2px black);
+}

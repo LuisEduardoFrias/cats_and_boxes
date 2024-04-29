@@ -3,16 +3,16 @@
         "name": "t",
         "size": {
             "horizontal": {
-                "width": 192,
-                "height": 128
+                "width": 198,
+                "height": 131
             },
             "vertical": {
-                "width": 128,
-                "height": 192
+                "width": 131,
+                "height": 198
             }
         },
         "rotation": 0,
-        "pieces": [
+        "tiles": [
             {
                 "rotation": 0,
                 "tiles": [
@@ -123,16 +123,16 @@
         "name": "l",
         "size": {
             "horizontal": {
-                "width": 192,
-                "height": 128
+                "width": 198,
+                "height": 131
             },
             "vertical": {
-                "width": 128,
-                "height": 192
+                "width": 131,
+                "height": 198
             }
         },
-        "rotation": 270,
-        "pieces": [
+        "rotation": 0,
+        "tiles": [
             {
                 "rotation": 0,
                 "tiles": [
@@ -243,16 +243,16 @@
         "name": "li",
         "size": {
             "horizontal": {
-                "width": 192,
-                "height": 128
+                "width": 198,
+                "height": 131
             },
             "vertical": {
-                "width": 128,
-                "height": 192
+                "width": 131,
+                "height": 198
             }
         },
         "rotation": 0,
-        "pieces": [
+        "tiles": [
             {
                 "rotation": 0,
                 "tiles": [
@@ -363,16 +363,16 @@
         "name": "z",
         "size": {
             "horizontal": {
-                "width": 192,
-                "height": 192
+                "width": 198,
+                "height": 198
             },
             "vertical": {
-                "width": 192,
-                "height": 192
+                "width": 198,
+                "height": 198
             }
         },
         "rotation": 270,
-        "pieces": [
+        "tiles": [
             {
                 "rotation": 0,
                 "tiles": [

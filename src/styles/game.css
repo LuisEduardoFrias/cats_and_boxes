@@ -1,0 +1,51 @@
+/**
+*/
+.game {
+    width: 100%;
+    height: 100%;
+    
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 30% 1fr;
+    grid-template-areas: "header" "main";
+    grid-row-gap: 10px;
+}
+
+header {
+    grid-area: header;
+    align-self: center;
+    justify-self: center;
+}
+
+.game-text-logo {
+    font-size: 55px;
+    text-wrap: nowrap;
+    color: black;
+    animation: glow 1s infinite;
+}
+
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 5px #fff, 0 0 10px #fff;
+    }
+    
+    50% {
+        text-shadow: none;
+    }
+    
+    100% {
+        text-shadow: 0 0 5px #fff, 0 0 10px #fff;
+    }
+}
+
+main {
+    grid-area: main;
+    align-self: center;
+    justify-self: center;
+
+    width: Calc(var(--width) - 20px);
+    height: Calc(Calc(var(--height) - 40px) - Calc(var(--height) * 0.3));
+    
+    display: grid;
+    place-content: center;
+}

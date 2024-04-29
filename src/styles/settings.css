@@ -1,0 +1,125 @@
+/**
+*/
+.sound {
+    width: 100%;
+    height: 100%;
+    
+    padding-inline: 10px;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    
+    .sound-header {
+        width: 100%;
+        
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        >h2 {
+            font-size: 40px;
+            font-weight: 500;
+        }
+        
+        >button {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            width: 40px;
+            height: 40px;
+            border: none;
+            border-radius: 50px;
+            color: #000000;
+            
+            background-image: linear-gradient(to bottom,
+                    transparent,
+                    var(--rose-2nd));
+            transition: color 1s ease;
+            
+            font-size: 15px;
+            font-weight: 700;
+            
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            img {
+                width: 40px;
+                height: auto;
+            }
+        }
+        
+        >button:hover {
+            background-image: linear-gradient(to bottom,
+                    var(--rose-2nd),
+                    transparent);
+        }
+    }
+}
+
+
+.sound-container {
+    width: 90%;
+}
+
+.sound-control {
+    width: 90%;
+    height: 30px;
+    margin-block-end: 60px;
+    
+    label {
+        margin-block-end: 10px;
+        cursor: pointer;
+        text-decoration-line: line-through;
+        font-size: 20px;
+        -webkit-tap-highlight-color: transparent;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        
+        div {
+            width: 30px;
+            height: 30px;
+            
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        img:nth-child(2) {
+            visibility: hidden;
+        }
+        
+        img {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+        }
+        
+        >input {
+            position: absolute;
+            top: -10000px;
+            left: -10000px;
+            
+        }
+    }
+    
+    label:has(input[type="checkbox"]:checked) {
+        text-decoration-line: none;
+    }
+    
+    label:has(input[type="checkbox"]:checked) img:first-child {
+        visibility: visible;
+    }
+    
+    label:has(input[type="checkbox"]:checked) img:nth-child(2) {
+        visibility: hidden;
+    }
+    
+    input {
+        width: 100%;
+        accent-color: var(--rose-1st);
+    }
+}

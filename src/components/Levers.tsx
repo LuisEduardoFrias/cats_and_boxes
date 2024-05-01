@@ -6,7 +6,7 @@ export default function Levers() {
 
     const index = levers.map(e => e.wasLevelCompleted).lastIndexOf(true) + 1;
 
-    function handleSeletLever(_lever) {
+    function handleSeletLever(_lever: number) {
         dispatch({ type: "SelectLever", lever: _lever })
     }
 
@@ -21,7 +21,7 @@ export default function Levers() {
             <div className="lever-container">
                 {
                     levers.map(e =>
-                        <article key={e.lever} className={getClassName(e)} onClick={() => handleSeletLever(e.lever)} role="button" tabindex={e.lever}>
+                        <article key={e.lever} className={getClassName(e)} onClick={() => { if (e.lever <= index + 2) { handleSeletLever(e.lever) } }} role="button" tabindex={e.lever}>
                             <span>{e.lever}</span>
                         </article>)
                 }

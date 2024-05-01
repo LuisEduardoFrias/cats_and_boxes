@@ -119,7 +119,8 @@
 .tile {
     border: 1px solid #716f6f;
     box-shadow: inset 0px 0px 7px 1px #8b8b8b;
-    background-color: #005bf1;
-
+    background-color: var(--rose-2nd);
+    
     place-content: center;
+
 }

@@ -42,29 +42,29 @@
             "t": {
                 "rotation": 180,
                 "point": {
-                    "x": 3,
-                    "y": 4
-                }
-            },
-            "l": {
-                "rotation": 0,
-                "point": {
-                    "x": 1,
-                    "y": 1
-                }
-            },
-            "li": {
-                "rotation": 90,
-                "point": {
-                    "x": 1,
+                    "x": 2,
                     "y": 3
                 }
             },
-            "z": {
+            "l": {
                 "rotation": 90,
                 "point": {
-                    "x": 3,
-                    "y": 1
+                    "x": 0,
+                    "y": 0
+                }
+            },
+            "li": {
+                "rotation": 0,
+                "point": {
+                    "x": 0,
+                    "y": 2
+                }
+            },
+            "z": {
+                "rotation": 0,
+                "point": {
+                    "x": 2,
+                    "y": 0
                 }
             }
         },

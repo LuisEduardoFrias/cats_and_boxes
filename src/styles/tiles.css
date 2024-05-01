@@ -70,7 +70,7 @@
 
 .tile-control-container {
     position: absolute;
-    top: -60px;
+    /* top: -60px; */
     width: 100px;
     height: 46px;
     border-radius: 5px;
@@ -87,17 +87,19 @@
 
 .tile-control-btn {
     padding: 5px;
-    width: 50px;
+    width: 47px;
     height: 100%;
     background-color: #57BEDDFF;
     color: black;
+    border: 2px solid #414141;
     border-radius: 3px;
     box-shadow: inset 1px 1px 3px 1px #218eaf,
         inset -2px -2px 3px 1px #17657d;
+    transform: scale(1);
 }
 
 .tile-control-btn svg {
-    width: 30px;
+    width: 20px;
 }
 
 .tile-control-rotate {
@@ -125,16 +127,16 @@
     background-color: #93d3e6;
 }
 
-.tile-control-btn:hover {
+/*.tile-control-btn:hover {
     background-color: #93d3e6;
 }
-
-.tile-control-container .tile-control-btn:nth-child(3):active {
+*/
+background-color .tile-control-container .tile-control-btn:nth-child(3):active {
     transform: rotateX(185deg) scale(0.9);
 }
 
 .tile-control-btn:active {
     box-shadow: inset 1px 1px 3px 1px #218eaf,
         inset -2px -2px 3px 1px #17657d;
-    transform: scale(0.9);
+    transform: scale(.9);
 }

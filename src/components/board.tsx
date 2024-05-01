@@ -65,8 +65,8 @@ function Droppable({ id, size, is_back, tile_size }: TDroppable) {
     const style = {
         width: `${size * tile_size}px`,
         height: `${size * tile_size}px`,
-        // backgroundColor: is_back ? 'black' : "",
-        backgroundColor: isOver ? 'red' : "",
+        backgroundColor: is_back ? 'black' : "",
+       // backgroundColor: isOver ? 'yellow' : "",
     };
 
     return (

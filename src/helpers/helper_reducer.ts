@@ -1,6 +1,7 @@
 
 export function handleCollisionWithGats(pieces, gats_position, seleted_tile, tile_name) {
 
+    //alert("colition-pieces: " + JSON.stringify(pieces, null, 2))
     const piece_index = pieces.findIndex(e => e.name === tile_name);
     const index = pieces[piece_index].pieces.findIndex(e => e.rotation === seleted_tile.rotation);
     const boxes = pieces[piece_index].pieces[index].tiles.filter(e => e.img.includes("box"));

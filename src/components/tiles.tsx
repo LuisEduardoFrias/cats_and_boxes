@@ -6,13 +6,15 @@ import { Piece } from "../models/piece"
 import "../styles/tiles.css"
 
 export default function Tiles() {
-    const [{ pieces }, _] = useSubscribeState(["pieces"])
+    const [{ pieces, tile_seleted, tiles_position }, _] = useSubscribeState(["pieces", "tile_seleted", "tiles_position"])
 
     return (
         <>
-            {[pieces[0]].map((piece: Piece, index: number) => <DrawTile
+            {pieces.map((piece: Piece, index: number) => <DrawTile
                 index={index}
                 piece={piece}
+                tile_seleted={tile_seleted}
+                tiles_position={tiles_position}
             />)}
         </>
     )
@@ -21,11 +23,11 @@ export default function Tiles() {
 type TDrawTileProps = {
     piece: Piece,
     index: number,
+    tile_seleted: string,
+    tiles_position: any
 }
 
-function DrawTile({ piece, index, }: TDrawTileProps) {
-
-    const [{ tiles_position, tile_seleted }, _] = useSubscribeState(["tiles_position", "tile_seleted"])
+function DrawTile({ piece, index, tile_seleted, tiles_position }: TDrawTileProps) {
 
     const isSelected = piece.name === tile_seleted;
     const rotation = tiles_position[piece.name].rotation;
@@ -34,13 +36,13 @@ function DrawTile({ piece, index, }: TDrawTileProps) {
     piece.rotation = rotation;
     const width = rotation === 0 || rotation === 180 ? piece.size.horizontal.width : piece.size.vertical.width;
     const height = rotation === 0 || rotation === 180 ? piece.size.horizontal.height : piece.size.vertical.height;
-    const _left = (position?.x) * 64;
-    const _bottom = (position?.y) * 64;
+    const _left = ((position?.x) * 64);
+    const _bottom = ((position?.y) * 64);
 
     const { attributes, listeners, setNodeRef, transform } = useDraggable({
         id: piece.name,
         data: {
-            pieces: piece.pieces.filter(e => e.rotation === rotation)[0],
+            pieces: piece.tiles.filter(e => e.rotation === rotation)[0],
             width,
             height
         },
@@ -53,24 +55,25 @@ function DrawTile({ piece, index, }: TDrawTileProps) {
     const tileStyle = {
         ...style,
         position: "absolute",
-        width: `${width}px`,
-        height: `${height}px`,
+        width: "0px",//`${width}px`,
+        height: "0px",//`${height}px`,
         bottom: `${_bottom}px`,
-        border: "3px solid red",
-        left: `${_left}px`
+        left: `${_left}px`,
+        border: "0px solid yellow"
     }
 
     return (
-        <div key={index} ref={setNodeRef} className={`tile-container ${piece.name} ${isSelected ? "tile-select" : ""}`} style={tileStyle}  >
-            {isSelected && <Control tile_name={piece.name} rotation={rotation} />}
+        <div key={index} tabindex={index} className={`tile-container ${piece.name} ${isSelected ? "tile-select" : ""}`} style={tileStyle}  >
+            {isSelected && <Control tile_name={piece.name} rotation={rotation} orientation={height} />}
 
-            {piece.pieces.map((e, i) => {
+            {piece.tiles.map((e, i) => {
                 if (piece.rotation === e.rotation)
                     return (
                         <>
                             {
                                 e.tiles.map((o, ind) => <Pieces
                                     piece={o}
+                                    refr={setNodeRef}
                                     pieceName={piece.name}
                                     rotation={piece.rotation}
                                     isSelected={isSelected}
@@ -86,41 +89,47 @@ function DrawTile({ piece, index, }: TDrawTileProps) {
     )
 }
 
-function Pieces({ piece, isSelected, rotation, pieceName, onclick, index, listeners, attributes }) {
+type TPieces = {
+    piece: any,
+    refr: any
+    isSelected: boolean,
+    rotation: number,
+    pieceName: string,
+    onclick: any,
+    index: number,
+    listeners: any
+    attributes: any
+}
+
+function Pieces({ piece, refr, isSelected, rotation, pieceName, onclick, index, listeners, attributes }: TPieces) {
+
+    const color = pieceName === "t" ? "#ffff02" :
+        (pieceName === "l" ? "#04fff5" :
+            (pieceName === "li" ? "#1c63ff" : "#43ff0a"));
 
     const stylePiece = {
         position: "absolute",
-        ...getStylePosition(piece, pieceName, rotation),
-        borderColor: piece.img.includes("box") ? (piece.has_gat ? "red" : "transparent") : "transparent"
+        border: `4px solid ${"#43ff0a"}`,
+        left: `${(piece.x) * 64}px`,
+        bottom: `${(piece.y) * 64}px`,
+        borderColor: piece.img.includes("box") ? (piece.has_gat ? "red" : color) : color,
     }
 
     return (
-        <div style={stylePiece} className={`tile-piece ${piece.img.includes("box") ? "tile-box" : "tile-tile"}`} onClick={onclick} {...(isSelected ? listeners : null)} {...(isSelected ? attributes : null)} >
+        <div style={stylePiece} ref={refr} className={`tile-piece ${piece.img.includes("box") ? "tile-box" : "tile-tile"}`} onClick={onclick} {...(isSelected ? listeners : null)} {...(isSelected ? attributes : null)} >
             <img key={index} src={`/images/${piece.img}.png`} />
         </div>
     )
 }
 
-function getStylePosition(piece, pieceName, rotation) {
+function Control({ tile_name, rotation, orientation }: { tile_name: string, rotation: 0 | 90 | 180 | 270, orientation: number }) {
 
-    let x = 0, y = 0;
-
-    if (pieceName === "t") {
-            x = piece.x - 1; y = piece.y - 1;
+    const controlStyle = {
+        top: `${-orientation - 50}px`
     }
-    else if (pieceName === "l") { }
-    else if (pieceName === "li") { }
-    else if (pieceName === "z") { }
 
-    return {
-        left: `${(x) * 64}px`,
-        bottom: `${(y) * 64}px`,
-    }
-}
-
-function Control({ tile_name, rotation }: { tile_name: string, rotation: 0 | 90 | 180 | 270 }) {
     return (
-        <div className="tile-control-container" >
+        <div className="tile-control-container" style={controlStyle} >
             <button className="tile-control-btn tile-control-rotate" onClick={() => dispatch({ type: "ChangeRotation", rotation: (rotation + 90 > 270 ? 0 : rotation + 90), tile_name })} >
                 <div>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6"><path strokeLinecap="round" strokeLinejoin="round" d="m15 15 6-6m0 0-6-6m6 6H9a6 6 0 0 0 0 12h3" /></svg>

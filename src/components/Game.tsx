@@ -19,11 +19,11 @@ export default function Game() {
             </header>
             <main>
                 <OpenClose notInitialize={true} dependecies={[viewLevers, viewSetting, viewPlay]}>
-                    {(!viewPlay && !viewSetting && !viewLevers) && <Menu />}
-                    {viewPlay && <Play />}
-                    {viewLevers && <Levers />}
-                    {viewSetting && <Settings />}
-        </OpenClose>
+                    {/*(!viewPlay && !viewSetting && !viewLevers) && <Menu />*/}
+                    {!viewPlay && <Play />}
+                    {/*viewLevers && <Levers />}
+                    {viewSetting && <Settings />*/}
+                </OpenClose>
             </main >
         </div >
     )

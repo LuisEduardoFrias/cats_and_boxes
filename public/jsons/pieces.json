@@ -4,10 +4,10 @@
         "size": {
             "horizontal": {
                 "width": 198,
-                "height": 131
+                "height": 132
             },
             "vertical": {
-                "width": 131,
+                "width": 132,
                 "height": 198
             }
         },
@@ -18,24 +18,24 @@
                 "tiles": [
                     {
                         "img": "azulejo",
+                        "x": 0,
+                        "y": 0
+                    },
+                    {
+                        "img": "azulejo",
                         "x": 1,
                         "y": 1
                     },
                     {
                         "img": "azulejo",
                         "x": 2,
-                        "y": 2
-                    },
-                    {
-                        "img": "azulejo",
-                        "x": 3,
-                        "y": 1
+                        "y": 0
                     },
                     {
                         "img": "box3",
                         "has_gat": false,
-                        "x": 2,
-                        "y": 1
+                        "x": 1,
+                        "y": 0
                     }
                 ]
             },
@@ -44,24 +44,24 @@
                 "tiles": [
                     {
                         "img": "azulejo",
-                        "x": 1,
-                        "y": 2
-                    },
-                    {
-                        "img": "azulejo",
-                        "x": 2,
+                        "x": 0,
                         "y": 1
                     },
                     {
                         "img": "azulejo",
-                        "x": 2,
-                        "y": 3
+                        "x": 1,
+                        "y": 0
+                    },
+                    {
+                        "img": "azulejo",
+                        "x": 1,
+                        "y": 2
                     },
                     {
                         "img": "box3",
                         "has_gat": false,
-                        "x": 2,
-                        "y": 2
+                        "x": 1,
+                        "y": 1
                     }
                 ]
             },
@@ -70,8 +70,13 @@
                 "tiles": [
                     {
                         "img": "azulejo",
+                        "x": 0,
+                        "y": 1
+                    },
+                    {
+                        "img": "azulejo",
                         "x": 1,
-                        "y": 2
+                        "y": 0
                     },
                     {
                         "img": "azulejo",
@@ -79,15 +84,10 @@
                         "y": 1
                     },
                     {
-                        "img": "azulejo",
-                        "x": 3,
-                        "y": 2
-                    },
-                    {
                         "img": "box3",
                         "has_gat": false,
-                        "x": 2,
-                        "y": 2
+                        "x": 1,
+                        "y": 1
                     }
                 ]
             },
@@ -96,24 +96,24 @@
                 "tiles": [
                     {
                         "img": "azulejo",
+                        "x": 0,
+                        "y": 2
+                    },
+                    {
+                        "img": "azulejo",
                         "x": 1,
                         "y": 1
                     },
                     {
-                        "img": "azulejo",
-                        "x": 1,
-                        "y": 3
-                    },
-                    {
-                        "img": "azulejo",
-                        "x": 2,
-                        "y": 2
-                    },
-                    {
                         "img": "box3",
                         "has_gat": false,
-                        "x": 1,
-                        "y": 2
+                        "x": 0,
+                        "y": 1
+                    },
+                    {
+                        "img": "azulejo",
+                        "x": 0,
+                        "y": 0
                     }
                 ]
             }
@@ -123,12 +123,12 @@
         "name": "l",
         "size": {
             "horizontal": {
-                "width": 198,
-                "height": 131
+                "width": 132,
+                "height": 198
             },
             "vertical": {
-                "width": 131,
-                "height": 198
+                "width": 198,
+                "height": 132
             }
         },
         "rotation": 0,
@@ -138,24 +138,24 @@
                 "tiles": [
                     {
                         "img": "azulejo",
-                        "x": 1,
+                        "x": 0,
                         "y": 1
                     },
                     {
                         "img": "azulejo",
-                        "x": 2,
-                        "y": 1
-                    },
-                    {
-                        "img": "azulejo",
-                        "x": 3,
+                        "x": 0,
                         "y": 2
+                    },
+                    {
+                        "img": "azulejo",
+                        "x": 1,
+                        "y": 0
                     },
                     {
                         "img": "box4",
                         "has_gat": false,
-                        "x": 3,
-                        "y": 1
+                        "x": 0,
+                        "y": 0
                     }
                 ]
             },
@@ -164,13 +164,13 @@
                 "tiles": [
                     {
                         "img": "azulejo",
-                        "x": 1,
-                        "y": 3
+                        "x": 0,
+                        "y": 0
                     },
                     {
                         "img": "azulejo",
-                        "x": 2,
-                        "y": 2
+                        "x": 1,
+                        "y": 0
                     },
                     {
                         "img": "azulejo",
@@ -181,7 +181,7 @@
                         "img": "box4",
                         "has_gat": false,
                         "x": 2,
-                        "y": 3
+                        "y": 0
                     }
                 ]
             },
@@ -190,18 +190,18 @@
                 "tiles": [
                     {
                         "img": "azulejo",
+                        "x": 0,
+                        "y": 2
+                    },
+                    {
+                        "img": "azulejo",
                         "x": 1,
                         "y": 1
                     },
                     {
                         "img": "azulejo",
-                        "x": 2,
-                        "y": 2
-                    },
-                    {
-                        "img": "azulejo",
-                        "x": 3,
-                        "y": 2
+                        "x": 1,
+                        "y": 0
                     },
                     {
                         "img": "box4",
@@ -216,13 +216,13 @@
                 "tiles": [
                     {
                         "img": "azulejo",
-                        "x": 1,
-                        "y": 2
+                        "x": 0,
+                        "y": 0
                     },
                     {
                         "img": "azulejo",
                         "x": 1,
-                        "y": 3
+                        "y": 1
                     },
                     {
                         "img": "azulejo",
@@ -232,7 +232,7 @@
                     {
                         "img": "box4",
                         "has_gat": false,
-                        "x": 1,
+                        "x": 0,
                         "y": 1
                     }
                 ]
@@ -243,12 +243,12 @@
         "name": "li",
         "size": {
             "horizontal": {
-                "width": 198,
-                "height": 131
+                "width": 132,
+                "height": 198
             },
             "vertical": {
-                "width": 131,
-                "height": 198
+                "width": 198,
+                "height": 132
             }
         },
         "rotation": 0,
@@ -258,8 +258,13 @@
                 "tiles": [
                     {
                         "img": "azulejo",
+                        "x": 0,
+                        "y": 0
+                    },
+                    {
+                        "img": "azulejo",
                         "x": 1,
-                        "y": 1
+                        "y": 0
                     },
                     {
                         "img": "azulejo",
@@ -267,14 +272,9 @@
                         "y": 2
                     },
                     {
-                        "img": "azulejo",
-                        "x": 3,
-                        "y": 1
-                    },
-                    {
                         "img": "box3",
                         "has_gat": false,
-                        "x": 2,
+                        "x": 1,
                         "y": 1
                     }
                 ]
@@ -284,7 +284,7 @@
                 "tiles": [
                     {
                         "img": "azulejo",
-                        "x": 1,
+                        "x": 0,
                         "y": 1
                     },
                     {
@@ -295,13 +295,13 @@
                     {
                         "img": "azulejo",
                         "x": 2,
-                        "y": 3
+                        "y": 0
                     },
                     {
                         "img": "box3",
                         "has_gat": false,
-                        "x": 2,
-                        "y": 2
+                        "x": 1,
+                        "y": 1
                     }
                 ]
             },
@@ -310,24 +310,24 @@
                 "tiles": [
                     {
                         "img": "azulejo",
+                        "x": 0,
+                        "y": 0
+                    },
+                    {
+                        "img": "azulejo",
+                        "x": 0,
+                        "y": 2
+                    },
+                    {
+                        "img": "azulejo",
                         "x": 1,
                         "y": 2
                     },
                     {
-                        "img": "azulejo",
-                        "x": 3,
-                        "y": 2
-                    },
-                    {
-                        "img": "azulejo",
-                        "x": 3,
-                        "y": 1
-                    },
-                    {
                         "img": "box3",
                         "has_gat": false,
-                        "x": 2,
-                        "y": 2
+                        "x": 0,
+                        "y": 1
                     }
                 ]
             },
@@ -336,24 +336,24 @@
                 "tiles": [
                     {
                         "img": "azulejo",
-                        "x": 1,
+                        "x": 0,
+                        "y": 0
+                    },
+                    {
+                        "img": "azulejo",
+                        "x": 0,
                         "y": 1
                     },
                     {
                         "img": "azulejo",
-                        "x": 1,
-                        "y": 3
-                    },
-                    {
-                        "img": "azulejo",
                         "x": 2,
-                        "y": 3
+                        "y": 0
                     },
                     {
                         "img": "box3",
                         "has_gat": false,
                         "x": 1,
-                        "y": 2
+                        "y": 0
                     }
                 ]
             }
@@ -383,12 +383,18 @@
                     },
                     {
                         "img": "azulejo",
-                        "x": 2,
-                        "y": 2
+                        "x": 1,
+                        "y": 1
                     },
                     {
                         "img": "azulejo",
-                        "x": 3,
+                        "x": 1,
+                        "y": 0
+                    },
+                    {
+                        "img": "box4",
+                        "has_gat": false,
+                        "x": 0,
                         "y": 2
                     },
                     {
@@ -396,12 +402,6 @@
                         "has_gat": false,
                         "x": 2,
                         "y": 1
-                    },
-                    {
-                        "img": "box4",
-                        "has_gat": false,
-                        "x": 3,
-                        "y": 3
                     }
                 ]
             },
@@ -410,13 +410,13 @@
                 "tiles": [
                     {
                         "img": "azulejo",
-                        "x": 2,
-                        "y": 3
+                        "x": 0,
+                        "y": 1
                     },
                     {
                         "img": "azulejo",
-                        "x": 2,
-                        "y": 2
+                        "x": 1,
+                        "y": 1
                     },
                     {
                         "img": "azulejo",
@@ -426,13 +426,13 @@
                     {
                         "img": "box4",
                         "has_gat": false,
-                        "x": 1,
-                        "y": 3
+                        "x": 0,
+                        "y": 0
                     },
                     {
                         "img": "box3",
                         "has_gat": false,
-                        "x": 3,
+                        "x": 1,
                         "y": 2
                     }
                 ]
@@ -447,25 +447,25 @@
                     },
                     {
                         "img": "azulejo",
-                        "x": 2,
-                        "y": 2
-                    },
-                    {
-                        "img": "azulejo",
-                        "x": 3,
-                        "y": 2
-                    },
-                    {
-                        "img": "box4",
-                        "has_gat": false,
                         "x": 1,
                         "y": 1
                     },
                     {
-                        "img": "box3",
+                        "img": "azulejo",
+                        "x": 1,
+                        "y": 0
+                    },
+                    {
+                        "img": "box4",
                         "has_gat": false,
                         "x": 2,
-                        "y": 3
+                        "y": 0
+                    },
+                    {
+                        "img": "box3",
+                        "has_gat": false,
+                        "x": 0,
+                        "y": 1
                     }
                 ]
             },
@@ -474,29 +474,29 @@
                 "tiles": [
                     {
                         "img": "azulejo",
-                        "x": 2,
-                        "y": 3
-                    },
-                    {
-                        "img": "azulejo",
-                        "x": 2,
-                        "y": 2
-                    },
-                    {
-                        "img": "azulejo",
-                        "x": 2,
+                        "x": 0,
                         "y": 1
                     },
                     {
-                        "img": "box4",
-                        "has_gat": false,
-                        "x": 3,
+                        "img": "azulejo",
+                        "x": 1,
+                        "y": 1
+                    },
+                    {
+                        "img": "azulejo",
+                        "x": 2,
                         "y": 1
                     },
                     {
                         "img": "box3",
                         "has_gat": false,
                         "x": 1,
+                        "y": 0
+                    },
+                    {
+                        "img": "box4",
+                        "has_gat": false,
+                        "x": 2,
                         "y": 2
                     }
                 ]

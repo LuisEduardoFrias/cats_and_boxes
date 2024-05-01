@@ -9,6 +9,10 @@
     grid-template-rows: 30% 1fr;
     grid-template-areas: "header" "main";
     grid-row-gap: 10px;
+    
+    perspective: 800;
+    perspective-origin: 200px 200px;
+    transform-style: preserve-3d;
 }
 
 header {
@@ -42,7 +46,7 @@ main {
     grid-area: main;
     align-self: center;
     justify-self: center;
-
+    
     width: Calc(var(--width) - 20px);
     height: Calc(Calc(var(--height) - 40px) - Calc(var(--height) * 0.3));
     

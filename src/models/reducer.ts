@@ -20,37 +20,43 @@ export default function reducer(state: GetBox, actions: Action) {
             return { ...state, viewSetting: actions.isShow }
         },
         ChangeStateViewPlay: () => {
-            return { ...state, viewGame: actions.isShow }
+            return { ...state, viewPlay: actions.isShow, viewLevers: !actions.isShow }
         },
         ChangeRotation: () => {
             const tiles_position = structuredClone(state.tiles_position);
             tiles_position[actions.tile_name].rotation = actions.rotation;
 
-            const updated_pieces = handleCollisionWithGats(
-                structuredClone(state.pieces),
-                structuredClone(state.gats_position),
-                tiles_position[actions.tile_name],
-                actions.tile_name);
-
-            const newState = { ...state, pieces: updated_pieces, edited_grids: [] };
-            return { ...newState, tiles_position };
+            /*  const updated_pieces = handleCollisionWithGats(
+                  structuredClone(state.pieces),
+                  structuredClone(state.gats_position),
+                  tiles_position[actions.tile_name],
+                  actions.tile_name);
+  */
+            //  const newState = { pieces: updated_pieces, edited_grids: [] };
+            return { ...state, tiles_position, edited_grids: [] };
         },
         SeletTile: () => {
-            return { ...state, tile_seleted: actions.tile }
+
+            //todo agregar piesa a grid
+            //todo validar que no choque con mas piezas o gratos a menos que sea la caja
+            return { ...state, tile_seleted: actions.tile };
         },
         SelectLever: () => {
-            return {
-                ...state, viewLevers: false,
+
+            const put = {
                 viewPlay: true,
+                viewLevers: false,
                 lever: actions.lever,
                 tiles_position: state.levers[actions.lever].tiles_position,
-                gats_position: state.levers[actions.lever].gats_position,
+                gats_position: state.levers[actions.lever].gats_position
             }
+
+            return { ...state, ...put };
         },
         Move: () => {
             const tiles_position = structuredClone(state.tiles_position)
             tiles_position[actions.tile].point = actions.position;
-            return { ...state, tiles_position }
+            return { ...state, tiles_position, edited_grids: [] }
         },
         ChangeEditedGrids: () => {
             return { ...state, edited_grids: [...actions.gridIds] }

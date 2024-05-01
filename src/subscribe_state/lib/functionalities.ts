@@ -32,12 +32,10 @@ export function subCribe(
     id: string,
     dispatch: Dispatch
 ): void {
-    //if (!SUB_CRIBER[id]) {
     SUB_CRIBER[id] = {
         props,
         dispatch
     };
-    //}
 }
 
 //intermediator of the dispatch
@@ -58,23 +56,42 @@ export function middleDistpach(action: Action, reducer: Reducer): void {
     initialized.updateGlobalState(newState, changedProperties);
 
     //Probocar el cambio de estado en los useReducers de los suscriptores.
-    if (changedProperties.length > 0)
-        for (let key in SUB_CRIBER) {
-            const countPros: number = SUB_CRIBER[key].props.length;
+    if (changedProperties.length > 0) {
+        Reflect.ownKeys(SUB_CRIBER).forEach((key: string) => {
+            console.log(`sub ${key}`)
 
-            for (let i: number = 0; i < countPros; i++) {
-                const pr: string = SUB_CRIBER[key].props[i];
+            const props = Reflect.get(SUB_CRIBER, key).props;
 
-                if (changedProperties.every(prop => prop === pr || prop === ALL)) {
-                    const promesa = new Promise((resolve, reject) => {
-                        SUB_CRIBER[key].dispatch({ type: "any" })
-                        resolve(true);
-                    });
-                    promesa.then((property) => { });
+            for (let i = 0; i < props.length; i++) {
+                console.log(`props: ${props} - ${i}`)
+
+                let isBreak = false;
+
+                for (let j = 0; j < changedProperties.length; j++) {
+
+                    console.log(`ch-p: ${changedProperties} - ${j}`)
+
+                    if (changedProperties[j] === props[i] || changedProperties[j] === ALL) {
+
+                        console.log("isBreak")
+                        const promesa = new Promise((resolve, reject) => {
+                            SUB_CRIBER[key].dispatch({ type: "any" })
+                            resolve(true);
+                        });
+                        promesa.then((property) => { });
+                       
+                        isBreak = true;
+                        break;
+                    }
+                }
+
+                if (isBreak) {
+                    isBreak = false;
                     break;
                 }
             }
-        }
+        })
+    }
 }
 
 //retorna las propiedades que an sido actializadas.

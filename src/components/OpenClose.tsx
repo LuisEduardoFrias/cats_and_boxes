@@ -27,7 +27,7 @@ export default function OpenClose({ children, dependecies, notInitialize }: TOpe
             }, 3000);
         })
 
-        setOpenClose(true);
+        //setOpenClose(true);
         if (_notInitialize) {
         }
         else {

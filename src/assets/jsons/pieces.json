@@ -33,7 +33,6 @@
                     },
                     {
                         "img": "box3",
-                        "has_gat": false,
                         "x": 1,
                         "y": 0
                     }
@@ -59,7 +58,7 @@
                     },
                     {
                         "img": "box3",
-                        "has_gat": false,
+                        
                         "x": 1,
                         "y": 1
                     }
@@ -85,7 +84,7 @@
                     },
                     {
                         "img": "box3",
-                        "has_gat": false,
+                        
                         "x": 1,
                         "y": 1
                     }
@@ -106,7 +105,7 @@
                     },
                     {
                         "img": "box3",
-                        "has_gat": false,
+                        
                         "x": 0,
                         "y": 1
                     },
@@ -153,7 +152,7 @@
                     },
                     {
                         "img": "box4",
-                        "has_gat": false,
+                        
                         "x": 0,
                         "y": 0
                     }
@@ -179,7 +178,7 @@
                     },
                     {
                         "img": "box4",
-                        "has_gat": false,
+                        
                         "x": 2,
                         "y": 0
                     }
@@ -205,7 +204,7 @@
                     },
                     {
                         "img": "box4",
-                        "has_gat": false,
+                        
                         "x": 1,
                         "y": 2
                     }
@@ -231,7 +230,7 @@
                     },
                     {
                         "img": "box4",
-                        "has_gat": false,
+                        
                         "x": 0,
                         "y": 1
                     }
@@ -273,7 +272,7 @@
                     },
                     {
                         "img": "box3",
-                        "has_gat": false,
+                        
                         "x": 1,
                         "y": 1
                     }
@@ -299,7 +298,7 @@
                     },
                     {
                         "img": "box3",
-                        "has_gat": false,
+                        
                         "x": 1,
                         "y": 1
                     }
@@ -325,7 +324,7 @@
                     },
                     {
                         "img": "box3",
-                        "has_gat": false,
+                        
                         "x": 0,
                         "y": 1
                     }
@@ -351,7 +350,7 @@
                     },
                     {
                         "img": "box3",
-                        "has_gat": false,
+                        
                         "x": 1,
                         "y": 0
                     }
@@ -393,13 +392,13 @@
                     },
                     {
                         "img": "box4",
-                        "has_gat": false,
+                        
                         "x": 0,
                         "y": 2
                     },
                     {
                         "img": "box3",
-                        "has_gat": false,
+                        
                         "x": 2,
                         "y": 1
                     }
@@ -425,13 +424,13 @@
                     },
                     {
                         "img": "box4",
-                        "has_gat": false,
+                        
                         "x": 0,
                         "y": 0
                     },
                     {
                         "img": "box3",
-                        "has_gat": false,
+                        
                         "x": 1,
                         "y": 2
                     }
@@ -457,13 +456,13 @@
                     },
                     {
                         "img": "box4",
-                        "has_gat": false,
+                        
                         "x": 2,
                         "y": 0
                     },
                     {
                         "img": "box3",
-                        "has_gat": false,
+                        
                         "x": 0,
                         "y": 1
                     }
@@ -489,13 +488,13 @@
                     },
                     {
                         "img": "box3",
-                        "has_gat": false,
+                        
                         "x": 1,
                         "y": 0
                     },
                     {
                         "img": "box4",
-                        "has_gat": false,
+                        
                         "x": 2,
                         "y": 2
                     }

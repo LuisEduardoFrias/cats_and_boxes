@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import "../styles/open_close.css"
+import "../styles/components/openClose.css"
 
 type TOpenClose = {
     children: React.ReactNode;
@@ -27,7 +27,7 @@ export default function OpenClose({ children, dependecies, notInitialize }: TOpe
             }, 3000);
         })
 
-        //setOpenClose(true);
+        setOpenClose(true);
         if (_notInitialize) {
         }
         else {
@@ -39,7 +39,7 @@ export default function OpenClose({ children, dependecies, notInitialize }: TOpe
         <article className="doors">
             <div className="door" style={{ animationPlayState: openclose ? "running" : "paused" }}></div>
             <div className="door" style={{ animationPlayState: openclose ? "running" : "paused" }}></div>
-            {oldChild}
+            <div className="door-container" >{oldChild}</div>
         </article>
     );
 }

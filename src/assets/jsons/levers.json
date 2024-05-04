@@ -1,6 +1,7 @@
 [
     {
         "lever": 1,
+        "movements": 5,
         "gats_position": [
             {
                 "name": "gato1",
@@ -67,11 +68,11 @@
                     "y": 0
                 }
             }
-        },
-        "wasLevelCompleted": false
+        }
     },
     {
         "lever": 2,
+        "movements": 6,
         "gats_position": [
             {
                 "name": "gato1",
@@ -138,11 +139,11 @@
                     "y": 2
                 }
             }
-        },
-        "wasLevelCompleted": false
+        }
     },
     {
         "lever": 3,
+        "movements": 5,
         "gats_position": [
             {
                 "img": "",
@@ -214,11 +215,11 @@
                     "y": 1
                 }
             }
-        },
-        "wasLevelCompleted": false
+        }
     },
     {
         "lever": 4,
+        "movements": 6,
         "gats_position": [
             {
                 "img": "",
@@ -290,11 +291,11 @@
                     "y": 1
                 }
             }
-        },
-        "wasLevelCompleted": false
+        }
     },
     {
         "lever": 5,
+        "movements": 6,
         "gats_position": [
             {
                 "img": "",
@@ -366,8 +367,7 @@
                     "y": 1
                 }
             }
-        },
-        "wasLevelCompleted": false
+        }
     },
     {
         "lever": 6,
@@ -442,11 +442,11 @@
                     "y": 1
                 }
             }
-        },
-        "wasLevelCompleted": false
+        }
     },
     {
         "lever": 7,
+        "movements": 5,
         "gats_position": [
             {
                 "img": "",
@@ -518,11 +518,11 @@
                     "y": 1
                 }
             }
-        },
-        "wasLevelCompleted": false
+        }
     },
     {
         "lever": 8,
+        "movements": 6,
         "gats_position": [
             {
                 "img": "",
@@ -594,11 +594,11 @@
                     "y": 1
                 }
             }
-        },
-        "wasLevelCompleted": false
+        }
     },
     {
         "lever": 9,
+        "movements": 6,
         "gats_position": [
             {
                 "img": "",
@@ -670,11 +670,11 @@
                     "y": 1
                 }
             }
-        },
-        "wasLevelCompleted": false
+        }
     },
     {
         "lever": 10,
+        "movements": 6,
         "gats_position": [
             {
                 "img": "",
@@ -746,11 +746,11 @@
                     "y": 1
                 }
             }
-        },
-        "wasLevelCompleted": false
+        }
     },
     {
         "lever": 11,
+        "movements": 6,
         "gats_position": [
             {
                 "img": "",
@@ -822,11 +822,11 @@
                     "y": 1
                 }
             }
-        },
-        "wasLevelCompleted": false
+        }
     },
     {
         "lever": 12,
+        "movements": 6,
         "gats_position": [
             {
                 "img": "",
@@ -898,11 +898,11 @@
                     "y": 1
                 }
             }
-        },
-        "wasLevelCompleted": false
+        }
     },
     {
         "lever": 13,
+        "movements": 6,
         "gats_position": [
             {
                 "img": "",
@@ -974,11 +974,11 @@
                     "y": 1
                 }
             }
-        },
-        "wasLevelCompleted": false
+        }
     },
     {
         "lever": 14,
+        "movements": 6,
         "gats_position": [
             {
                 "img": "",
@@ -1050,11 +1050,11 @@
                     "y": 1
                 }
             }
-        },
-        "wasLevelCompleted": false
+        }
     },
     {
         "lever": 15,
+        "movements": 6,
         "gats_position": [
             {
                 "img": "",
@@ -1126,11 +1126,11 @@
                     "y": 1
                 }
             }
-        },
-        "wasLevelCompleted": false
+        }
     },
     {
         "lever": 16,
+        "movements": 6,
         "gats_position": [
             {
                 "img": "",
@@ -1202,11 +1202,11 @@
                     "y": 1
                 }
             }
-        },
-        "wasLevelCompleted": false
+        }
     },
     {
         "lever": 17,
+        "movements": 6,
         "gats_position": [
             {
                 "img": "",
@@ -1278,11 +1278,11 @@
                     "y": 1
                 }
             }
-        },
-        "wasLevelCompleted": false
+        }
     },
     {
         "lever": 18,
+        "movements": 6,
         "gats_position": [
             {
                 "img": "",
@@ -1354,11 +1354,11 @@
                     "y": 1
                 }
             }
-        },
-        "wasLevelCompleted": false
+        }
     },
     {
         "lever": 19,
+        "movements": 6,
         "gats_position": [
             {
                 "img": "",
@@ -1430,11 +1430,11 @@
                     "y": 1
                 }
             }
-        },
-        "wasLevelCompleted": false
+        }
     },
     {
         "lever": 20,
+        "movements": 6,
         "gats_position": [
             {
                 "img": "",
@@ -1506,11 +1506,11 @@
                     "y": 1
                 }
             }
-        },
-        "wasLevelCompleted": false
+        }
     },
     {
         "lever": 21,
+        "movements": 6,
         "gats_position": [
             {
                 "img": "",
@@ -1582,11 +1582,11 @@
                     "y": 1
                 }
             }
-        },
-        "wasLevelCompleted": false
+        }
     },
     {
         "lever": 22,
+        "movements": 6,
         "gats_position": [
             {
                 "img": "",
@@ -1658,11 +1658,11 @@
                     "y": 1
                 }
             }
-        },
-        "wasLevelCompleted": false
+        }
     },
     {
         "lever": 23,
+        "movements": 6,
         "gats_position": [
             {
                 "img": "",
@@ -1734,11 +1734,11 @@
                     "y": 1
                 }
             }
-        },
-        "wasLevelCompleted": false
+        }
     },
     {
         "lever": 24,
+        "movements": 6,
         "gats_position": [
             {
                 "img": "",
@@ -1810,11 +1810,11 @@
                     "y": 1
                 }
             }
-        },
-        "wasLevelCompleted": false
+        }
     },
     {
         "lever": 25,
+        "movements": 6,
         "gats_position": [
             {
                 "img": "",
@@ -1886,11 +1886,11 @@
                     "y": 1
                 }
             }
-        },
-        "wasLevelCompleted": false
+        }
     },
     {
         "lever": 26,
+        "movements": 6,
         "gats_position": [
             {
                 "img": "",
@@ -1962,11 +1962,11 @@
                     "y": 1
                 }
             }
-        },
-        "wasLevelCompleted": false
+        }
     },
     {
         "lever": 27,
+        "movements": 6,
         "gats_position": [
             {
                 "img": "",
@@ -2038,11 +2038,11 @@
                     "y": 1
                 }
             }
-        },
-        "wasLevelCompleted": false
+        }
     },
     {
         "lever": 28,
+        "movements": 6,
         "gats_position": [
             {
                 "img": "",
@@ -2114,11 +2114,11 @@
                     "y": 1
                 }
             }
-        },
-        "wasLevelCompleted": false
+        }
     },
     {
         "lever": 29,
+        "movements": 6,
         "gats_position": [
             {
                 "img": "",
@@ -2190,11 +2190,11 @@
                     "y": 1
                 }
             }
-        },
-        "wasLevelCompleted": false
+        }
     },
     {
         "lever": 30,
+        "movements": 6,
         "gats_position": [
             {
                 "img": "",
@@ -2266,11 +2266,11 @@
                     "y": 1
                 }
             }
-        },
-        "wasLevelCompleted": false
+        }
     },
     {
         "lever": 31,
+        "movements": 6,
         "gats_position": [
             {
                 "img": "",
@@ -2342,11 +2342,11 @@
                     "y": 1
                 }
             }
-        },
-        "wasLevelCompleted": false
+        }
     },
     {
         "lever": 32,
+        "movements": 6,
         "gats_position": [
             {
                 "img": "",
@@ -2418,7 +2418,6 @@
                     "y": 1
                 }
             }
-        },
-        "wasLevelCompleted": false
+        }
     }
 ]

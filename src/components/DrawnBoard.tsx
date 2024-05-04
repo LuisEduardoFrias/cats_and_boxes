@@ -1,14 +1,14 @@
 import { useDroppable } from '@dnd-kit/core';
-import { children } from "react"
+import { Children } from "react"
 import { useSubscribeState } from "../subscribe_state/index"
-import "../styles/board.css"
+import "../styles/components/board.css"
 
 type TBoardProps = {
     children: Children,
     tile_size?: 1 | 2 | 3,
 }
 
-export default function Board({ children, tile_size = 1 }: TBoardProps) {
+export default function DrawnBoard({ children, tile_size = 1 }: TBoardProps) {
 
     const [{ edited_grids }] = useSubscribeState(["edited_grids"])
 
@@ -17,7 +17,7 @@ export default function Board({ children, tile_size = 1 }: TBoardProps) {
     }
 
     const size = 64;
-    const array = new Array(25).fill(undefined);
+    const grid = new Array(25).fill(null);
 
     const board_style = {
         width: `${(size * tile_size) * 5}px`,
@@ -28,7 +28,7 @@ export default function Board({ children, tile_size = 1 }: TBoardProps) {
 
     return (
         <div className="board" style={board_style} >
-            {array.map((_, index) => <Droppable key={index} id={index} is_back={checkGrid(index, edited_grids)} size={size} tile_size={tile_size} />)}
+            {grid.map((_, index) => <Droppable key={index} id={index} is_back={checkGrid(index, edited_grids)} size={size} tile_size={tile_size} />)}
             {children}
         </div>
     )
@@ -45,7 +45,7 @@ type TDroppable = {
     is_back: boolean
 }
 
-function Droppable({ id, size, is_back, tile_size }: TDroppable) {
+function Droppable({ id, size, tile_size, is_back }: TDroppable) {
 
     const { rect, node, over, isOver, setNodeRef } = useDroppable({
         id, data: {
@@ -66,7 +66,7 @@ function Droppable({ id, size, is_back, tile_size }: TDroppable) {
         width: `${size * tile_size}px`,
         height: `${size * tile_size}px`,
         backgroundColor: is_back ? 'black' : "",
-       // backgroundColor: isOver ? 'yellow' : "",
+        // backgroundColor: isOver ? 'yellow' : "",
     };
 
     return (

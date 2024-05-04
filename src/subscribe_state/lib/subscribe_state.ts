@@ -34,9 +34,9 @@ export default function useSubscribeState(
     useEffect(() => {
         //subscribe the component
     }, [props, callerFunction, dispatch])
-        subCribe(props, callerFunction, (action: Action) => {
-            dispatch(action);
-        });
+    subCribe(props, callerFunction, (action: Action) => {
+        dispatch(action);
+    });
 
 
     //Check if a dispatch is added to execute before the execution continues.

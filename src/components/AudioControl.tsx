@@ -1,27 +1,12 @@
-import React, { useState, useEffect } from "react"
-import { dispatch } from "../subscribe_state/index"
-import "../styles/settings.css";
+/***/
+import { useState, useEffect, ChangeEvent } from "react"
 
-export default function Settings() {
-    return (
-        <section className="sound" >
-            <div className="sound-header">
-                <h2>Settings</h2>
-                <button tabindex={0} className="btn" onClick={() => dispatch({ type: "ChangeStateViewSettings", isShow: false })} ><img src="images/back.png" atl="image of back arrow" /></button>
-            </div>
-            <form className="sound-container">
-                <Control title="Melody" icons={["/images/melodyless.png", "/images/melody.png"]} />
-                <Control title="Sound" icons={["/images/soundless.png", "/images/sound.png"]} />
-            </form>
-        </section>)
-}
-
-type TControlProps = {
+type TAudioControlProps = {
     title: string,
     icons: [string, string]
 }
 
-function Control({ title, icons }: TControlProps) {
+export default function AudioControl({ title, icons }: TAudioControlProps) {
     const [volum, setVolum] = useState(40)
     const [check, setCheck] = useState(true)
 

@@ -8,33 +8,40 @@ import { getKeys, setObj } from "./functionalities";
 
 export default function useInitialize(
     reducer?: Reducer,
-    initialState?: GlobalState
+    initialState?: GlobalState,
+    storageName?: string,
 ): void {
-    Initialize.getInstance(reducer, initialState);
+    Initialize.getInstance(reducer, initialState, storageName);
 }
 
 export class Initialize {
-    private _reducer: Reducer;
-    private _globalState: GlobalState;
+    private _reducer: Reducer | { key: string, value: Reducer }[];
+    private _globalState: GlobalState | { key: string, value: GlobalState }[];
     private static _instance: Initialize;
 
     public static getInstance(
         reducer?: Reducer,
-        initialState?: GlobalState
+        initialState?: GlobalState,
+        storageName?: string,
     ): Initialize {
         if (!Initialize._instance) {
             if (!reducer || !initialState)
                 throw new Error(`${!reducer ? "The reducer parameter is required for instance Initialize." : ""}${!reducer && !initialState ? "\n" : ""}${!initialState ? "The initialState parameter is required for instance Initialize." : ""}`);
 
-            Initialize._instance = new Initialize(reducer, initialState);
+            Initialize._instance = new Initialize(reducer, initialState, storageName);
         }
 
         return Initialize._instance;
     }
 
-    private constructor(reducer: Reducer, initialState: GlobalState) {
-        this._reducer = reducer;
-        this._globalState = initialState;
+    private constructor(reducer: Reducer, initialState: GlobalState, storageName?: string) {
+        if (storageName) {
+            this._reducer  = [{ key: storageName, value: reducer }];
+            this._globalState = [{ key: storageName, value: initialState }];
+        } else {
+            this._reducer = reducer;
+            this._globalState = initialState;
+        }
     }
 
     public get globalState(): GlobalState {

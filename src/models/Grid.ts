@@ -5,4 +5,6 @@ export type Grid = {
     hasGat:boolean,
     hasShadow:boolean,
     hasTile:boolean,
+    hasBox: boolean,
+    data:any
 }

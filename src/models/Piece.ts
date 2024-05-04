@@ -1,18 +1,17 @@
+import { Rotation } from './Rotation'
 
-type Size = {
+export type Size = {
     width: number,
     height: number
 };
 
-type Rotation = 0 | 90 | 180 | 270;
-
-type Mosaic = {
+export type Mosaic = {
     img: string,
     x: number,
     y: number
 }
 
-type Tesserae = {
+export type Tesserae = {
     rotation: Rotation,
     tiles: Mosaic[]
 }
@@ -24,5 +23,5 @@ export type Piece = {
         vertical: Size
     },
     rotation: Rotation,
-    pieces: Tesserae[]
+    tiles: Tesserae[]
 }

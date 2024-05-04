@@ -1,9 +1,10 @@
+/**/
+import levers from "../assets/jsons/levers.json"
 import Gat from "../models/gat"
-import { useSubscribeState } from "../subscribe_state/index";
-import "../styles/gat.css"
+import "../styles/components/gat.css"
 
-export default function Gats() {
-    const [{ gats_position }, _] = useSubscribeState(["gats_position"])
+export default function DrawnGats({ lever }:number) {
+    const gats_position: Gat[4] = levers[lever].gats_position;
 
     return (
         <>
@@ -31,7 +32,9 @@ function DrawGat({ gat, index, tile_size = 1 }: TDrawGatProps) {
         height: `${50 * tile_size}px`,
     }
 
-    return (<div key={index} className="gat-container" style={containerStyle} >
-        <img src={`/images/${gat.name}.png`} className="gat-img" style={imageStyle} />
-    </div>)
+    return (
+        <div key={index} className="gat-container" style={containerStyle} >
+            <img src={`/images/${gat.name}.png`} className="gat-img" style={imageStyle} />
+        </div>
+    )
 }

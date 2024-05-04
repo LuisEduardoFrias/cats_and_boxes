@@ -1,4 +1,5 @@
-
+/**
+*/
 import { AnySubCriber } from "./types";
 
 export const ALL: string = "all";

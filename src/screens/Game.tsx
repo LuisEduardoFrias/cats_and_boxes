@@ -1,15 +1,17 @@
-//
-import Menu from "./Menu.tsx"
+/***/
 import Play from "./Play"
 import Levers from "./Levers"
 import Settings from "./Settings"
-import OpenClose from "./OpenClose"
+
+import Menu from "../components/Menu"
+import OpenClose from "../components/OpenClose"
 
 import { useSubscribeState } from "../subscribe_state/index"
-import "../styles/game.css"
+import "../styles/screens/game.css"
 
 export default function Game() {
     const [{ viewLevers, viewSetting, viewPlay }, _] = useSubscribeState(["viewLevers", "viewSetting", "viewPlay"])
+
     return (
         <div className="game">
             <header>
@@ -19,10 +21,10 @@ export default function Game() {
             </header>
             <main>
                 <OpenClose notInitialize={true} dependecies={[viewLevers, viewSetting, viewPlay]}>
-                    {/*(!viewPlay && !viewSetting && !viewLevers) && <Menu />*/}
-                    {!viewPlay && <Play />}
-                    {/*viewLevers && <Levers />}
-                    {viewSetting && <Settings />*/}
+                    {(!viewPlay && !viewSetting && !viewLevers) && <Menu />}
+                    {viewPlay && <Play />}
+                    {viewLevers && <Levers />}
+                    {viewSetting && <Settings />}
                 </OpenClose>
             </main >
         </div >

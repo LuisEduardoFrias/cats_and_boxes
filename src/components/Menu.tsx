@@ -1,5 +1,5 @@
 import { dispatch } from "../subscribe_state/index"
-import "../styles/menu.css"
+import "../styles/components/menu.css"
 
 export default function Menu() {
     return (

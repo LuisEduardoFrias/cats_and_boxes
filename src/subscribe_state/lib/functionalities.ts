@@ -1,5 +1,5 @@
-/** @format */
-
+/**
+*/
 import {
     Action,
     OutReducer,

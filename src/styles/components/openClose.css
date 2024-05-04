@@ -10,6 +10,12 @@
     align-items: center;
 }
 
+.door-container {
+    width: Calc(var(--width) + 20px);
+    height: Calc(Calc(var(--height) - 40px) - Calc(var(--height) * 0.3));
+    padding: 20px;
+}
+
 .door {
     position: absolute;
     z-index: 9;

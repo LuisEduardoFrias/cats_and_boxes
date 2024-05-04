@@ -1,26 +1,19 @@
-import { Point } from "point"
-import { handleCollisionWithGats } from "../helpers/helper_reducer"
+import { Point } from "../models/Point"
+import { Grid } from "../models/Grid"
+//import { handleCollisionWithGats } from "../helpers/helper_reducer"
 
 type Action =
-    { type: "ChangeStateViewLevers", isShow: boolean } |
-    { type: "ChangeStateViewSettings", isShow: boolean } |
-    { type: "ChangeStateViewPlay", isShow: boolean } |
+    { type: "InitializeGrid", grid: (Grid&null)[] } |
     { type: "ChangeRotation", rotation: 0 | 90 | 180 | 270, tile_name: string } |
     { type: "SeletTile", tile: string | undefined } |
     { type: "SelectLever", lever: number } |
     { type: "Move", position: Point, tile: string }
     ;
 
-export default function reducer(state: GetBox, actions: Action) {
+export default function domainReducer(state: GetBox, actions: Action) {
     const _actions = {
-        ChangeStateViewLevers: () => {
-            return { ...state, viewLevers: actions.isShow }
-        },
-        ChangeStateViewSettings: () => {
-            return { ...state, viewSetting: actions.isShow }
-        },
-        ChangeStateViewPlay: () => {
-            return { ...state, viewPlay: actions.isShow, viewLevers: !actions.isShow }
+        InitializeGrid: () => {
+            return { ...state, grid: actions.grid }
         },
         ChangeRotation: () => {
             const tiles_position = structuredClone(state.tiles_position);
@@ -60,8 +53,9 @@ export default function reducer(state: GetBox, actions: Action) {
         },
         ChangeEditedGrids: () => {
             return { ...state, edited_grids: [...actions.gridIds] }
-        }
+        },
+        default: () => null
     };
 
-    return _actions[actions.type]();
+    return (_actions[actions.type] || _actions["default"])();
 }

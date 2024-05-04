@@ -1,5 +1,3 @@
-/** @format */
-
 import type Initialize from "./initialize_super_state";
 
 export type AnySubCriber = {

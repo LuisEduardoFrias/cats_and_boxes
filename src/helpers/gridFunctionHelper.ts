@@ -7,7 +7,7 @@ import { Grid } from "../models/Grid.ts"
 //add element position in the victual grid
 export function insertGatsTilesPositionsInGridHelper(lever: number): (Grid & null)[] {
     const grid: (Grid & null)[] = new Array(24).fill(null)
-    
+
     //add gats position in the victual grid
     levers[lever].gats_position.forEach(e =>
         grid[getIndexByPoint(e)] = {
@@ -40,7 +40,7 @@ export function insertGatsTilesPositionsInGridHelper(lever: number): (Grid & nul
             }
         })
     })
-
+//hola
     return grid;
 }
 

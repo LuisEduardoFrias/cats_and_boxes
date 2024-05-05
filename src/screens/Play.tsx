@@ -19,7 +19,7 @@ export default function Play() {
         const grid: (Grid & null)[] = insertGatsTilesPositionsInGridHelper(lever);
         dispatch({ type: "InitializeGrid", grid })
     }, [lever])
-
+    //tghhjdjdjdjdjjdjdjdjjxjxjxjjxjxjxbdudhdhdudh
     const playMain = useMemo(() =>
         <>
             <DndContext

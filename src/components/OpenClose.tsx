@@ -16,7 +16,7 @@ export default function OpenClose({ children, dependecies, notInitialize }: TOpe
         new Promise(() => {
             const timer = setTimeout(() => {
                 setOldChild(children)
-            }, 2000);
+            }, 0);//2000);
         })
     }, [children])
 
@@ -24,10 +24,10 @@ export default function OpenClose({ children, dependecies, notInitialize }: TOpe
         new Promise(() => {
             const timer = setTimeout(() => {
                 setOpenClose(false);
-            }, 3000);
+            }, 0); //3000);
         })
 
-        setOpenClose(true);
+        //setOpenClose(true);
         if (_notInitialize) {
         }
         else {

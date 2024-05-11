@@ -58,22 +58,22 @@ export function middleDistpach(action: Action, reducer: Reducer): void {
     //Probocar el cambio de estado en los useReducers de los suscriptores.
     if (changedProperties.length > 0) {
         Reflect.ownKeys(SUB_CRIBER).forEach((key: string) => {
-            console.log(`sub ${key}`)
+            //console.log(`sub ${key}`)
 
             const props = Reflect.get(SUB_CRIBER, key).props;
 
             for (let i = 0; i < props.length; i++) {
-                console.log(`props: ${props} - ${i}`)
+                //console.log(`props: ${props} - ${i}`)
 
                 let isBreak = false;
 
                 for (let j = 0; j < changedProperties.length; j++) {
 
-                    console.log(`ch-p: ${changedProperties} - ${j}`)
+                    //console.log(`ch-p: ${changedProperties} - ${j}`)
 
                     if (changedProperties[j] === props[i] || changedProperties[j] === ALL) {
 
-                        console.log("isBreak")
+                        //console.log("isBreak")
                         const promesa = new Promise((resolve, reject) => {
                             SUB_CRIBER[key].dispatch({ type: "any" })
                             resolve(true);

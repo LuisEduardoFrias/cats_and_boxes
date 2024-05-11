@@ -1,17 +1,32 @@
 import { dispatch } from "../subscribe_state/index"
 
 export function handleDragStart(event) {
-
+    //console.log("start: " + JSON.stringify(event))
 }
 
 export function handleDragMove(event) {
+    //console.log("move - active:" + JSON.stringify(event.active, null, 0))
+    console.log("move - over: " + JSON.stringify(event.over.id, null, 0))
 
+    //move - active:{"id":"t","data":{"current":{"pieces":{"rotation":180,"tiles":[{"img":"azulejo","x":0,"y":1},{"img":"azulejo","x":1,"y":0},{"img":"azulejo","x":2,"y":1},{"img":"box3","x":1,"y":1}]},"width":198,"height":132}},"rect":{"current":{"initial":{"top":334.3660888671875,"left":302,"width":64,"height":64,"bottom":398.3660888671875,"right":366},"translated":{"top":127.6617431640625,"left":346.5449523925781,"width":64,"height":64,"bottom":191.6617431640625,"right":410.5449523925781}}}}
+    //move - over: {"id":4,"rect":{"width":64,"height":64,"top":334.3660888671875,"bottom":398.3660888671875,"right":366,"left":302},"data":{"current":{"x":5,"y":5}},"disabled":false}
+
+    if (event.active.id === "t") {
+        const rotation = event.active.data.current.pieces.rotation;
+
+        if (rotation === 0) {
+            // event.over.id < 5 
+        }
+        else {
+
+        }
+    }
 }
 
 export function handleDragOver(event) {
-    console.log("over - active:" + JSON.stringify(event.active, null, 0))
-    console.log("over - over: " + JSON.stringify(event.over, null, 0))
-    console.log("over - collition: " + JSON.stringify(event.collition, null, 0))
+    //console.log("over - active:" + JSON.stringify(event.active, null, 0))
+    //console.log("over - over: " + JSON.stringify(event.over, null, 0))
+    //console.log("over - collition: " + JSON.stringify(event.collition, null, 0))
 
     const rotation = event.active.data.current.pieces.rotation;
 
@@ -53,10 +68,9 @@ export function handleDragEnd(event) {
     if (event.over) {
         let x = 0, y = 0;
 
-        console.log("end - active:" + JSON.stringify(event.active, null, 0))
-        console.log("end - over: " + JSON.stringify(event.over, null, 0))
-        console.log("ebd - collition: " + JSON.stringify(event.collition, null, 0))
-
+        // console.log("end - active:" + JSON.stringify(event.active, null, 0))
+        //console.log("end - over: " + JSON.stringify(event.over, null, 0))
+        // console.log("ebd - collition: " + JSON.stringify(event.collition, null, 0))
 
         const rotation = event.active.data.current.pieces.rotation;
         const id = event.active.id;

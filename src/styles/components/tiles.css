@@ -11,6 +11,7 @@
 .tile-select .tile-piece {
     background-color: #d9b466;
     opacity: 0.5;
+    cursor: url("./images/hand_grab.png"), auto;
     
     img {
         transform: scale(.9);
@@ -139,4 +140,11 @@ background-color .tile-control-container .tile-control-btn:nth-child(3):active {
     box-shadow: inset 1px 1px 3px 1px #218eaf,
         inset -2px -2px 3px 1px #17657d;
     transform: scale(.9);
+}
+
+.tile-control-btn:disabled {
+    background-color: #218eaf;
+    box-shadow: inset 1px 1px 3px 1px #0f2329,
+        inset -2px -2px 3px 1px #0f2329;
+    transform: scale(1);
 }

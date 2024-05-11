@@ -1,0 +1,21 @@
+.next-menu-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    width: 100%;
+    height: 100%;
+    transform: translateZ(90px);
+    background-color: #ffffff40;
+    backdrop-filter: blur(0px);
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    
+    button {
+        color: black;
+    }
+}

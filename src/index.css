@@ -70,6 +70,7 @@ body {
     font-weight: 900;
     transition: color 1s ease;
     filter: grayscale(0%);
+    user-select: none;
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;
 }

@@ -1,6 +1,6 @@
 //
-import levers from "./assets/jsons/levers.json"
-import {leverState} from "./models/Lever"
+import levels from "./assets/jsons/levels.json"
+import { levelState } from "./models/Level"
 import intefaceReducer from "./reducers/interfaceReducer"
 import domainReducer from "./reducers/domainReducer"
 import { DomainGlobalState } from "./models/DomainGlobalState"
@@ -11,15 +11,20 @@ import './App.css'
 
 const domInitialState: DomainGlobalState = {
     grid: [],
-    lever: 0,
+    level: null,
+    movements: 0,
+    gatsInBixes: 0,
     tiles_position: undefined,
 }
 
 const intInitialState: InterfaceGlobalState = {
     tile_seleted: undefined,
-    levers: levers.map((_, i) => ({ lever: i, state: i <= 1 ? leverState.activated : leverState.desactivated })),
+    levels: levels.map((_, i) => ({ level: i, state: i <= 1 ? levelState.activated : levelState.desactivated })),
     edited_grids: [],
-    viewLevers: false,
+    confetti: false,
+    release: true,
+    menuGame: false,
+    viewlevels: false,
     viewPlay: false,
     viewSetting: false
 }

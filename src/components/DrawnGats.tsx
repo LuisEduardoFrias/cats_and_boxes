@@ -1,10 +1,10 @@
 /**/
-import levers from "../assets/jsons/levers.json"
+import levels from "../assets/jsons/levels.json"
 import Gat from "../models/gat"
 import "../styles/components/gat.css"
 
-export default function DrawnGats({ lever }:number) {
-    const gats_position: Gat[4] = levers[lever].gats_position;
+export default function DrawnGats({ level }:number) {
+    const gats_position: Gat[4] = levels[level].gats_position;
 
     return (
         <>

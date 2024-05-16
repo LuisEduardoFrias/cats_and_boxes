@@ -16,19 +16,20 @@ export default function intefaceReducer(state: GetBox, actions: Action) {
                 confetti: false,
                 menuGame: false,
                 tile_seleted: undefined,
-            old_tile_seleted: undefined,}
-    },
+                old_tile_seleted: undefined,
+            }
+        },
         ChangeStateViewSettings: () => {
             return { ...state, viewSetting: actions.isShow }
-},
-ChangeStateViewPlay: () => {
-    return { ...state, viewPlay: actions.isShow, viewlevels: !actions.isShow }
-},
-    ChangeStateViewMenuGame: () => {
-        return { ...state, menuGame: actions.isShow }
-    },
+        },
+        ChangeStateViewPlay: () => {
+            return { ...state, viewPlay: actions.isShow, viewlevels: !actions.isShow }
+        },
+        ChangeStateViewMenuGame: () => {
+            return { ...state, menuGame: actions.isShow }
+        },
         default: () => null
     };
 
-return (_actions[actions.type] || _actions["default"])();
+    return (_actions[actions.type] || _actions["default"])();
 }

@@ -1,6 +1,359 @@
 [
     {
-        "lever": 1,
+        "How to create levels": "Preparation: Look for a notebook to draw. Draw a 5x5 grid. Place an \"x\" in the positions where you want the 5 cats to be. Pieces and Boxes: Find a way to represent the pieces: \"t\", \"l\", \"inverted l\", and \"z\", along with their respective boxes. Place the pieces so that the boxes are on top of the cats. Piece Movement: Start moving the pieces and rotating them one by one. Each movement involves changing 1 piece from one position to another (rotations do not count as movements). Count each movement made. Verification: Upon finishing, compare the position of the cats and pieces with the \"levels.json\" file to avoid creating a duplicate level. In the same \"levels.json\" file, use a level as a reference and save the data of the positions and movements made. Coordinates: For the cat coordinates, count the cells from left to right (starting from 1 for \"x\") and from bottom to top (starting from 1 for \"y\"). For the pieces, count the cells from left to right (starting from 0 for \"x\") and from bottom to top (starting from 0 for \"y\").",
+        "Como crear niveles": "Preparación: Busca un cuaderno para dibujar. Dibuja una cuadrícula de 5x5. Coloca una \"x\" en las posiciones donde quieres que estén los 5 gatos. Piezas y Cajas: Busca una manera de representar las piezas: \"t\", \"l\", \"l invertida\" y \"z\", junto con sus respectivas cajas. Coloca las piezas de forma que las cajas estén encima de los gatos. Movimiento de las Piezas: Comienza a mover las piezas y girarlas de 1 en 1. Cada movimiento implica cambiar 1 pieza de una posición a otra (los giros no cuentan como movimientos). Cuenta cada movimiento realizado. Verificación: Al terminar, compara la posición de los gatos y las piezas con el archivo \"levels.json\" para evitar crear un nivel duplicado. En el mismo archivo \"levels.json\", toma un nivel como referencia y guarda los datos de las posiciones y movimientos realizados. Coordenadas: Para las coordenadas de los gatos, cuenta las celdas desde la izquierda hacia la derecha (comenzando desde 1 para \"x\") y desde abajo hacia arriba (comenzando desde 1 para \"y\"). Para las piezas, cuenta las celdas desde la izquierda hacia la derecha (comenzando desde 0 para \"x\") y desde abajo hacia arriba (comenzando desde 0 para \"y\") "
+    },
+    {
+        "movements": 4,
+        "gats_position": [
+            {
+                "name": "gato1",
+                "point": {
+                    "x": 1,
+                    "y": 5
+                }
+            },
+            {
+                "name": "gato2",
+                "point": {
+                    "x": 1,
+                    "y": 2
+                }
+            },
+            {
+                "name": "gato3",
+                "point": {
+                    "x": 3,
+                    "y": 4
+                }
+            },
+            {
+                "name": "gato4",
+                "point": {
+                    "x": 4,
+                    "y": 1
+                }
+            },
+            {
+                "name": "gato5",
+                "point": {
+                    "x": 5,
+                    "y": 5
+                }
+            }
+        ],
+        "tiles_position": {
+            "t": {
+                "rotation": 0,
+                "point": {
+                    "x": 0,
+                    "y": 0
+                }
+            },
+            "l": {
+                "rotation": 180,
+                "point": {
+                    "x": 2,
+                    "y": 2
+                }
+            },
+            "j": {
+                "rotation": 90,
+                "point": {
+                    "x": 2,
+                    "y": 0
+                }
+            },
+            "z": {
+                "rotation": 180,
+                "point": {
+                    "x": 0,
+                    "y": 2
+                }
+            }
+        }
+    },
+    {
+        "movements": 4,
+        "gats_position": [
+            {
+                "name": "gato1",
+                "point": {
+                    "x": 1,
+                    "y": 5
+                }
+            },
+            {
+                "name": "gato2",
+                "point": {
+                    "x": 2,
+                    "y": 3
+                }
+            },
+            {
+                "name": "gato3",
+                "point": {
+                    "x": 3,
+                    "y": 2
+                }
+            },
+            {
+                "name": "gato4",
+                "point": {
+                    "x": 4,
+                    "y": 1
+                }
+            },
+            {
+                "name": "gato5",
+                "point": {
+                    "x": 4,
+                    "y": 4
+                }
+            }
+        ],
+        "tiles_position": {
+            "t": {
+                "rotation": 0,
+                "point": {
+                    "x": 0,
+                    "y": 0
+                }
+            },
+            "l": {
+                "rotation": 270,
+                "point": {
+                    "x": 2,
+                    "y": 3
+                }
+            },
+            "j": {
+                "rotation": 180,
+                "point": {
+                    "x": 0,
+                    "y": 1
+                }
+            },
+            "z": {
+                "rotation": 270,
+                "point": {
+                    "x": 2,
+                    "y": 1
+                }
+            }
+        }
+    },
+    {
+        "movements": 4,
+        "gats_position": [
+            {
+                "name": "gato1",
+                "point": {
+                    "x": 1,
+                    "y": 5
+                }
+            },
+            {
+                "name": "gato2",
+                "point": {
+                    "x": 2,
+                    "y": 2
+                }
+            },
+            {
+                "name": "gato3",
+                "point": {
+                    "x": 4,
+                    "y": 1
+                }
+            },
+            {
+                "name": "gato4",
+                "point": {
+                    "x": 4,
+                    "y": 4
+                }
+            },
+            {
+                "name": "gato5",
+                "point": {
+                    "x": 5,
+                    "y": 2
+                }
+            }
+        ],
+        "tiles_position": {
+            "t": {
+                "rotation": 270,
+                "point": {
+                    "x": 2,
+                    "y": 0
+                }
+            },
+            "l": {
+                "rotation": 0,
+                "point": {
+                    "x": 0,
+                    "y": 0
+                }
+            },
+            "j": {
+                "rotation": 0,
+                "point": {
+                    "x": 3,
+                    "y": 2
+                }
+            },
+            "z": {
+                "rotation": 270,
+                "point": {
+                    "x": 0,
+                    "y": 2
+                }
+            }
+        }
+    },
+    {
+        "movements": 4,
+        "gats_position": [
+            {
+                "name": "gato1",
+                "point": {
+                    "x": 1,
+                    "y": 5
+                }
+            },
+            {
+                "name": "gato2",
+                "point": {
+                    "x": 3,
+                    "y": 2
+                }
+            },
+            {
+                "name": "gato3",
+                "point": {
+                    "x": 3,
+                    "y": 4
+                }
+            },
+            {
+                "name": "gato4",
+                "point": {
+                    "x": 4,
+                    "y": 2
+                }
+            },
+            {
+                "name": "gato5",
+                "point": {
+                    "x": 5,
+                    "y": 4
+                }
+            }
+        ],
+        "tiles_position": {
+            "t": {
+                "rotation": 180,
+                "point": {
+                    "x": 2,
+                    "y": 3
+                }
+            },
+            "l": {
+                "rotation": 90,
+                "point": {
+                    "x": 0,
+                    "y": 0
+                }
+            },
+            "j": {
+                "rotation": 0,
+                "point": {
+                    "x": 3,
+                    "y": 0
+                }
+            },
+            "z": {
+                "rotation": 0,
+                "point": {
+                    "x": 0,
+                    "y": 1
+                }
+            }
+        }
+    },
+    {
+        "movements": 5,
+        "gats_position": [
+            {
+                "name": "gato1",
+                "point": {
+                    "x": 1,
+                    "y": 3
+                }
+            },
+            {
+                "name": "gato2",
+                "point": {
+                    "x": 2,
+                    "y": 1
+                }
+            },
+            {
+                "name": "gato3",
+                "point": {
+                    "x": 3,
+                    "y": 2
+                }
+            },
+            {
+                "name": "gato4",
+                "point": {
+                    "x": 3,
+                    "y": 2
+                }
+            },
+            {
+                "name": "gato5",
+                "point": {
+                    "x": 5,
+                    "y": 2
+                }
+            }
+        ],
+        "tiles_position": {
+            "t": {
+                "rotation": 0,
+                "point": {
+                    "x": 2,
+                    "y": 0
+                }
+            },
+            "l": {
+                "rotation": 279,
+                "point": {
+                    "x": 0,
+                    "y": 3
+                }
+            },
+            "j": {
+                "rotation": 0,
+                "point": {
+                    "x": 0,
+                    "y": 1
+                }
+            },
+            "z": {
+                "rotation": 279,
+                "point": {
+                    "x": 2,
+                    "y": 2
+                }
+            }
+        }
+    },
+    {
         "movements": 5,
         "gats_position": [
             {
@@ -27,8 +380,148 @@
             {
                 "name": "gato4",
                 "point": {
-                    "x": 5,
+                    "x": 4,
+                    "y": 3
+                }
+            },
+            {
+                "name": "gato5",
+                "point": {
+                    "x": 4,
                     "y": 1
+                }
+            }
+        ],
+        "tiles_position": {
+            "t": {
+                "rotation": 180,
+                "point": {
+                    "x": 2,
+                    "y": 0
+                }
+            },
+            "l": {
+                "rotation": 270,
+                "point": {
+                    "x": 3,
+                    "y": 2
+                }
+            },
+            "j": {
+                "rotation": 270,
+                "point": {
+                    "x": 0,
+                    "y": 0
+                }
+            },
+            "z": {
+                "rotation": 180,
+                "point": {
+                    "x": 0,
+                    "y": 2
+                }
+            }
+        }
+    },
+    {
+        "movements": 5,
+        "gats_position": [
+            {
+                "name": "gato1",
+                "point": {
+                    "x": 1,
+                    "y": 2
+                }
+            },
+            {
+                "name": "gato2",
+                "point": {
+                    "x": 2,
+                    "y": 1
+                }
+            },
+            {
+                "name": "gato3",
+                "point": {
+                    "x": 3,
+                    "y": 2
+                }
+            },
+            {
+                "name": "gato4",
+                "point": {
+                    "x": 4,
+                    "y": 5
+                }
+            },
+            {
+                "name": "gato5",
+                "point": {
+                    "x": 5,
+                    "y": 2
+                }
+            }
+        ],
+        "tiles_position": {
+            "t": {
+                "rotation": 180,
+                "point": {
+                    "x": 2,
+                    "y": 0
+                }
+            },
+            "l": {
+                "rotation": 180,
+                "point": {
+                    "x": 0,
+                    "y": 3
+                }
+            },
+            "j": {
+                "rotation": 0,
+                "point": {
+                    "x": 0,
+                    "y": 1
+                }
+            },
+            "z": {
+                "rotation": 270,
+                "point": {
+                    "x": 2,
+                    "y": 2
+                }
+            }
+        }
+    },
+    {
+        "movements": 5,
+        "gats_position": [
+            {
+                "name": "gato1",
+                "point": {
+                    "x": 1,
+                    "y": 2
+                }
+            },
+            {
+                "name": "gato2",
+                "point": {
+                    "x": 2,
+                    "y": 1
+                }
+            },
+            {
+                "name": "gato3",
+                "point": {
+                    "x": 3,
+                    "y": 3
+                }
+            },
+            {
+                "name": "gato4",
+                "point": {
+                    "x": 4,
+                    "y": 5
                 }
             },
             {
@@ -43,35 +536,34 @@
             "t": {
                 "rotation": 180,
                 "point": {
-                    "x": 2,
+                    "x": 0,
                     "y": 3
                 }
             },
             "l": {
                 "rotation": 90,
                 "point": {
-                    "x": 0,
+                    "x": 2,
                     "y": 0
                 }
             },
-            "li": {
-                "rotation": 0,
+            "j": {
+                "rotation": 270,
                 "point": {
-                    "x": 0,
-                    "y": 2
+                    "x": 1,
+                    "y": 1
                 }
             },
             "z": {
-                "rotation": 0,
+                "rotation": 270,
                 "point": {
                     "x": 2,
-                    "y": 0
+                    "y": 2
                 }
             }
         }
     },
     {
-        "lever": 2,
         "movements": 6,
         "gats_position": [
             {
@@ -125,7 +617,7 @@
                     "y": 4
                 }
             },
-            "li": {
+            "j": {
                 "rotation": 0,
                 "point": {
                     "x": 3,
@@ -142,7 +634,6 @@
         }
     },
     {
-        "lever": 3,
         "movements": 5,
         "gats_position": [
             {
@@ -201,7 +692,7 @@
                     "y": 1
                 }
             },
-            "li": {
+            "j": {
                 "rotation": 90,
                 "point": {
                     "x": 1,
@@ -218,7 +709,6 @@
         }
     },
     {
-        "lever": 4,
         "movements": 6,
         "gats_position": [
             {
@@ -277,7 +767,7 @@
                     "y": 1
                 }
             },
-            "li": {
+            "j": {
                 "rotation": 90,
                 "point": {
                     "x": 1,
@@ -294,7 +784,6 @@
         }
     },
     {
-        "lever": 5,
         "movements": 6,
         "gats_position": [
             {
@@ -353,7 +842,7 @@
                     "y": 1
                 }
             },
-            "li": {
+            "j": {
                 "rotation": 90,
                 "point": {
                     "x": 1,
@@ -370,7 +859,6 @@
         }
     },
     {
-        "lever": 6,
         "gats_position": [
             {
                 "img": "",
@@ -428,7 +916,7 @@
                     "y": 1
                 }
             },
-            "li": {
+            "j": {
                 "rotation": 90,
                 "point": {
                     "x": 1,
@@ -445,7 +933,6 @@
         }
     },
     {
-        "lever": 7,
         "movements": 5,
         "gats_position": [
             {
@@ -504,7 +991,7 @@
                     "y": 1
                 }
             },
-            "li": {
+            "j": {
                 "rotation": 90,
                 "point": {
                     "x": 1,
@@ -521,7 +1008,6 @@
         }
     },
     {
-        "lever": 8,
         "movements": 6,
         "gats_position": [
             {
@@ -580,7 +1066,7 @@
                     "y": 1
                 }
             },
-            "li": {
+            "j": {
                 "rotation": 90,
                 "point": {
                     "x": 1,
@@ -597,7 +1083,6 @@
         }
     },
     {
-        "lever": 9,
         "movements": 6,
         "gats_position": [
             {
@@ -656,7 +1141,7 @@
                     "y": 1
                 }
             },
-            "li": {
+            "j": {
                 "rotation": 90,
                 "point": {
                     "x": 1,
@@ -673,7 +1158,6 @@
         }
     },
     {
-        "lever": 10,
         "movements": 6,
         "gats_position": [
             {
@@ -732,7 +1216,7 @@
                     "y": 1
                 }
             },
-            "li": {
+            "j": {
                 "rotation": 90,
                 "point": {
                     "x": 1,
@@ -749,7 +1233,6 @@
         }
     },
     {
-        "lever": 11,
         "movements": 6,
         "gats_position": [
             {
@@ -808,7 +1291,7 @@
                     "y": 1
                 }
             },
-            "li": {
+            "j": {
                 "rotation": 90,
                 "point": {
                     "x": 1,
@@ -825,7 +1308,6 @@
         }
     },
     {
-        "lever": 12,
         "movements": 6,
         "gats_position": [
             {
@@ -884,7 +1366,7 @@
                     "y": 1
                 }
             },
-            "li": {
+            "j": {
                 "rotation": 90,
                 "point": {
                     "x": 1,
@@ -901,7 +1383,6 @@
         }
     },
     {
-        "lever": 13,
         "movements": 6,
         "gats_position": [
             {
@@ -960,7 +1441,7 @@
                     "y": 1
                 }
             },
-            "li": {
+            "j": {
                 "rotation": 90,
                 "point": {
                     "x": 1,
@@ -977,7 +1458,6 @@
         }
     },
     {
-        "lever": 14,
         "movements": 6,
         "gats_position": [
             {
@@ -1036,7 +1516,7 @@
                     "y": 1
                 }
             },
-            "li": {
+            "j": {
                 "rotation": 90,
                 "point": {
                     "x": 1,
@@ -1053,7 +1533,6 @@
         }
     },
     {
-        "lever": 15,
         "movements": 6,
         "gats_position": [
             {
@@ -1112,7 +1591,7 @@
                     "y": 1
                 }
             },
-            "li": {
+            "j": {
                 "rotation": 90,
                 "point": {
                     "x": 1,
@@ -1129,7 +1608,6 @@
         }
     },
     {
-        "lever": 16,
         "movements": 6,
         "gats_position": [
             {
@@ -1188,7 +1666,7 @@
                     "y": 1
                 }
             },
-            "li": {
+            "j": {
                 "rotation": 90,
                 "point": {
                     "x": 1,
@@ -1205,7 +1683,6 @@
         }
     },
     {
-        "lever": 17,
         "movements": 6,
         "gats_position": [
             {
@@ -1264,7 +1741,7 @@
                     "y": 1
                 }
             },
-            "li": {
+            "j": {
                 "rotation": 90,
                 "point": {
                     "x": 1,
@@ -1281,7 +1758,6 @@
         }
     },
     {
-        "lever": 18,
         "movements": 6,
         "gats_position": [
             {
@@ -1340,7 +1816,7 @@
                     "y": 1
                 }
             },
-            "li": {
+            "j": {
                 "rotation": 90,
                 "point": {
                     "x": 1,
@@ -1357,7 +1833,6 @@
         }
     },
     {
-        "lever": 19,
         "movements": 6,
         "gats_position": [
             {
@@ -1416,7 +1891,7 @@
                     "y": 1
                 }
             },
-            "li": {
+            "j": {
                 "rotation": 90,
                 "point": {
                     "x": 1,
@@ -1433,7 +1908,6 @@
         }
     },
     {
-        "lever": 20,
         "movements": 6,
         "gats_position": [
             {
@@ -1492,7 +1966,7 @@
                     "y": 1
                 }
             },
-            "li": {
+            "j": {
                 "rotation": 90,
                 "point": {
                     "x": 1,
@@ -1509,7 +1983,6 @@
         }
     },
     {
-        "lever": 21,
         "movements": 6,
         "gats_position": [
             {
@@ -1568,7 +2041,7 @@
                     "y": 1
                 }
             },
-            "li": {
+            "j": {
                 "rotation": 90,
                 "point": {
                     "x": 1,
@@ -1585,7 +2058,6 @@
         }
     },
     {
-        "lever": 22,
         "movements": 6,
         "gats_position": [
             {
@@ -1644,7 +2116,7 @@
                     "y": 1
                 }
             },
-            "li": {
+            "j": {
                 "rotation": 90,
                 "point": {
                     "x": 1,
@@ -1661,7 +2133,6 @@
         }
     },
     {
-        "lever": 23,
         "movements": 6,
         "gats_position": [
             {
@@ -1720,7 +2191,7 @@
                     "y": 1
                 }
             },
-            "li": {
+            "j": {
                 "rotation": 90,
                 "point": {
                     "x": 1,
@@ -1737,7 +2208,6 @@
         }
     },
     {
-        "lever": 24,
         "movements": 6,
         "gats_position": [
             {
@@ -1796,7 +2266,7 @@
                     "y": 1
                 }
             },
-            "li": {
+            "j": {
                 "rotation": 90,
                 "point": {
                     "x": 1,
@@ -1813,7 +2283,6 @@
         }
     },
     {
-        "lever": 25,
         "movements": 6,
         "gats_position": [
             {
@@ -1872,7 +2341,7 @@
                     "y": 1
                 }
             },
-            "li": {
+            "j": {
                 "rotation": 90,
                 "point": {
                     "x": 1,
@@ -1889,7 +2358,6 @@
         }
     },
     {
-        "lever": 26,
         "movements": 6,
         "gats_position": [
             {
@@ -1948,7 +2416,7 @@
                     "y": 1
                 }
             },
-            "li": {
+            "j": {
                 "rotation": 90,
                 "point": {
                     "x": 1,
@@ -1965,7 +2433,6 @@
         }
     },
     {
-        "lever": 27,
         "movements": 6,
         "gats_position": [
             {
@@ -2024,7 +2491,7 @@
                     "y": 1
                 }
             },
-            "li": {
+            "j": {
                 "rotation": 90,
                 "point": {
                     "x": 1,
@@ -2041,7 +2508,6 @@
         }
     },
     {
-        "lever": 28,
         "movements": 6,
         "gats_position": [
             {
@@ -2100,7 +2566,7 @@
                     "y": 1
                 }
             },
-            "li": {
+            "j": {
                 "rotation": 90,
                 "point": {
                     "x": 1,
@@ -2117,7 +2583,6 @@
         }
     },
     {
-        "lever": 29,
         "movements": 6,
         "gats_position": [
             {
@@ -2176,7 +2641,7 @@
                     "y": 1
                 }
             },
-            "li": {
+            "j": {
                 "rotation": 90,
                 "point": {
                     "x": 1,
@@ -2193,7 +2658,6 @@
         }
     },
     {
-        "lever": 30,
         "movements": 6,
         "gats_position": [
             {
@@ -2252,7 +2716,7 @@
                     "y": 1
                 }
             },
-            "li": {
+            "j": {
                 "rotation": 90,
                 "point": {
                     "x": 1,
@@ -2269,7 +2733,6 @@
         }
     },
     {
-        "lever": 31,
         "movements": 6,
         "gats_position": [
             {
@@ -2328,7 +2791,7 @@
                     "y": 1
                 }
             },
-            "li": {
+            "j": {
                 "rotation": 90,
                 "point": {
                     "x": 1,
@@ -2345,7 +2808,6 @@
         }
     },
     {
-        "lever": 32,
         "movements": 6,
         "gats_position": [
             {
@@ -2404,7 +2866,7 @@
                     "y": 1
                 }
             },
-            "li": {
+            "j": {
                 "rotation": 90,
                 "point": {
                     "x": 1,

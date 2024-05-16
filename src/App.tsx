@@ -10,10 +10,10 @@ import useInitialize from "./subscribe_state/index"
 import './App.css'
 
 const domInitialState: DomainGlobalState = {
-    grid: [],
+    virtualGrid: [],
     level: null,
     movements: 0,
-    gatsInBixes: 0,
+    gatsInBixes: [],
     tiles_position: undefined,
 }
 

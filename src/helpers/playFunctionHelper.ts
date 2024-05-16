@@ -6,7 +6,7 @@ export function handleDragStart(event) {
 
 export function handleDragMove(event) {
     //console.log("move - active:" + JSON.stringify(event.active, null, 0))
-    console.log("move - over: " + JSON.stringify(event.over.id, null, 0))
+    // console.log("move - over: " + JSON.stringify(event.over.id, null, 0))
 
     //move - active:{"id":"t","data":{"current":{"pieces":{"rotation":180,"tiles":[{"img":"azulejo","x":0,"y":1},{"img":"azulejo","x":1,"y":0},{"img":"azulejo","x":2,"y":1},{"img":"box3","x":1,"y":1}]},"width":198,"height":132}},"rect":{"current":{"initial":{"top":334.3660888671875,"left":302,"width":64,"height":64,"bottom":398.3660888671875,"right":366},"translated":{"top":127.6617431640625,"left":346.5449523925781,"width":64,"height":64,"bottom":191.6617431640625,"right":410.5449523925781}}}}
     //move - over: {"id":4,"rect":{"width":64,"height":64,"top":334.3660888671875,"bottom":398.3660888671875,"right":366,"left":302},"data":{"current":{"x":5,"y":5}},"disabled":false}
@@ -49,7 +49,7 @@ function pieceShadowPosition(rotation: 0 | 90 | 180 | 270, tileName: string, id:
         else if (rotation === 180) return [id - 1, id, id + 5, id + 10];
         else if (rotation === 270) return [id, id + 1, id + 2, id + 5];
     }
-    else if (tileName === "li") {
+    else if (tileName === "j") {
         if (rotation === 0) return [id - 5, id, id + 4, id + 5];
         else if (rotation === 90) return [id - 1, id, id + 1, id + 6];
         else if (rotation === 180) return [id - 5, id - 4, id, id + 5];
@@ -111,7 +111,7 @@ export function handleDragEnd(event) {
                 y = event.over.data.current.y - 2;
             }
         }
-        else if (event.active.id === 'li') {
+        else if (event.active.id === 'j') {
             if (rotation === 0) {
                 x = event.over.data.current.x - 2;
                 y = event.over.data.current.y - 2;

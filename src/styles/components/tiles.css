@@ -8,8 +8,11 @@
     transform: translateZ(30px);
 }
 
+.seleted_tile {
+    transform: translateZ(95px);
+}
+
 .tile-select .tile-piece {
-    background-color: #d9b466;
     opacity: 0.5;
     cursor: url("./images/hand_grab.png"), auto;
     
@@ -22,10 +25,7 @@
     position: relative;
     width: 64px;
     height: 64px;
-    padding: 4px;
-    border: 1px solid #805500;
-    background-color: #7d54028c;
-    
+    border: none;
     display: grid;
     place-content: center;
     
@@ -37,7 +37,6 @@
 
 .tile-box {
     transform: translateZ(60px);
-    border: 5px dashed transparent;
 }
 
 /*.l:has(div:hover) div {

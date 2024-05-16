@@ -5,7 +5,7 @@ import {Grid} from "../models/Grid.ts"
 
 export function levelBuildHelper(level: number) {
     const tiles_position: Tile[4] = levels[level].tiles_position;
-    const grid: (Grid & null)[] = insertGatsTilesPositionsInGridHelper(level);
+    const virtualGrid: (Grid & null)[] = insertGatsTilesPositionsInGridHelper(level);
 
-    return { tiles_position, grid }
+    return { tiles_position, virtualGrid }
 }

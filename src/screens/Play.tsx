@@ -42,11 +42,11 @@ export default function Play() {
                 <div>
                     <div>
                         <label>Level</label>
-                        <label>{level + 1}</label>
+                        <label>{level }</label>
                     </div>
                     <div>
                         <label>Gats in box</label>
-                        <label>{gatsInBixes}</label>
+                        <label>{gatsInBixes.length}</label>
                     </div>
                     <div>
                         <label>Movements</label>

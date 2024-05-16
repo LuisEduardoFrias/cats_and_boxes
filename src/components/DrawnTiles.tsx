@@ -107,19 +107,24 @@ function Pieces({ piece, refr, isSelected, rotation, pieceName, onclick, index, 
 
     const color = pieceName === "t" ? "#ffff02" :
         (pieceName === "l" ? "#04fff5" :
-            (pieceName === "li" ? "#1c63ff" : "#43ff0a"));
+            (pieceName === "j" ? "#1c63ff" : "#43ff0a"));
 
     const stylePiece = {
         position: "absolute",
-        border: `4px solid ${"#43ff0a"}`,
+        border: `0px solid `,
         left: `${(piece.x) * 64}px`,
         bottom: `${(piece.y) * 64}px`,
-        borderColor: piece.img.includes("box") ? (piece.has_gat ? "red" : color) : color,
+        ...getShadowByPieces(pieceName, rotation, index),
+        backgroundColor: color, //piece.img.includes("box") ? (piece.has_gat ? "blue" : color) : color,
     }
 
+    const cn = `tile-piece ${isSelected ? "seleted_tile" : ""} ${piece.img.includes("box") ? (!isSelected ? "tile-box" : "seleted_tile") : "tile-tile"}`;
+    const list = { ...(isSelected ? listeners : null) };
+    const attr = { ...(isSelected ? attributes : null) };
+
     return (
-        <div style={stylePiece} ref={refr} className={`tile-piece ${piece.img.includes("box") ? "tile-box" : "tile-tile"}`} onClick={onclick} {...(isSelected ? listeners : null)} {...(isSelected ? attributes : null)} >
-            <img key={index} src={`/images/${piece.img}.png`} />
+        <div style={stylePiece} ref={refr} className={cn} onClick={onclick} {...list} {...attr} >
+            {piece.img.includes("box") ? <img key={index} src={`/images/${piece.img}.png`} /> : null}
         </div>
     )
 }
@@ -141,9 +146,97 @@ function Control({ tile_name, release, rotation, orientation }: { tile_name: str
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6"><path strokeLinecap="round" strokeLinejoin="round" d="M9 15 3 9m0 0 6-6M3 9h12a6 6 0 0 1 0 12h-3" /></svg>
                 </div>
             </button>
-            <button disabled={!release} className={`tile-control-btn tile-control-insert`} onClick={() => dispatch({ type: "SeletTile", tile: undefined })}>
+            <button disabled={!release} className={`tile-control-btn tile-control-insert`} onClick={() => dispatch({ type: "DeseletTile", tile: undefined })}>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6"><path strokeLinecap="round" strokeLinejoin="round" d="M9 3.75H6.912a2.25 2.25 0 0 0-2.15 1.588L2.35 13.177a2.25 2.25 0 0 0-.1.661V18a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18v-4.162c0-.224-.034-.447-.1-.661L19.24 5.338a2.25 2.25 0 0 0-2.15-1.588H15M2.25 13.5h3.86a2.25 2.25 0 0 1 2.012 1.244l.256.512a2.25 2.25 0 0 0 2.013 1.244h3.218a2.25 2.25 0 0 0 2.013-1.244l.256-.512a2.25 2.25 0 0 1 2.013-1.244h3.859M12 3v8.25m0 0-3-3m3 3 3-3" /></svg>
             </button>
         </div >
     )
+}
+
+function getShadowByPieces(pieceName, rotation, index) {
+    return pieceName === "t" ? (rotation === 0 ?
+        (index === 0 ? { borderBottom: "3px solid red", borderTop: "3px solid red", borderLeft: "3px solid red" } :
+            (index === 1 ? { borderTop: "3px solid red", borderLeft: "3px solid red", borderRight: "3px solid red" } :
+                (index === 2 ? { borderBottom: "3px solid red", borderTop: "3px solid red", borderRight: "3px solid red" } :
+                    (index === 3 ? { borderBottom: "3px solid red" } : ""))))
+        : rotation === 90 ?
+            (index === 0 ? { borderBottom: "3px solid red", borderLeft: "3px solid red", borderTop: "3px solid red" } :
+                (index === 1 ? { borderBottom: "3px solid red", borderLeft: "3px solid red", borderRight: "3px solid red" } :
+                    (index === 2 ? { borderTop: "3px solid red", borderLeft: "3px solid red", borderRight: "3px solid red" } :
+                        (index === 3 ? { borderRight: "3px solid red" } : ""))))
+            : rotation === 180 ?
+                (index === 0 ? { borderBottom: "3px solid red", borderLeft: "3px solid red", borderTop: "3px solid red" } :
+                    (index === 1 ? { borderBottom: "3px solid red", borderLeft: "3px solid red", borderRight: "3px solid red" } :
+                        (index === 2 ? { borderTop: "3px solid red", borderBottom: "3px solid red", borderRight: "3px solid red" } :
+                            (index === 3 ? { borderTop: "3px solid red" } : ""))))
+                : rotation === 270 ?
+                    (index === 0 ? { borderRight: "3px solid red", borderLeft: "3px solid red", borderTop: "3px solid red" } :
+                        (index === 1 ? { borderBottom: "3px solid red", borderTop: "3px solid red", borderRight: "3px solid red" } :
+                            (index === 2 ? { borderLeft: "3px solid red" } :
+                                (index === 3 ? { borderRight: "3px solid red", borderLeft: "3px solid red", borderBottom: "3px solid red" } : ""))))
+                    : "") :
+        pieceName === "l" ? (rotation === 0 ?
+            (index === 0 ? { borderBottom: "3px solid white" } :
+                (index === 1 ? { borderBottom: "3px solid white" } :
+                    (index === 2 ? { borderBottom: "3px solid white" } :
+                        (index === 3 ? { borderBottom: "3px solid white" } : ""))))
+            : rotation === 90 ?
+                (index === 0 ? { borderBottom: "3px solid white" } :
+                    (index === 1 ? { borderBottom: "3px solid white" } :
+                        (index === 2 ? { borderBottom: "3px solid white" } :
+                            (index === 3 ? { borderBottom: "3px solid white" } : ""))))
+                : rotation === 180 ?
+                    (index === 0 ? { borderBottom: "3px solid white" } :
+                        (index === 1 ? { borderBottom: "3px solid white" } :
+                            (index === 2 ? { borderBottom: "3px solid white" } :
+                                (index === 3 ? { borderBottom: "3px solid white" } : ""))))
+                    : rotation === 270 ?
+                        (index === 0 ? { borderBottom: "3px solid white" } :
+                            (index === 1 ? { borderBottom: "3px solid white" } :
+                                (index === 2 ? { borderBottom: "3px solid white" } :
+                                    (index === 3 ? { borderBottom: "3px solid white" } : ""))))
+                        : "") :
+            pieceName === "j" ? (rotation === 0 ?
+                (index === 0 ? { borderBottom: "3px solid white" } :
+                    (index === 1 ? { borderBottom: "3px solid white" } :
+                        (index === 2 ? { borderBottom: "3px solid white" } :
+                            (index === 3 ? { borderBottom: "3px solid white" } : ""))))
+                : rotation === 90 ?
+                    (index === 0 ? { borderBottom: "3px solid white" } :
+                        (index === 1 ? { borderBottom: "3px solid white" } :
+                            (index === 2 ? { borderBottom: "3px solid white" } :
+                                (index === 3 ? { borderBottom: "3px solid white" } : ""))))
+                    : rotation === 180 ?
+                        (index === 0 ? { borderBottom: "3px solid white" } :
+                            (index === 1 ? { borderBottom: "3px solid white" } :
+                                (index === 2 ? { borderBottom: "3px solid white" } :
+                                    (index === 3 ? { borderBottom: "3px solid white" } : ""))))
+                        : rotation === 270 ?
+                            (index === 0 ? { borderBottom: "3px solid white" } :
+                                (index === 1 ? { borderBottom: "3px solid white" } :
+                                    (index === 2 ? { borderBottom: "3px solid white" } :
+                                        (index === 3 ? { borderBottom: "3px solid white" } : ""))))
+                            : "") :
+                pieceName === "z" ? (rotation === 0 ?
+                    (index === 0 ? { borderBottom: "3px solid white" } :
+                        (index === 1 ? { borderBottom: "3px solid white" } :
+                            (index === 2 ? { borderBottom: "3px solid white" } :
+                                (index === 3 ? { borderBottom: "3px solid white" } : ""))))
+                    : rotation === 90 ?
+                        (index === 0 ? { borderBottom: "3px solid white" } :
+                            (index === 1 ? { borderBottom: "3px solid white" } :
+                                (index === 2 ? { borderBottom: "3px solid white" } :
+                                    (index === 3 ? { borderBottom: "3px solid white" } : ""))))
+                        : rotation === 180 ?
+                            (index === 0 ? { borderBottom: "3px solid white" } :
+                                (index === 1 ? { borderBottom: "3px solid white" } :
+                                    (index === 2 ? { borderBottom: "3px solid white" } :
+                                        (index === 3 ? { borderBottom: "3px solid white" } : ""))))
+                            : rotation === 270 ?
+                                (index === 0 ? { borderBottom: "3px solid white" } :
+                                    (index === 1 ? { borderBottom: "3px solid white" } :
+                                        (index === 2 ? { borderBottom: "3px solid white" } :
+                                            (index === 3 ? { borderBottom: "3px solid white" } : ""))))
+                                : "") : "";
+
 }

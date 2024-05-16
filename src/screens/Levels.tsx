@@ -25,7 +25,7 @@ export default function Levers() {
                 <div className="level-container">
                     {
                         levels.map((e: Level) =>
-                            <article key={e.level} className={getClassName(e)} onClick={() => { if (e.state !== levelState.desactivated) { handleSeletLever(e.level) } }} role="button" tabindex={e.level}>
+                            <article key={e.level} className={getClassName(e)} onClick={() => { if (e.state !== levelState.desactivated) { handleSeletLever(e.level + 1) } }} role="button" tabindex={e.level}>
                                 <span>{e.level + 1}</span>
                             </article>)
                     }

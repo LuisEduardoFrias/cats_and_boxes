@@ -10,7 +10,7 @@ type TBoardProps = {
 
 export default function DrawnBoard({ children, tile_size = 1 }: TBoardProps) {
 
-    const [{ edited_grids }] = useSubscribeState(["edited_grids"])
+    const [{ shadow_in_grid }] = useSubscribeState(["shadow_in_grid"])
 
     if (tile_size < 1 || tile_size > 3) {
         tile_size = 1;
@@ -28,14 +28,14 @@ export default function DrawnBoard({ children, tile_size = 1 }: TBoardProps) {
 
     return (
         <div className="board" style={board_style} >
-            {grid.map((_, index) => <Droppable key={index} id={index} is_back={checkGrid(index, edited_grids)} size={size} tile_size={tile_size} />)}
+            {grid.map((_, index) => <Droppable key={index} id={index} is_back={checkGrid(index, shadow_in_grid)} size={size} tile_size={tile_size} />)}
             {children}
         </div>
     )
 }
 
-function checkGrid(index: number, edited_grids: number[]): boolean {
-    return edited_grids.find(e => e === index) === undefined ? false : true;
+function checkGrid(index: number, shadow_in_grid: number[]): boolean {
+    return shadow_in_grid?.find(e => e === index) === undefined ? false : true;
 }
 
 type TDroppable = {

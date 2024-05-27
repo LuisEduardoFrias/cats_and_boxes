@@ -20,13 +20,16 @@ const domInitialState: DomainGlobalState = {
 const intInitialState: InterfaceGlobalState = {
     tile_seleted: undefined,
     levels: levels.map((_, i) => ({ level: i, state: i <= 1 ? levelState.activated : levelState.desactivated })),
-    edited_grids: [],
+    shadow_in_grid: [],
+    boxChangeImg: [],
     confetti: false,
     release: true,
+    sound: { volume: 40, muted: true },
+    music: { volume: 40, muted: true },
     menuGame: false,
-    viewlevels: false,
-    viewPlay: false,
-    viewSetting: false
+    levelsView: false,
+    playView: false,
+    settingView: false
 }
 
 const initialState: DomainGlobalState & InterfaceGlobalState = {

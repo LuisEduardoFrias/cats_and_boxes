@@ -7,16 +7,18 @@ import { useSubscribeState, dispatch } from "../subscribe_state/index"
 import { Point } from "../models/Point"
 import { Tile } from "../models/Tile"
 import { Piece } from "../models/Piece"
+import { getTileIndexByPoint, getIndexByPoint } from "../helpers/gridFunctionHelper.ts"
 import "../styles/components/tiles.css"
 
 export default function DrawnTiles() {
-    const [{ tile_seleted, tiles_position, release }, _] = useSubscribeState(["tile_seleted", "tiles_position", "release"])
+    const [{ tile_seleted, boxChangeImg, tiles_position, release, virtualGrid }, _] = useSubscribeState(["tile_seleted", "boxChangeImg", "tiles_position", "release"])
 
     return (
         <>
             {pieces.map((piece: Piece, index: number) => <DrawTile
                 key={index}
                 index={index}
+                boxChangeImg={boxChangeImg}
                 piece={piece}
                 release={release}
                 tile_seleted={tile_seleted?.name}
@@ -25,6 +27,7 @@ export default function DrawnTiles() {
         </>
     )
 }
+
 
 type TDrawTileProps = {
     piece: Piece,
@@ -35,7 +38,9 @@ type TDrawTileProps = {
 }
 
 //tile
-function DrawTile({ piece, index, release, tile_seleted, tiles_position }: TDrawTileProps) {
+function DrawTile({ piece, boxChangeImg, index, release, tile_seleted, tiles_position }: TDrawTileProps) {
+
+    //console.log("DrawTile boxChangeImg: " + JSON.stringify(boxChangeImg))
 
     const isSelected = piece.name === tile_seleted;
     const rotation = tiles_position[piece.name]?.rotation;
@@ -63,20 +68,23 @@ function DrawTile({ piece, index, release, tile_seleted, tiles_position }: TDraw
     const tileStyle = {
         ...style,
         position: "absolute",
-        width: "0px",//`${width}px`,
-        height: "0px",//`${height}px`,
+        width: `${0}px`,
+        height: `${0}px`,
         bottom: `${_bottom}px`,
         left: `${_left}px`,
         border: "0px solid yellow"
     }
 
+    const getSelectPiece = isSelected ? "tile-select" : (tile_seleted !== undefined ? "no-tile-select" : "");
+
     return (
-        <div key={index} tabindex={index} className={`tile-container ${piece.name} ${isSelected ? "tile-select" : ""}`} style={tileStyle}  >
+        <div key={index} tabindex={index} className={`tile-container ${piece.name} ${getSelectPiece}`} style={tileStyle}  >
             {isSelected && <Control tile_name={piece.name} release={release} rotation={rotation} orientation={height} />}
             {piece.tiles.map((obj, i) => rotation === obj.rotation ?
-                obj.tiles.map((o, ind) => <Pieces
+                obj.tiles.map((o, ind: number) => <Pieces
                     key={ind}
                     piece={o}
+                    gatsInBexes={getImgBox(boxChangeImg, o, point, rotation, piece.name, ind)}
                     refr={setNodeRef}
                     pieceName={piece.name}
                     rotation={rotation}
@@ -90,8 +98,27 @@ function DrawTile({ piece, index, release, tile_seleted, tiles_position }: TDraw
     )
 }
 
+
+function getImgBox(boxChangeImg, obj, point, rotation, pieceName, ind: number) {
+    let gatsInBoxes: undefined;
+
+    if (boxChangeImg.length > 0 && obj.img.includes("box")) {
+
+        const index = getIndexByPoint({ point: { x: point.x + 1, y: point.y + 1 } });
+        const piecesTiles: Tesserae[] = pieces.find((e: Piece) => e.name === pieceName).tiles
+        const tiles: Mosaic[] = piecesTiles.find((e: Tesserae) => e.rotation === rotation).tiles;
+
+        const boxIndex = getTileIndexByPoint({ x: tiles[ind].x, y: tiles[ind].y }) + index;
+
+        gatsInBoxes = boxChangeImg?.find(e => e.name === pieceName && e.indexBox === boxIndex);
+    }
+
+    return gatsInBoxes?.img;
+}
+
 type TPieces = {
     piece: any,
+    gatsInBexes: string | null,
     refr: any
     isSelected: boolean,
     rotation: number,
@@ -103,19 +130,21 @@ type TPieces = {
 }
 
 //tile intermos
-function Pieces({ piece, refr, isSelected, rotation, pieceName, onclick, index, listeners, attributes }: TPieces) {
+function Pieces({ piece, gatsInBexes, refr, isSelected, rotation, pieceName, onclick, index, listeners, attributes }: TPieces) {
 
-    const color = pieceName === "t" ? "#ffff02" :
-        (pieceName === "l" ? "#04fff5" :
-            (pieceName === "j" ? "#1c63ff" : "#43ff0a"));
+    const color = pieceName === "t" ? "#1f0800" :
+        (pieceName === "l" ? "#f8a007" :
+            (pieceName === "j" ? "#f8a007" : "#1f0800"));
 
     const stylePiece = {
         position: "absolute",
         border: `0px solid `,
-        left: `${(piece.x) * 64}px`,
-        bottom: `${(piece.y) * 64}px`,
+        left: `${(piece.x) * 64 + (isSelected ? 5:0)}px`,
+        bottom: `${(piece.y) * 64 + (isSelected ? 5 : 0) }px`,
+        borderWidth: "3px",
+        borderStyle: "solid",
         ...getShadowByPieces(pieceName, rotation, index),
-        backgroundColor: color, //piece.img.includes("box") ? (piece.has_gat ? "blue" : color) : color,
+        backgroundColor: color, //piece.img.includes("box") ? (piece.has_gat ? lcolor : color) : color,
     }
 
     const cn = `tile-piece ${isSelected ? "seleted_tile" : ""} ${piece.img.includes("box") ? (!isSelected ? "tile-box" : "seleted_tile") : "tile-tile"}`;
@@ -124,10 +153,11 @@ function Pieces({ piece, refr, isSelected, rotation, pieceName, onclick, index, 
 
     return (
         <div style={stylePiece} ref={refr} className={cn} onClick={onclick} {...list} {...attr} >
-            {piece.img.includes("box") ? <img key={index} src={`/images/${piece.img}.png`} /> : null}
+            {piece.img.includes("box") ? <img key={index} src={`/images/${gatsInBexes ?? piece.img}.png`} /> : null}
         </div>
     )
 }
+
 
 //control de rotacion
 function Control({ tile_name, release, rotation, orientation }: { tile_name: string, release: boolean, rotation: 0 | 90 | 180 | 270, orientation: number }) {
@@ -154,89 +184,132 @@ function Control({ tile_name, release, rotation, orientation }: { tile_name: str
 }
 
 function getShadowByPieces(pieceName, rotation, index) {
-    return pieceName === "t" ? (rotation === 0 ?
-        (index === 0 ? { borderBottom: "3px solid red", borderTop: "3px solid red", borderLeft: "3px solid red" } :
-            (index === 1 ? { borderTop: "3px solid red", borderLeft: "3px solid red", borderRight: "3px solid red" } :
-                (index === 2 ? { borderBottom: "3px solid red", borderTop: "3px solid red", borderRight: "3px solid red" } :
-                    (index === 3 ? { borderBottom: "3px solid red" } : ""))))
-        : rotation === 90 ?
-            (index === 0 ? { borderBottom: "3px solid red", borderLeft: "3px solid red", borderTop: "3px solid red" } :
-                (index === 1 ? { borderBottom: "3px solid red", borderLeft: "3px solid red", borderRight: "3px solid red" } :
-                    (index === 2 ? { borderTop: "3px solid red", borderLeft: "3px solid red", borderRight: "3px solid red" } :
-                        (index === 3 ? { borderRight: "3px solid red" } : ""))))
-            : rotation === 180 ?
-                (index === 0 ? { borderBottom: "3px solid red", borderLeft: "3px solid red", borderTop: "3px solid red" } :
-                    (index === 1 ? { borderBottom: "3px solid red", borderLeft: "3px solid red", borderRight: "3px solid red" } :
-                        (index === 2 ? { borderTop: "3px solid red", borderBottom: "3px solid red", borderRight: "3px solid red" } :
-                            (index === 3 ? { borderTop: "3px solid red" } : ""))))
-                : rotation === 270 ?
-                    (index === 0 ? { borderRight: "3px solid red", borderLeft: "3px solid red", borderTop: "3px solid red" } :
-                        (index === 1 ? { borderBottom: "3px solid red", borderTop: "3px solid red", borderRight: "3px solid red" } :
-                            (index === 2 ? { borderLeft: "3px solid red" } :
-                                (index === 3 ? { borderRight: "3px solid red", borderLeft: "3px solid red", borderBottom: "3px solid red" } : ""))))
-                    : "") :
-        pieceName === "l" ? (rotation === 0 ?
-            (index === 0 ? { borderBottom: "3px solid white" } :
-                (index === 1 ? { borderBottom: "3px solid white" } :
-                    (index === 2 ? { borderBottom: "3px solid white" } :
-                        (index === 3 ? { borderBottom: "3px solid white" } : ""))))
-            : rotation === 90 ?
-                (index === 0 ? { borderBottom: "3px solid white" } :
-                    (index === 1 ? { borderBottom: "3px solid white" } :
-                        (index === 2 ? { borderBottom: "3px solid white" } :
-                            (index === 3 ? { borderBottom: "3px solid white" } : ""))))
-                : rotation === 180 ?
-                    (index === 0 ? { borderBottom: "3px solid white" } :
-                        (index === 1 ? { borderBottom: "3px solid white" } :
-                            (index === 2 ? { borderBottom: "3px solid white" } :
-                                (index === 3 ? { borderBottom: "3px solid white" } : ""))))
-                    : rotation === 270 ?
-                        (index === 0 ? { borderBottom: "3px solid white" } :
-                            (index === 1 ? { borderBottom: "3px solid white" } :
-                                (index === 2 ? { borderBottom: "3px solid white" } :
-                                    (index === 3 ? { borderBottom: "3px solid white" } : ""))))
-                        : "") :
-            pieceName === "j" ? (rotation === 0 ?
-                (index === 0 ? { borderBottom: "3px solid white" } :
-                    (index === 1 ? { borderBottom: "3px solid white" } :
-                        (index === 2 ? { borderBottom: "3px solid white" } :
-                            (index === 3 ? { borderBottom: "3px solid white" } : ""))))
-                : rotation === 90 ?
-                    (index === 0 ? { borderBottom: "3px solid white" } :
-                        (index === 1 ? { borderBottom: "3px solid white" } :
-                            (index === 2 ? { borderBottom: "3px solid white" } :
-                                (index === 3 ? { borderBottom: "3px solid white" } : ""))))
-                    : rotation === 180 ?
-                        (index === 0 ? { borderBottom: "3px solid white" } :
-                            (index === 1 ? { borderBottom: "3px solid white" } :
-                                (index === 2 ? { borderBottom: "3px solid white" } :
-                                    (index === 3 ? { borderBottom: "3px solid white" } : ""))))
-                        : rotation === 270 ?
-                            (index === 0 ? { borderBottom: "3px solid white" } :
-                                (index === 1 ? { borderBottom: "3px solid white" } :
-                                    (index === 2 ? { borderBottom: "3px solid white" } :
-                                        (index === 3 ? { borderBottom: "3px solid white" } : ""))))
-                            : "") :
-                pieceName === "z" ? (rotation === 0 ?
-                    (index === 0 ? { borderBottom: "3px solid white" } :
-                        (index === 1 ? { borderBottom: "3px solid white" } :
-                            (index === 2 ? { borderBottom: "3px solid white" } :
-                                (index === 3 ? { borderBottom: "3px solid white" } : ""))))
-                    : rotation === 90 ?
-                        (index === 0 ? { borderBottom: "3px solid white" } :
-                            (index === 1 ? { borderBottom: "3px solid white" } :
-                                (index === 2 ? { borderBottom: "3px solid white" } :
-                                    (index === 3 ? { borderBottom: "3px solid white" } : ""))))
-                        : rotation === 180 ?
-                            (index === 0 ? { borderBottom: "3px solid white" } :
-                                (index === 1 ? { borderBottom: "3px solid white" } :
-                                    (index === 2 ? { borderBottom: "3px solid white" } :
-                                        (index === 3 ? { borderBottom: "3px solid white" } : ""))))
-                            : rotation === 270 ?
-                                (index === 0 ? { borderBottom: "3px solid white" } :
-                                    (index === 1 ? { borderBottom: "3px solid white" } :
-                                        (index === 2 ? { borderBottom: "3px solid white" } :
-                                            (index === 3 ? { borderBottom: "3px solid white" } : ""))))
-                                : "") : "";
+    const tcolor = "#f8a007";
+    const lcolor = "#1f0800";
+    const jcolor = "#1f0800";
+    const zcolor = "#f8a007";
 
+    const getBorderStyle = (borderTopColor, borderRightColor, borderBottomColor, borderLeftColor, margin, width, height, borderRadius) => {
+        return {
+            borderTopColor,
+            borderRightColor,
+            borderBottomColor,
+            borderLeftColor,
+            margin,
+            width,
+            height,
+            borderRadius
+        };
+    };
+
+    if (pieceName === "t") {
+        if (rotation === 0) {
+            if (index === 0) { return getBorderStyle(tcolor, "transparent", tcolor, tcolor, "5px 0px 5px 5px", "59px", "54px", "5px 0px 0px 5px "); }
+            else if (index === 1) { return getBorderStyle(tcolor, tcolor, "transparent", tcolor, "5px 5px 0px 5px", "54px", "59px", "5px 5px 0px 0px"); }
+            else if (index === 2) { return getBorderStyle(tcolor, tcolor, tcolor, "transparent", "5px 5px 5px 0px", "59px", "54px", "0px 5px 5px 0px"); }
+            else if (index === 3) { return getBorderStyle("transparent", "transparent", tcolor, "transparent", "0px 0px 5px 0px", "64px", "59px", "7px 7px 0px 0px"); }
+        }
+        else if (rotation === 90) {
+            if (index === 0) { return getBorderStyle(tcolor, "transparent", tcolor, tcolor, "5px 0px 5px 5px", "59px", "54px", "5px 0 0 5px"); }
+            else if (index === 1) { return getBorderStyle("transparent", tcolor, tcolor, tcolor, "0px 5px 5px 5px", "54px", "59px", "0 0 5px 5px"); }
+            else if (index === 2) { return getBorderStyle(tcolor, tcolor, "transparent", tcolor, "5px 5px 0px 5px", "54px", "59px", "5px 5px 0 0"); }
+            else if (index === 3) { return getBorderStyle("transparent", tcolor, "transparent", "transparent", "0px 5px 0px 0px", "59px", "64px", "7px 0 0 7px"); }
+        }
+        else if (rotation === 180) {
+            if (index === 0) { return getBorderStyle(tcolor, "transparent", tcolor, tcolor, "5px 0px 5px 5px", "59px", "54px", "5px 0 0 5px"); }
+            else if (index === 1) { return getBorderStyle("transparent", tcolor, tcolor, tcolor, "0px 5px 5px 5px", "54px", "59px", "0 0 5px 5px"); }
+            else if (index === 2) { return getBorderStyle(tcolor, tcolor, tcolor, "transparent", "5px 5px 5px 0px", "59px", "54px", " 0 5px 5px 0"); }
+            else if (index === 3) { return getBorderStyle(tcolor, "transparent", "transparent", "transparent", "5px 5px 0px 0px", "64px", "59px", "0 0 7px 7px"); }
+        }
+        else if (rotation === 270) {
+            if (index === 0) { return getBorderStyle(tcolor, tcolor, "transparent", tcolor, "5px 5px 0px 5px", "54px", "59px", "5px 5px 0 0"); }
+            else if (index === 1) { return getBorderStyle(tcolor, tcolor, tcolor, "transparent", "5px 5px 5px 0px", "59px", "54px", " 0 5px 5px 0"); }
+            else if (index === 2) { return getBorderStyle("transparent", "transparent", "transparent", tcolor, "0px 0px 0px 5px", "59px", "64px", " 0 7px 7px 0"); }
+            else if (index === 3) { return getBorderStyle("transparent", tcolor, tcolor, tcolor, "0px 5px 5px 5px", "54px", "59px", "0 0 5px 5px"); }
+        }
+    }
+    else if (pieceName === "l") {
+        if (rotation === 0) {
+            if (index === 0) return getBorderStyle("transparent", lcolor, "transparent", lcolor, "0px 5px 0px 5px", "54px", "64px", "0 0");
+            else if (index === 1) return getBorderStyle(lcolor, lcolor, "transparent", lcolor, "5px 5px 0px 5px", "54px", "59px", "5px 5px 0 0");
+            else if (index === 2) return getBorderStyle(lcolor, lcolor, lcolor, "transparent", "5px 5px 5px 0px", "59px", "54px", "0 5px 5px 0");
+            else if (index === 3) return getBorderStyle("transparent", "transparent", lcolor, lcolor, "0px 0px 5px 5px", "59px", "59px", "0 7px 0 5px");
+        }
+        else if (rotation === 90) {
+            if (index === 0) return getBorderStyle(lcolor, "transparent", lcolor, lcolor, "5px 0px 5px 5px", "59px", "54px", "5px 0 0 5px");
+            else if (index === 1) return getBorderStyle(lcolor, "transparent", lcolor, "transparent", "5px 0px 5px 0px", "64px", "54px", "0 0 0 0");
+            else if (index === 2) return getBorderStyle(lcolor, lcolor, "transparent", lcolor, "5px 5px 0px 5px", "54px", "59px", "5px 5px 0 0");
+            else if (index === 3) return getBorderStyle("transparent", lcolor, lcolor, "transparent", "0px 5px 5px 0px", "59px", "59px", "7px 0 5px 0");
+        }
+        else if (rotation === 180) {
+            if (index === 0) return getBorderStyle(lcolor, "transparent", lcolor, lcolor, "5px 0px 5px 5px", "59px", "54px", "5px 0 0 5px");
+            else if (index === 1) return getBorderStyle("transparent", lcolor, "transparent", lcolor, "0px 5px 0px 5px", "54px", "64px", "0 0");
+            else if (index === 2) return getBorderStyle("transparent", lcolor, lcolor, lcolor, "0px 5px 5px 5px", "54px", "59px", "0 0 5px 5px");
+            else if (index === 3) return getBorderStyle(lcolor, lcolor, "transparent", "transparent", "5px 5px 0px 0px", "59px", "59px", "0 5px 0 7px");
+        }
+        else if (rotation === 270) {
+            if (index === 0) return getBorderStyle("transparent", lcolor, lcolor, lcolor, "0px 5px 5px 5px", "54px", "59px", " 0 0 5px 5px");
+            else if (index === 1) return getBorderStyle(lcolor, "transparent", lcolor, "transparent", "5px 0px 5px 0px", "64px", "54px", "0 0");
+            else if (index === 2) return getBorderStyle(lcolor, lcolor, lcolor, "transparent", "5px 5px 5px 0px", "59px", "54px", " 0 5px 5px 0 ");
+            else if (index === 3) return getBorderStyle(lcolor, "transparent", "transparent", lcolor, "5px 0px 0px 5px", "59px", "59px", "5px 0 7px 0 ");
+        }
+    }
+    else if (pieceName === "j") {
+        if (rotation === 0) {
+            if (index === 0) return getBorderStyle(jcolor, "transparent", jcolor, jcolor, "5px 0px 5px 5px", "59px", "54px", "5px 0 0 5px");
+            else if (index === 1) return getBorderStyle("transparent", jcolor, jcolor, "transparent", "0px 5px 5px 0px", "59px", "59px", "7px 0 5px 0");
+            else if (index === 2) return getBorderStyle(jcolor, jcolor, "transparent", jcolor, "5px 5px 0px 5px", "54px", "59px", "5px 5px 0 0");
+            else if (index === 3) return getBorderStyle("transparent", jcolor, "transparent", jcolor, "0px 5px 0px 5px", "54px", "64px", " 0 0 ");
+        }
+        else if (rotation === 90) {
+            if (index === 0) return getBorderStyle(jcolor, "transparent", jcolor, jcolor, "5px 0px 5px 5px", "59px", "54px", "5px 0 0 5px");
+            else if (index === 1) return getBorderStyle(jcolor, jcolor, "transparent", "transparent", "5px 5px 0px 0px", "59px", "59px", "0 5px 0 7px");
+            else if (index === 2) return getBorderStyle("transparent", jcolor, jcolor, jcolor, "0px 5px 5px 5px", "54px", "59px", "0 0 5px 5px");
+            else if (index === 3) return getBorderStyle(jcolor, "transparent", jcolor, "transparent", "5px 0px 5px 0px", "64px", "54px", "0 0");
+        }
+        else if (rotation === 180) {
+            if (index === 0) return getBorderStyle("transparent", jcolor, jcolor, jcolor, "0px 5px 5px 5px", "54px", "59px", "0 0 5px 5px");
+            else if (index === 1) return getBorderStyle(jcolor, "transparent", "transparent", jcolor, "5px 0px 0px 5px", "59px", "59px", "5px 0 7px 0");
+            else if (index === 2) return getBorderStyle(jcolor, jcolor, jcolor, "transparent", "5px 5px 5px 0px", "59px", "54px", " 0 5px 5px 0");
+            else if (index === 3) return getBorderStyle("transparent", jcolor, "transparent", jcolor, "0px 5px 0px 5px", "54px", "64px", " 0 0 ");
+        }
+        else if (rotation === 270) {
+            if (index === 0) return getBorderStyle("transparent", "transparent", jcolor, jcolor, "0px 0px 5px 5px", "59px", "59px", " 0 7px 0 5px");
+            else if (index === 1) return getBorderStyle(jcolor, jcolor, "transparent", jcolor, "5px 5px 0px 5px", "54px", "59px", "5px 5px 0 0");
+            else if (index === 2) return getBorderStyle(jcolor, jcolor, jcolor, "transparent", "5px 5px 5px 0px", "59px", "54px", " 0 5px 5px 0");
+            else if (index === 3) return getBorderStyle(jcolor, "transparent", jcolor, "transparent", "5px 0px 5px 0px", "64px", "54px", "0 0 ");
+        }
+    }
+    else if (pieceName === "z") {
+        if (rotation === 0) {
+            if (index === 0) return getBorderStyle(zcolor, zcolor, "transparent", "transparent", "5px 5px 0px 0px", "59px", "59px", " 0 5px 0 7px");
+            else if (index === 1) return getBorderStyle("transparent", "transparent", "transparent", zcolor, "0px 0px 0px 5px", "59px", "64px", "0 7px 7px 0");
+            else if (index === 2) return getBorderStyle("transparent", zcolor, zcolor, zcolor, "0px 5px 5px 5px", "54px", "59px", " 0 0 5px 5px");
+            else if (index === 3) return getBorderStyle(zcolor, "transparent", zcolor, zcolor, "5px 0px 5px 5px", "59px", "54px", " 5px 0 0 5px");
+            else if (index === 4) return getBorderStyle(zcolor, zcolor, zcolor, "transparent", "5px 5px 5px 0px", "59px", "54px", " 0 5px 5px 0");
+        }
+        else if (rotation === 90) {
+            if (index === 0) return getBorderStyle(zcolor, "transparent", "transparent", zcolor, "5px 0px 0px 5px", "59px", "59px", "5px 0 7px 0");
+            else if (index === 1) return getBorderStyle("transparent", "transparent", zcolor, "transparent", "0px 0px 5px 0px", "64px", "59px", "7px 7px 0 7px");
+            else if (index === 2) return getBorderStyle(zcolor, zcolor, zcolor, "transparent", "5px 5px 5px 0px", "59px", "54px", " 0 5px 5px 0");
+            else if (index === 3) return getBorderStyle("transparent", zcolor, zcolor, zcolor, "0px 5px 5px 5px", "54px", "59px", " 0 0 5px 5px");
+            else if (index === 4) return getBorderStyle(zcolor, zcolor, "transparent", zcolor, "5px 5px 0px 5px", "54px", "59px", " 5px 5px 0 0");
+        }
+        else if (rotation === 180) {
+            if (index === 0) return getBorderStyle(zcolor, zcolor, "transparent", zcolor, "5px 5px 0px 5px", "54px", "59px", "5px 5px 0 0");
+            else if (index === 1) return getBorderStyle("transparent", zcolor, "transparent", "transparent", "0px 5px 0px 0px", "59px", "64px", "7px 0 0 7px",);
+            else if (index === 2) return getBorderStyle("transparent", "transparent", zcolor, zcolor, "0px 0px 5px 5px", "59px", "59px", "0 7px 0 5px");
+            else if (index === 3) return getBorderStyle(zcolor, zcolor, zcolor, "transparent", "5px 5px 5px 0px", "59px", "54px", "0 5px 5px 0");
+            else if (index === 4) return getBorderStyle(zcolor, "transparent", zcolor, zcolor, "5px 0px 5px 5px", "59px", "54px", "5px 0 0 5px");
+        }
+        else if (rotation === 270) {
+            if (index === 0) return getBorderStyle(zcolor, "transparent", zcolor, zcolor, "5px 0px 5px 5px", "59px", "54px", " 5px 0 0 5px");
+            else if (index === 1) return getBorderStyle(zcolor, "transparent", "transparent", "transparent", "5px 0px 0px 0px", "64px", "59px", " 0 0 7px 7px");
+            else if (index === 2) return getBorderStyle("transparent", zcolor, zcolor, "transparent", "0px 5px 5px 0px", "59px", "59px", "7px 0 5px 0 ");
+            else if (index === 3) return getBorderStyle("transparent", zcolor, zcolor, zcolor, "0px 5px 5px 5px", "54px", "59px", " 0 0 5px 5px");
+            else if (index === 4) return getBorderStyle(zcolor, zcolor, "transparent", zcolor, "5px 5px 0px 5px", "54px", "59px", " 5px 5px 0 0");
+        }
+    }
+
+    return getBorderStyle(tcolor, "transparent", tcolor, tcolor, "5px 0px 5px 5px", "59px", "54px", "5px 0px 0px 5px ");
 }

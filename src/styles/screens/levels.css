@@ -81,7 +81,7 @@
         gap: 5px;
         
         >article {
-            width: Calc(Calc(var(--width) - 30px) / 5);
+            width: Calc(Calc(var(--width) - 45px) / 5);
             height: Calc(Calc(var(--widt) - 180px) / 5);
             border-radius: 5px;
             margin-bottom: 5px;

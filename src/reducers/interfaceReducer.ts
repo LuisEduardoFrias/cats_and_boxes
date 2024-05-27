@@ -1,32 +1,49 @@
+import { Sound } from "../models/Sound"
 
 type Action =
-    { type: "ChangeStateViewLevels", isShow: boolean } |
-    { type: "ChangeStateViewSettings", isShow: boolean } |
-    { type: "ChangeStateViewPlay", isShow: boolean } |
-    { type: "ChangeStateViewMenuGame", isShow: boolean }
+    { type: "GoToLevelsView" } |
+    { type: "GoToSettingsView" } |
+    { type: "GoToHome" } |
+    { type: "GoToPlayView" } |
+    { type: "ShowMenuOfGame", isShow: boolean }|
+    { type: "ChangeMusic", music: Sound }|
+    { type: "ChangeSound", sound: Sound }
     ;
 
 export default function intefaceReducer(state: GetBox, actions: Action) {
     const _actions = {
-        ChangeStateViewLevels: () => {
+        GoToLevelsView: () => {
             return {
                 ...state,
-                viewLevels: actions.isShow,
-                viewPlay: !actions.isShow,
+                levelsView: true,
+                playView: false,
                 confetti: false,
                 menuGame: false,
                 tile_seleted: undefined,
                 old_tile_seleted: undefined,
             }
         },
-        ChangeStateViewSettings: () => {
-            return { ...state, viewSetting: actions.isShow }
+        GoToSettingsView: () => {
+            return { ...state, settingView: true }
         },
-        ChangeStateViewPlay: () => {
-            return { ...state, viewPlay: actions.isShow, viewlevels: !actions.isShow }
+        GoToHome: () => {
+            return {
+                ...state,
+                levelsView: false,
+                settingView: false,
+            }
         },
-        ChangeStateViewMenuGame: () => {
+        GoToPlayView: () => {
+            return { ...state, playView: true, levelsView: false }
+        },
+        ShowMenuOfGame: () => {
             return { ...state, menuGame: actions.isShow }
+        },
+        ChangeMusic: () => {
+            return { ...state, music: actions.music }
+        },
+        ChangeSound: () => {
+            return { ...state, sound: actions.sound }
         },
         default: () => null
     };

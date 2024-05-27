@@ -9,6 +9,8 @@ import GameMenu from "../components/GameMenu"
 import DrawnGats from "../components/DrawnGats"
 import DrawnTiles from "../components/DrawnTiles"
 import DrawnBoard from "../components/DrawnBoard"
+import Sound from "../components/Sound"
+import WindowSound from "../components/WindowSound"
 import { useSubscribeState } from "../subscribe_state/index"
 import { handleDragStart, handleDragMove, handleDragOver, handleDragEnd, } from "../helpers/playFunctionHelper"
 import "../styles/screens/play.css"
@@ -19,7 +21,7 @@ export default function Play() {
     const topMovements = levels[level].movements;
 
     const playMain = useMemo(() =>
-        <>
+        <WindowSound src={"../assets/sound/next_lever.wav"}>
             <DndContext
                 collisionDetection={closestCenter}
                 onDragStart={handleDragStart}
@@ -32,20 +34,22 @@ export default function Play() {
                     <DrawnGats level={level} />
                 </DrawnBoard>
             </DndContext>
-        </>, [level]
+        </WindowSound>, [level]
     )
 
     return (
         <div className="play">
             <div className="play-header">
-                <button tabindex={0} className="btn" onClick={() => dispatch({ type: "ChangeStateViewMenuGame", isShow: true })} ><img src="images/menu.png" atl="image of menu arrow" /></button>
+                <button tabindex={0} className="btn" onClick={() => dispatch({ type: "ShowMenuOfGame", isShow: true })} >
+                    <img src="images/menu.png" atl="image of menu arrow" />
+                </button>
                 <div>
                     <div>
                         <label>Level</label>
-                        <label>{level }</label>
+                        <label>{level}</label>
                     </div>
                     <div>
-                        <label>Gats in box</label>
+                        <label>Gats in boxes</label>
                         <label>{gatsInBixes.length}</label>
                     </div>
                     <div>
@@ -55,7 +59,11 @@ export default function Play() {
                 </div>
             </div>
             <div className="play-main">
-                {confetti && <NextMenu level={level + 1} />}
+                {confetti &&
+                    /*  <Sound src={"../assets/sound/next_lever.wav"}>
+                      </Sound>*/
+                    <NextMenu level={level + 1} />
+                }
                 {menuGame && <GameMenu />}
                 {playMain}
             </div>

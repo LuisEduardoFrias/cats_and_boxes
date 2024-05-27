@@ -6,8 +6,9 @@ import { Grid } from "../models/Grid.ts"
 
 //add element position in the victual virtualGrid
 export function insertGatsTilesPositionsInGridHelper(level: number): (Grid & null)[] {
-    const virtualGrid: (Grid & null)[] = new Array(24).fill(null)
+    const virtualGrid: (Grid & null)[] = new Array(25).fill(null)
     //add gats position in the victual virtualGrid
+
     levels[level].gats_position.forEach(e =>
         virtualGrid[getIndexByPoint(e)] = {
             point: e.point,
@@ -16,8 +17,7 @@ export function insertGatsTilesPositionsInGridHelper(level: number): (Grid & nul
             hasTile: false,
             hasBox: false,
             data: e.name
-        }
-    )
+        })
 
     //add tiles position in the victual virtualGrid
     Reflect.ownKeys(levels[level].tiles_position).forEach((key: string) => {
@@ -45,7 +45,7 @@ export function insertGatsTilesPositionsInGridHelper(level: number): (Grid & nul
 
 // Calcula el indice correspondiente según las cordenadas dadas;
 export function getIndexByPoint(coord) {
-    return ((5 - coord.point.y) * 5 + coord.point.x) - 1;
+    return (((5 - coord.point.y) * 5 + coord.point.x) - 1);
 }
 
 // Calcula el indice correspondiente de un tile de una pieza según las cordenadas dadas y el tipo de pieza;

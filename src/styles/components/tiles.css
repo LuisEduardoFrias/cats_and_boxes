@@ -2,6 +2,7 @@
 */
 
 .tile-container {
+    cursor: grabbing;
     perspective: 2000;
     perspective-origin: 200px 200px;
     transform-style: preserve-3d;
@@ -13,11 +14,20 @@
 }
 
 .tile-select .tile-piece {
+    box-shadow: 0 0 3px 1px white;
+    cursor: url("./images/hand_grab.png"), auto;
+    
+    img {
+        transform: scale(1.1);
+    }
+}
+
+.no-tile-select .tile-piece {
     opacity: 0.5;
     cursor: url("./images/hand_grab.png"), auto;
     
     img {
-        transform: scale(.9);
+        transform: scale(0.9);
     }
 }
 
@@ -39,34 +49,13 @@
     transform: translateZ(60px);
 }
 
-/*.l:has(div:hover) div {
-    border: 6px solid #d6c39f;
-    background-color: #d9b466;
-}
-
-.li:has(div:hover) div {
-    border: 6px solid #d6c39f;
-    background-color: #d9b466;
-}
-
-.z:has(div:hover) div {
-    border: 6px solid #d6c39f;
-    background-color: #d9b466;
-}
-
-*/
-
 /*
-
-.t:has(div:hover) .btn {
-    z-index: 999;
-    visibility: visible;
-}
-
-.t:has(btn:hover) div {
-    border: 6px solid #d6c39f;
-    background-color: #d9b466;
-}*/
+---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+---------------------------------------------------
+*/
 
 .tile-control-container {
     position: absolute;
@@ -89,12 +78,12 @@
     padding: 5px;
     width: 47px;
     height: 100%;
-    background-color: #57BEDDFF;
+    background-color: #f9bc00;
     color: black;
     border: 2px solid #414141;
     border-radius: 3px;
-    box-shadow: inset 1px 1px 3px 1px #218eaf,
-        inset -2px -2px 3px 1px #17657d;
+    box-shadow: inset 1px 1px 3px 1px #131313,
+        inset -2px -2px 3px 1px #131313;
     transform: scale(1);
 }
 
@@ -124,7 +113,7 @@
 }
 
 .tile-control-container .tile-control-btn:nth-child(3):hover {
-    background-color: #93d3e6;
+    background-color: #ba5400;
 }
 
 /*.tile-control-btn:hover {
@@ -136,14 +125,14 @@ background-color .tile-control-container .tile-control-btn:nth-child(3):active {
 }
 
 .tile-control-btn:active {
-    box-shadow: inset 1px 1px 3px 1px #218eaf,
-        inset -2px -2px 3px 1px #17657d;
+    box-shadow: inset 1px 1px 3px 1px #ba5400,
+        inset -2px -2px 3px 1px #131313;
     transform: scale(.9);
 }
 
 .tile-control-btn:disabled {
-    background-color: #218eaf;
-    box-shadow: inset 1px 1px 3px 1px #0f2329,
-        inset -2px -2px 3px 1px #0f2329;
+    background-color: #ba5400;
+    box-shadow: inset 1px 1px 3px 1px #131313,
+        inset -2px -2px 3px 1px #131313;
     transform: scale(1);
 }

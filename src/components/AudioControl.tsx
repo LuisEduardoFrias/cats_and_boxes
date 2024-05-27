@@ -1,39 +1,52 @@
 /***/
-import { useState, useEffect, ChangeEvent } from "react"
+import { Sound } from "../models/Sound"
+import { useState, ChangeEvent } from "react"
 
 type TAudioControlProps = {
     title: string,
-    icons: [string, string]
+    icons: [string, string],
+    volume: number,
+    check: boolean,
+    onchange: (obj: Sound) => void,
 }
 
-export default function AudioControl({ title, icons }: TAudioControlProps) {
-    const [volum, setVolum] = useState(40)
-    const [check, setCheck] = useState(true)
+export default function AudioControl({ title, icons, volume, check, onchange }: TAudioControlProps) {
+
+    const [_volume_, setVolum] = useState(volume)
+    const [_check_, setCheck] = useState(check)
 
     function handleVolum(event: ChangeEvent<HTMLInputElement>) {
-        const _volum = Number(event.target.value);
+        const _volume = Number(event.target.value);
 
-        if (check && _volum === 0) {
-            setCheck(false);
+        let check_ = _check_;
+
+        if (!_check_ && _volume === 0) {
+            check_ = true;
         }
-        else if (!check) {
-            setCheck(true);
+        else if (_check_) {
+            check_ = false;
         }
 
-        setVolum(_volum);
+        setCheck(check_)
+        setVolum(_volume);
+        onchange({ volume: _volume, muted: check_ })
     }
 
     function handleCheck(event: ChangeEvent<HTMLInputElement>) {
         const isCheck = Boolean(event.target.checked);
 
-        if (isCheck) {
-            setVolum(40)
+        let volume_ = _volume_;
+
+        if (!isCheck) {
+            volume_ = 40;
         }
         else {
-            setVolum(0)
+            volume_ = 0;
         }
 
         setCheck(isCheck)
+        setVolum(volume_);
+        onchange({ volume: volume_, muted: isCheck })
     }
 
     return (
@@ -41,11 +54,11 @@ export default function AudioControl({ title, icons }: TAudioControlProps) {
             <label>
                 {title}
                 <div>
-                    {!check && <img src={icons[0]} alt="image of sound icon" />}
-                    {check && <img src={icons[1]} alt="image of sound icon" />}
+                    {_check_ && <img src={icons[0]} alt="image of sound icon" />}
+                    {!_check_ && <img src={icons[1]} alt="image of sound icon" />}
                 </div>
-                <input tabindex={3} type="checkbox" checked={check} onChange={handleCheck} />
+                <input tabindex={3} type="checkbox" checked={_check_} onChange={handleCheck} />
             </label>
-            <input tabindex={4} type="range" value={volum} onChange={handleVolum} />
+            <input tabindex={4} type="range" value={_volume_} onChange={handleVolum} />
         </div>)
 }

@@ -9,7 +9,6 @@ import GameMenu from "../components/GameMenu"
 import DrawnGats from "../components/DrawnGats"
 import DrawnTiles from "../components/DrawnTiles"
 import DrawnBoard from "../components/DrawnBoard"
-import Sound from "../components/Sound"
 import WindowSound from "../components/WindowSound"
 import { useSubscribeState } from "../subscribe_state/index"
 import { handleDragStart, handleDragMove, handleDragOver, handleDragEnd, } from "../helpers/playFunctionHelper"
@@ -59,10 +58,7 @@ export default function Play() {
                 </div>
             </div>
             <div className="play-main">
-                {confetti &&
-                    /*  <Sound src={"../assets/sound/next_lever.wav"}>
-                      </Sound>*/
-                    <NextMenu level={level + 1} />
+                {confetti && <NextMenu level={level + 1} />
                 }
                 {menuGame && <GameMenu />}
                 {playMain}

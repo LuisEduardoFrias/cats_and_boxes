@@ -3,6 +3,7 @@ import { useDraggable } from '@dnd-kit/core'
 //import { restrictToWindowEdges } from '@dnd-kit/modifiers';
 import pieces from "../assets/jsons/pieces.json"
 import { CSS } from '@dnd-kit/utilities';
+import { selectAll } from "../models/SelectAll"
 import { useSubscribeState, dispatch } from "../subscribe_state/index"
 import { Point } from "../models/Point"
 import { Tile } from "../models/Tile"
@@ -11,13 +12,14 @@ import { getTileIndexByPoint, getIndexByPoint } from "../helpers/gridFunctionHel
 import "../styles/components/tiles.css"
 
 export default function DrawnTiles() {
-    const [{ tile_seleted, boxChangeImg, tiles_position, release, virtualGrid }, _] = useSubscribeState(["tile_seleted", "boxChangeImg", "tiles_position", "release"])
-
+    const [{ tile_seleted, boxChangeImg, tiles_position, release, virtualGrid, selectAll }, _] = useSubscribeState(["tile_seleted", "boxChangeImg", "tiles_position", "release", "selectAll"])
+   
     return (
         <>
             {pieces.map((piece: Piece, index: number) => <DrawTile
                 key={index}
                 index={index}
+                selectAllforfilter={selectAll}
                 boxChangeImg={boxChangeImg}
                 piece={piece}
                 release={release}
@@ -32,13 +34,14 @@ export default function DrawnTiles() {
 type TDrawTileProps = {
     piece: Piece,
     index: number,
+    selectAllforfilter: selectAll,
     release: boolean,
     tile_seleted: string,
     tiles_position: any
 }
 
 //tile
-function DrawTile({ piece, boxChangeImg, index, release, tile_seleted, tiles_position }: TDrawTileProps) {
+function DrawTile({ piece, boxChangeImg, index, selectAllforfilter, release, tile_seleted, tiles_position }: TDrawTileProps) {
 
     //console.log("DrawTile boxChangeImg: " + JSON.stringify(boxChangeImg))
 
@@ -67,6 +70,7 @@ function DrawTile({ piece, boxChangeImg, index, release, tile_seleted, tiles_pos
 
     const tileStyle = {
         ...style,
+        filter: (selectAllforfilter !== selectAll.none && selectAllforfilter !== selectAll.pieces && selectAllforfilter !== selectAll.boxes) ? "blur(10px)" : "blur(0px)",
         position: "absolute",
         width: `${0}px`,
         height: `${0}px`,
@@ -84,6 +88,7 @@ function DrawTile({ piece, boxChangeImg, index, release, tile_seleted, tiles_pos
                 obj.tiles.map((o, ind: number) => <Pieces
                     key={ind}
                     piece={o}
+                    selectAllforfilter={selectAllforfilter}
                     gatsInBexes={getImgBox(boxChangeImg, o, point, rotation, piece.name, ind)}
                     refr={setNodeRef}
                     pieceName={piece.name}
@@ -120,6 +125,7 @@ type TPieces = {
     piece: any,
     gatsInBexes: string | null,
     refr: any
+    selectAllforfilter: selectAll,
     isSelected: boolean,
     rotation: number,
     pieceName: string,
@@ -130,17 +136,18 @@ type TPieces = {
 }
 
 //tile intermos
-function Pieces({ piece, gatsInBexes, refr, isSelected, rotation, pieceName, onclick, index, listeners, attributes }: TPieces) {
+function Pieces({ piece, gatsInBexes, selectAllforfilter, refr, isSelected, rotation, pieceName, onclick, index, listeners, attributes }: TPieces) {
 
     const color = pieceName === "t" ? "#1f0800" :
         (pieceName === "l" ? "#f8a007" :
             (pieceName === "j" ? "#f8a007" : "#1f0800"));
 
     const stylePiece = {
+        filter: (!piece.img.includes("box") && selectAllforfilter !== selectAll.none && selectAllforfilter === selectAll.boxes) ? "blur(2px)" : "blur(0px)",
         position: "absolute",
         border: `0px solid `,
-        left: `${(piece.x) * 64 + (isSelected ? 5:0)}px`,
-        bottom: `${(piece.y) * 64 + (isSelected ? 5 : 0) }px`,
+        left: `${(piece.x) * 64 + (isSelected ? 5 : 0)}px`,
+        bottom: `${(piece.y) * 64 + (isSelected ? 5 : 0)}px`,
         borderWidth: "3px",
         borderStyle: "solid",
         ...getShadowByPieces(pieceName, rotation, index),

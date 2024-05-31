@@ -3,6 +3,7 @@ import levels from "./assets/jsons/levels.json"
 import { levelState } from "./models/Level"
 import intefaceReducer from "./reducers/interfaceReducer"
 import domainReducer from "./reducers/domainReducer"
+import { selectAll } from "./models/SelectAll"
 import { DomainGlobalState } from "./models/DomainGlobalState"
 import { InterfaceGlobalState } from "./models/InterfaceGlobalState"
 import Game from "./screens/Game"
@@ -24,12 +25,14 @@ const intInitialState: InterfaceGlobalState = {
     boxChangeImg: [],
     confetti: false,
     release: true,
-    sound: { volume: 40, muted: true },
-    music: { volume: 40, muted: true },
+    sound: { volume: 40, muted: false },
+    music: { volume: 40, muted: false },
     menuGame: false,
     levelsView: false,
     playView: false,
-    settingView: false
+    settingView: false,
+    tutorialView: false,
+    selectAll: selectAll.none,
 }
 
 const initialState: DomainGlobalState & InterfaceGlobalState = {

@@ -10,12 +10,20 @@
 }
 
 .seleted_tile {
-    transform: translateZ(95px);
+    z-index: 99999;
+    transform: translateZ(100px);
+}
+
+.tile-select {
+    z-index: 99999;
+    transform: translateZ(100px);
 }
 
 .tile-select .tile-piece {
     box-shadow: 0 0 3px 1px white;
     cursor: url("./images/hand_grab.png"), auto;
+    transform: translateZ(90px);
+    z-index: 99999;
     
     img {
         transform: scale(1.1);
@@ -24,6 +32,8 @@
 
 .no-tile-select .tile-piece {
     opacity: 0.5;
+    z-index: 999;
+    transform: translateZ(90px);
     cursor: url("./images/hand_grab.png"), auto;
     
     img {

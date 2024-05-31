@@ -2,6 +2,7 @@
 import Play from "./Play"
 import Levels from "./Levels"
 import Settings from "./Settings"
+import Tutorial from "./Tutorial"
 import Menu from "../components/Menu"
 import WindowSound from "../components/WindowSound"
 import OpenClose from "../components/OpenClose"
@@ -10,7 +11,7 @@ import { useSubscribeState } from "../subscribe_state/index"
 import "../styles/screens/game.css"
 
 export default function Game() {
-    const [{ levelsView, settingView, playView, confetti }, _] = useSubscribeState(["levelsView", "settingView", "playView", "confetti"])
+    const [{ levelsView, settingView, playView, tutorialView, confetti }, _] = useSubscribeState(["levelsView", "settingView", "playView", "tutorialView", "confetti"])
 
     return (
         <div className="game">
@@ -20,10 +21,14 @@ export default function Game() {
                 </h1>
             </header>
             <main>
-                <OpenClose notInitialize={true} dependecies={[levelsView, settingView, playView]}>
-                    {(!playView && !settingView && !levelsView) &&
+                <OpenClose notInitialize={true} dependecies={[levelsView, settingView, playView, tutorialView]}>
+                    {(!playView && !tutorialView) &&
                         <WindowSound src="/sound/music.mp3" >
-                            <Menu />
+                            {(!playView && !settingView && !levelsView && !tutorialView) &&
+                                <Menu />
+                            }
+                            {levelsView && <Levels />}
+                            {settingView && <Settings />}
                         </WindowSound>
                     }
                     {playView &&
@@ -31,12 +36,11 @@ export default function Game() {
                             <Play />
                         </WindowSound>
                     }
-                    {levelsView &&
-                        <WindowSound src="/sound/music.mp3" >
-                            <Levels />
+                    {tutorialView &&
+                        <WindowSound src="/sound/play.mp3" >
+                            <Tutorial />
                         </WindowSound>
                     }
-                    {settingView && <Settings />}
                 </OpenClose>
             </main >
             {confetti && <img src={`/images/confetti.gif`} className="game-confetti" alt="image of confetti" />}

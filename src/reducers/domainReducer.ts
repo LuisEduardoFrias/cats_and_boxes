@@ -2,6 +2,9 @@ import { Point } from "../models/Point"
 import { Grid } from "../models/Grid"
 import { GatInBox } from "../models/GatInBox"
 import { Tile } from "../models/Tile"
+import { selectAll } from "../models/SelectAll"
+import { Level, levelState } from "../models/Level.ts"
+import { levelBuildHelper } from "../helpers/levelBuilderFunctionHelper"
 import pieces from "../assets/jsons/pieces.json"
 import levels from "../assets/jsons/levels.json"
 import { pieceShadowPosition } from "../helpers/playFunctionHelper.ts"
@@ -11,8 +14,9 @@ import { checkBoxesThatChangeImage, getShadowForSelectPiece, getIndexOfAllMosaic
 type Action =
     { type: "InitializeGame", level: number, virtualGrid: (Grid & null)[25], tiles_position: Tile[4] } |
     { type: "ChangeRotation", rotation: 0 | 90 | 180 | 270, tile_name: string } |
-    { type: "SeletTile", tile: string } |
-    { type: "DeseletTile", tile: undefined } |
+    { type: "SeletTile", tile: Tile } |
+    { type: "DeseletTile" } |
+    { type: "GameReset" } |
     { type: "Move", position: Point, tile: string } |
     { type: "ChangeEditedGrids", gridIds: any }
     ;
@@ -26,6 +30,7 @@ export default function domainReducer(state: GetBox, actions: Action) {
                 levelsView: false,
                 movements: 0,
                 gatsInBixes: [],
+                selectAll: selectAll.none,
                 boxChangeImg: [],
                 shadow_in_grid: [],
                 confetti: false,
@@ -78,6 +83,7 @@ export default function domainReducer(state: GetBox, actions: Action) {
                 const tiles_position = structuredClone(state.tiles_position);
                 const boxChangeImg = structuredClone(state.boxChangeImg);
                 let gatsInBixes = structuredClone(state.gatsInBixes);
+                let levels = structuredClone(state.levels);
                 let movements = state.movements;
                 let confetti: boolean = false;
 
@@ -100,7 +106,7 @@ export default function domainReducer(state: GetBox, actions: Action) {
                     }
 
                     if (gatsInBixes.length === 5) {
-                        confetti = true;
+                        confetti = completedLevel(state.level, levels)
                     }
                 }
 
@@ -109,6 +115,7 @@ export default function domainReducer(state: GetBox, actions: Action) {
                     boxChangeImg: newBoxChangeImg,
                     movements,
                     confetti,
+                    levels,
                     tiles_position
                 }
             }
@@ -131,37 +138,43 @@ export default function domainReducer(state: GetBox, actions: Action) {
                 let gatsInBixes = structuredClone(state.gatsInBixes);
                 const tiles_position = structuredClone(state.tiles_position);
                 const boxChangeImg = structuredClone(state.boxChangeImg);
+                let levels = structuredClone(state.levels);
                 const tile_seleted = state.tile_seleted;
                 const virtualGrid = state.virtualGrid;
                 let movements = state.movements;
                 let confetti = false;
 
-                gatsInBixes = checkCatAndBoxCollisions(tile_seleted.name, gatsInBixes, tiles_position, virtualGrid);
+                if (tile_seleted) {
+                    gatsInBixes = checkCatAndBoxCollisions(tile_seleted.name, gatsInBixes, tiles_position, virtualGrid);
 
-                const newgrid = insertPieceInVictualGrid(virtualGrid, { ...tiles_position[tile_seleted.name], name: tile_seleted.name });
-                const newBoxChangeImg = checkBoxesThatChangeImage(tile_seleted, tiles_position, virtualGrid, boxChangeImg);
+                    const newgrid = insertPieceInVictualGrid(virtualGrid, { ...tiles_position[tile_seleted.name], name: tile_seleted.name });
+                    const newBoxChangeImg = checkBoxesThatChangeImage(tile_seleted, tiles_position, virtualGrid, boxChangeImg);
 
-                const point = tiles_position[tile_seleted.name].point;
-                const old_point = tile_seleted.point;
-                const rotation = tiles_position[tile_seleted.name].rotation;
-                const old_rotation = tile_seleted.rotation;
+                    const point = tiles_position[tile_seleted.name].point;
+                    const old_point = tile_seleted.point;
+                    const rotation = tiles_position[tile_seleted.name].rotation;
+                    const old_rotation = tile_seleted.rotation;
 
-                if (JSON.stringify(point) != JSON.stringify(old_point) || rotation !== old_rotation) {
-                    movements++;
+                    if (JSON.stringify(point) != JSON.stringify(old_point) || rotation !== old_rotation) {
+                        movements++;
+                    }
+
+                    if (gatsInBixes.length === 5) {
+                        confetti = completedLevel(state.level, levels)
+                    }
+
+                    return {
+                        movements,
+                        confetti,
+                        levels,
+                        gatsInBixes,
+                        shadow_in_grid: [],
+                        boxChangeImg: newBoxChangeImg,
+                        virtualGrid: newgrid,
+                    };
                 }
 
-                if (gatsInBixes.length === 5) {
-                    confetti = true;
-                }
-
-                return {
-                    movements,
-                    confetti,
-                    gatsInBixes,
-                    shadow_in_grid: [],
-                    boxChangeImg: newBoxChangeImg,
-                    virtualGrid: newgrid,
-                };
+                return {}
             }
 
             return {
@@ -202,10 +215,38 @@ export default function domainReducer(state: GetBox, actions: Action) {
             return { ...state, shadow_in_grid: [...actions.gridIds] }
         },
         //
+        //reset levels
+        GameReset: () => {
+
+            const put = {
+                movements: 0,
+                gatsInBixes: [],
+                boxChangeImg: [],
+                shadow_in_grid: [],
+                tile_seleted: undefined,
+                menuGame: false,
+                confetti: false,
+                selectAll: selectAll.none,
+                ...levelBuildHelper(state.level)
+            }
+
+            return { ...state, ...put }
+        },
+        //
         default: () => null
     };
 
     return (_actions[actions.type] || _actions["default"])();
+}
+
+function completedLevel(level: number, levels: Level[]) {
+    const confetti = true;
+    levels[level - 1] = { level: level - 1, state: levelState.completed };
+
+    const index = levels.findIndex(e => e.state === levelState.desactivated)
+    levels[index] = { level: levels[index].level, state: levelState.activated };
+
+    return confetti;
 }
 
 function insertPieceInVictualGrid(virtualGrid: Grid[25], tile_seleted: Tile) {

@@ -4,10 +4,12 @@ import useSuperState from "../domain/use_super_state";
 
 export default function Sound({
     children,
-    src
+    src,
+    className,
 }: {
     children: React.ReactNode;
     src: string;
+    className: string;
 }) {
     const [{ sound }, _] = useSubscribeState(["sound"]);
     const audioRef = useRef<HTMLAudioElement>(null);
@@ -21,7 +23,7 @@ export default function Sound({
     }, []);
 
     return (
-        <div style={{ width: "100%", height: "100%" }}>
+        <div className={className} style={{ width: "100%", height: "100%" }}>
             {children}
             <audio ref={audioRef} autoPlay src={src} controls={false}></audio>
         </div>

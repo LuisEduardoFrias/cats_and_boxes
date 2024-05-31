@@ -130,6 +130,12 @@
     filter: grayscale(80%);
 }
 
+.complete-box {
+    background-image: url('/images/open_box.webp');
+    border: 4px solid #9a9200;
+    filter: contrast(200%);
+}
+
 .select-box {
     background-color: #4e10e0;
     border: 4px solid var(--rose-1st);

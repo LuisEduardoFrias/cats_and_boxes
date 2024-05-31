@@ -12,7 +12,7 @@ export default function Levers() {
     }
 
     function getClassName(obj: Level) {
-        return `${obj.state === levelState.desactivated ? "close-box" : "open-box"} ${obj.level === level ? "select-box" : ""}`
+        return `${obj.state === levelState.desactivated ? "close-box" : obj.state === levelState.activated ? "open-box" : "complete-box"} ${obj.level === level ? "select-box" : ""}`
     }
 
     return (

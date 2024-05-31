@@ -1,13 +1,17 @@
 import { Sound } from "../models/Sound"
+import type { selectAll } from "../models/SelectAll"
+import { levelBuildHelper } from "../helpers/levelBuilderFunctionHelper"
 
 type Action =
     { type: "GoToLevelsView" } |
     { type: "GoToSettingsView" } |
     { type: "GoToHome" } |
     { type: "GoToPlayView" } |
-    { type: "ShowMenuOfGame", isShow: boolean }|
-    { type: "ChangeMusic", music: Sound }|
-    { type: "ChangeSound", sound: Sound }
+    { type: "ShowMenuOfGame", isShow: boolean } |
+    { type: "ChangeMusic", music: Sound } |
+    { type: "ChangeSound", sound: Sound } |
+    { type: "GoToTutorialView", isShow: Sound } |
+    { type: "SelectAll", SelectAll: selectAll }
     ;
 
 export default function intefaceReducer(state: GetBox, actions: Action) {
@@ -33,6 +37,21 @@ export default function intefaceReducer(state: GetBox, actions: Action) {
                 settingView: false,
             }
         },
+        GoToTutorialView: () => {
+
+            const put = {
+                movements: 0,
+                gatsInBixes: [],
+                boxChangeImg: [],
+                shadow_in_grid: [],
+                confetti: false,
+                tile_seleted: undefined,
+                level: 4,
+                ...levelBuildHelper(4)
+            }
+
+            return { ...state, ...put, tutorialView: actions.isShow }
+        },
         GoToPlayView: () => {
             return { ...state, playView: true, levelsView: false }
         },
@@ -44,6 +63,9 @@ export default function intefaceReducer(state: GetBox, actions: Action) {
         },
         ChangeSound: () => {
             return { ...state, sound: actions.sound }
+        },
+        SelectAll: () => {
+            return { ...state, selectAll: actions.SelectAll }
         },
         default: () => null
     };

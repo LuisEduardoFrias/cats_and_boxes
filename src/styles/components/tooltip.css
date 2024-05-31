@@ -1,0 +1,52 @@
+/***/
+
+.constiner-tooltop {
+    position: absolute;
+    z-index: 999999999999999;
+    transform: translateZ(160px);
+    border: 0px solid black;
+    width: 120px;
+    height: 90px;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.tooltop {
+    width: 120px;
+    height: 70px;
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: #ffffffb2;
+    box-shadow: 2px 2px 3px 1px black;
+    padding: 2px;
+    overflow-y: scroll;
+}
+
+.row {
+    position: absolute;
+    z-index: 99;
+    width: 0;
+    height: 0;
+    background-color: transparent;
+    
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid #ffffff;
+}
+
+.btn-next {
+    position: sticky;
+    
+    width: 40px;
+    height: 25px;
+    border-radius: 3px;
+    border: 1px solid black;
+    margin-inline-end: 5px;
+}
+
+.btn-next:active {
+    transform: scale(0.8);
+}

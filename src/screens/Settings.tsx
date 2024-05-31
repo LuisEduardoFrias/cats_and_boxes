@@ -7,15 +7,12 @@ import "../styles/screens/settings.css";
 export default function Settings() {
     const [{ sound, music }, _] = useSubscribeState(["sound", "music"])
 
-        console.log("state: " + JSON.stringify(music))
-
     function handleChangeMelody(obj: Sound) {
-        console.log("change: " + JSON.stringify(obj))
         dispatch({ type: "ChangeMusic", music: obj })
     }
 
     function handleChangeSound(obj: Sound) {
-        //dispatch({ type: "ChangeSound", sound: obj })
+        dispatch({ type: "ChangeSound", sound: obj })
     }
 
     return (

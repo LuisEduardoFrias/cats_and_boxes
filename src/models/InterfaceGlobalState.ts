@@ -1,11 +1,12 @@
-import { Lever } from './Lever'
+import { Level } from './Level'
 import { Tile } from './Tile'
 import { Sound } from './Tile'
+import type { selectAll } from "./SelectAll"
 
 export type InterfaceGlobalState = {
     tile_seleted: Tile | undefined,
     old_tile_seleted: Tile | undefined,
-    levers: Lever[],
+    levels: Level[],
     shadow_in_grid: number[],
     boxChangeImg: [],//tile index img
     confetti: boolean,
@@ -15,5 +16,7 @@ export type InterfaceGlobalState = {
     music: Sound,
     levelsView: boolean,
     playView: boolean,
-    settingView: boolean
+    settingView: boolean,
+    tutorialView: boolean,
+    selectAll: selectAll,
 }

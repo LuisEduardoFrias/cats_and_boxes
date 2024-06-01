@@ -1,212 +1,255 @@
+/***/
+import levels from "../assets/jsons/levels.json"
 import { Point } from "../models/Point"
 import { Grid } from "../models/Grid"
 import { Tile } from "../models/Tile"
-import pieces from "../assets/jsons/pieces.json"
-import levels from "../assets/jsons/levels.json"
-import { getTileIndexByPoint, getIndexByPoint } from "../helpers/gridFunctionHelper"
-//import { handleCollisionWithGats } from "../helpers/helper_reducer"
+import { selectAll } from "../models/SelectAll"
+import { levelBuildHelper } from "../helpers/levelBuilderFunctionHelper.ts"
+import {
+    checkBoxesThatChangeImage,
+    getShadowForSelectPiece,
+    getIndexOfAllMosac,
+    checkCollisionsForPartDeselection,
+    completedLevel,
+    insertPieceInVictualGrid,
+    removePieceForGrid,
+    checkCatAndBoxCollisions,
+} from "../helpers/reducerFunctionHelper.ts"
 
 type Action =
-    { type: "InitializeGame", level: number, grid: (Grid & null)[25], tiles_position: Tile[4] } |
+    { type: "InitializeGame", level: number, virtualGrid: (Grid & null)[25], tiles_position: Tile[4] } |
     { type: "ChangeRotation", rotation: 0 | 90 | 180 | 270, tile_name: string } |
-    { type: "SeletTile", tile: string | undefined } |
-    { type: "SelectLever", level: number } |
-    { type: "Move", position: Point, tile: string }
+    { type: "SelectTile", tile: Tile } |
+    { type: "DeselectTile" } |
+    { type: "GameReset" } |
+    { type: "Move", position: Point, tile: string } |
+    { type: "ChangeEditedGrids", gridIds: any }
     ;
 
 export default function domainReducer(state: GetBox, actions: Action) {
     const _actions = {
+        //inicializa cada nivel
         InitializeGame: () => {
             const put = {
-                viewPlay: true,
-                viewLevels: false,
+                playView: true,
+                levelsView: false,
                 movements: 0,
-                gatsInBixes: 0,
+                catsInBoxes: [],
+                selectAll: selectAll.none,
+                boxChangeImg: [],
+                shadow_in_grid: [],
                 confetti: false,
                 tile_seleted: undefined,
                 level: actions.level,
-                grid: actions.grid,
+                virtualGrid: actions.virtualGrid,
                 tiles_position: actions.tiles_position
             }
 
             return { ...state, ...put }
         },
+        //
+        // rota la pieza
         ChangeRotation: () => {
             const tiles_position = structuredClone(state.tiles_position);
+
             tiles_position[actions.tile_name].rotation = actions.rotation;
+            //funcionalidades a tener en cuenta al momento de rotar
+            const obj = () => {
+                let catsInBoxes = structuredClone(state.catsInBoxes);
+                const virtualGrid = structuredClone(state.virtualGrid);
+                const tile_seleted = structuredClone(state.tile_seleted);
+                const boxChangeImg = structuredClone(state.boxChangeImg);
 
-            let grid = structuredClone(state.grid);
-            let gatsInBixes = state.gatsInBixes;
-            const tile_seleted = structuredClone(state.tile_seleted);
+                const release = checkCollisionsForPartDeselection(tile_seleted.name, tiles_position, virtualGrid);
+                const newBoxChangeImg = checkBoxesThatChangeImage(tile_seleted, tiles_position, virtualGrid, boxChangeImg);
+                catsInBoxes = checkCatAndBoxCollisions(tile_seleted.name, catsInBoxes, tiles_position, virtualGrid);
 
-            // const tiles_position = structuredClone(state.tiles_position);
+                const shadow_in_grid = getShadowForSelectPiece({ ...tiles_position[actions.tile_name], name: actions.tile_name })
 
-
-            grid = removePieceForGrid(grid, tile_seleted.name);
-
-            const release = checkColitionForRelease(tile_seleted, tiles_position, grid, actions.tile_name);
-            const gib = checkColitionWithGat(tile_seleted, tiles_position, grid, actions.tile_name);
-
-            gatsInBixes += gib === -1 && gatsInBixes === 0 ? 0 : gib;
-
-
-            /*  const updated_pieces = handleCollisionWithGats(
-                  structuredClone(state.pieces),
-                  structuredClone(state.gats_position),
-                  tiles_position[actions.tile_name],
-                  actions.tile_name);
-  */
-            //  const newState = { pieces: updated_pieces, edited_grids: [] };
-            return { ...state, tiles_position, gatsInBixes, edited_grids: [], grid, release };
-        },
-        SeletTile: () => {
-            let movements = state.movements;
-            let gatsInBixes = state.gatsInBixes;
-
-            let release = state.release;
-            const grid = state.grid;
-            let old_tile_seleted = state.old_tile_seleted;
-            let tile_seleted = state.tile_seleted;
-            const tiles_position = structuredClone(state.tiles_position);
-            let confetti = false;
-
-            if (old_tile_seleted)
-                // insertPieceInVictualGrid(grid, old_tile_seleted, state.level);
-
-                if (release) old_tile_seleted = actions.tile;
-
-            if (!release) {
-                tiles_position[old_tile_seleted.name] = old_tile_seleted;
-                old_tile_seleted = actions.tile;
-                release = true;
+                return { catsInBoxes, release, shadow_in_grid, boxChangeImg: newBoxChangeImg }
             }
 
-            if (!actions.tile) {
-                movements++;
-                if (gatsInBixes === 5) {
-                    confetti = true;
+            return { ...state, ...obj(), tiles_position };
+        },
+        //
+        //selecciona una pieza
+        SelectTile: () => {
+            const virtualGrid = structuredClone(state.virtualGrid);
+            // let old_tile_seleted = structuredClone(state.old_tile_seleted);
+            let release: boolean = state.release;
+            let tile_seleted: Tile = state.tile_seleted;
+
+            let newgrid = removePieceForGrid(virtualGrid, actions.tile.name);
+
+            //funcionalidades a tener en cuenta al momento de rotar
+            const obj = () => {
+                if (tile_seleted === undefined) return {}
+
+                const tiles_position = structuredClone(state.tiles_position);
+                const boxChangeImg = structuredClone(state.boxChangeImg);
+                let catsInBoxes = structuredClone(state.catsInBoxes);
+                let levels = structuredClone(state.levels);
+                let movements = state.movements;
+                let confetti: boolean = false;
+
+                if (!release) {
+                    tiles_position[tile_seleted.name] = tile_seleted;
+                }
+
+                catsInBoxes = checkCatAndBoxCollisions(tile_seleted.name, catsInBoxes, tiles_position, virtualGrid);
+                newgrid = insertPieceInVictualGrid(newgrid, { ...tiles_position[tile_seleted.name], name: tile_seleted.name });
+                const newBoxChangeImg = checkBoxesThatChangeImage(tile_seleted, tiles_position, virtualGrid, boxChangeImg);
+
+                if (release) {
+                    const point = tiles_position[tile_seleted.name].point;
+                    const old_point = tile_seleted.point;
+                    const rotation = tiles_position[tile_seleted.name].rotation;
+                    const old_rotation = tile_seleted.rotation;
+
+                    if (JSON.stringify(point) != JSON.stringify(old_point) || rotation !== old_rotation) {
+                        movements++;
+                    }
+
+                    if (catsInBoxes.length === 5) {
+                        confetti = completedLevel(state.level, levels)
+                    }
+                }
+
+                return {
+                    catsInBoxes,
+                    boxChangeImg: newBoxChangeImg,
+                    movements,
+                    confetti,
+                    levels,
+                    tiles_position
                 }
             }
 
             return {
                 ...state,
-                release,
-                old_tile_seleted,
-                movements,
-                confetti,
-                tiles_position,
-                tile_seleted: actions.tile
+                ...obj(),
+                virtualGrid: newgrid,
+                release: true,
+                tile_seleted: actions.tile,
+                shadow_in_grid: getShadowForSelectPiece(actions.tile)
             };
         },
-        SelectLevel: () => {
-            /* const put = {
-                 viewPlay: true,
-                 viewLevels: false,
-                 level: actions.level,
-                 tiles_position: state.levers[actions.level].tiles_position,
-                 gats_position: state.levers[actions.level].gats_position
-             }
- 
-             return { ...state, ...put };*/
-            alert("select lever")
+        //
+        //deselecciona la pieza
+        DeselectTile: () => {
+
+            //funcionalidades a tener en cuenta al momento de rotar
+            const obj = () => {
+                let catsInBoxes = structuredClone(state.catsInBoxes);
+                const tiles_position = structuredClone(state.tiles_position);
+                const boxChangeImg = structuredClone(state.boxChangeImg);
+                let levels = structuredClone(state.levels);
+                const tile_seleted = state.tile_seleted;
+                const virtualGrid = state.virtualGrid;
+                let movements = state.movements;
+                let confetti = false;
+
+                if (tile_seleted) {
+                    catsInBoxes = checkCatAndBoxCollisions(tile_seleted.name, catsInBoxes, tiles_position, virtualGrid);
+
+                    const newgrid = insertPieceInVictualGrid(virtualGrid, { ...tiles_position[tile_seleted.name], name: tile_seleted.name });
+                    const newBoxChangeImg = checkBoxesThatChangeImage(tile_seleted, tiles_position, virtualGrid, boxChangeImg);
+
+                    const point = tiles_position[tile_seleted.name].point;
+                    const old_point = tile_seleted.point;
+                    const rotation = tiles_position[tile_seleted.name].rotation;
+                    const old_rotation = tile_seleted.rotation;
+
+                    if (JSON.stringify(point) != JSON.stringify(old_point) || rotation !== old_rotation) {
+                        movements++;
+                    }
+
+                    if (catsInBoxes.length === 5) {
+                        confetti = completedLevel(state.level, levels)
+                    }
+
+                    return {
+                        movements,
+                        confetti,
+                        levels,
+                        catsInBoxes,
+                        shadow_in_grid: [],
+                        boxChangeImg: newBoxChangeImg,
+                        virtualGrid: newgrid,
+                    };
+                }
+
+                return {}
+            }
+
+            return {
+                ...state,
+                ...obj(),
+                old_tile_seleted: undefined,
+                tile_seleted: undefined,
+            };
         },
+        //
+        //movimientos de la pieza
         Move: () => {
             const tiles_position = structuredClone(state.tiles_position);
-            let grid = structuredClone(state.grid);
-            let gatsInBixes = state.gatsInBixes;
-            const tile_seleted = structuredClone(state.tile_seleted);
 
             tiles_position[actions.tile].point = actions.position;
 
+            //funcionalidades a tener en cuenta al momento de rotar
+            const obj = () => {
+                const tile_seleted = structuredClone(state.tile_seleted);
+                let virtualGrid = structuredClone(state.virtualGrid);
+                let catsInBoxes = structuredClone(state.catsInBoxes);
+                let boxChangeImg = structuredClone(state.boxChangeImg);
 
-            grid = removePieceForGrid(grid, tile_seleted.name);
+                const newBoxChangeImg = checkBoxesThatChangeImage(tile_seleted, tiles_position, virtualGrid, boxChangeImg);
 
-            const release = checkColitionForRelease(tile_seleted, tiles_position, grid, actions.tile);
-            const gib = checkColitionWithGat(tile_seleted, tiles_position, grid, actions.tile);
+                const release = checkCollisionsForPartDeselection(tile_seleted.name, tiles_position, virtualGrid);
+                catsInBoxes = checkCatAndBoxCollisions(tile_seleted.name, catsInBoxes, tiles_position, virtualGrid);
 
-            gatsInBixes += gib === -1 && gatsInBixes === 0 ? 0 : gib;
+                return { catsInBoxes, boxChangeImg: newBoxChangeImg, release }
+            }
 
-            return { ...state, tiles_position, gatsInBixes, edited_grids: [], release, grid }
+            return { ...state, ...obj(), tiles_position }
+
         },
+        //
+        //cambia el grid editado
         ChangeEditedGrids: () => {
-            // console.log(JSON.stringify(state.grid, null, 2))
-
-            return { ...state, edited_grids: [...actions.gridIds] }
+            return { ...state, shadow_in_grid: [...actions.gridIds] }
         },
+        //
+        //resetear nivel
+        GameReset: () => {
+
+            const put = {
+                movements: 0,
+                catsInBoxes: [],
+                boxChangeImg: [],
+                shadow_in_grid: [],
+                tile_seleted: undefined,
+                menuGame: false,
+                confetti: false,
+                selectAll: selectAll.none,
+                ...levelBuildHelper(state.level)
+            }
+
+            return { ...state, ...put }
+        },
+        //
         default: () => null
     };
 
     return (_actions[actions.type] || _actions["default"])();
 }
 
-function insertPieceInVictualGrid(grid: Grid[24], tile_seleted: Tile, level: number) {
-    //add tiles position in the victual grid
-    const index = getIndexByPoint({ point: { x: tile_seleted.point.x + 1, y: tile_seleted.point.y + 1 } });
-
-    const piecesTiles: Tesserae[] = pieces.find((e: Piece) => e.name === tile_seleted.name).tiles
-    const tiles: Mosaic[] = piecesTiles.find((e: Tesserae) => e.rotation === tile_seleted.rotation).tiles;
-    const indexs = tiles.map((e: Mosaic) => getTileIndexByPoint({ x: e.x, y: e.y }));
-
-    indexs.forEach((i: number) => {
-        grid[index + (i)] = {
-            point: tile_seleted.point,
-            hasGat: false,
-            hasShadow: false,
-            hasTile: true,
-            hasBox: false,
-            data: tile_seleted.name
-        }
-    })
-}
-
-function removePieceForGrid(grid: Grid[24], tile_name: string) {
-    //remove piece of the grid
-    return grid.map((gd: Grid) => {
-        if (gd?.data === tile_name) {
-            return null;
-        }
-        else {
-            return gd;
-        }
-    })
-}
-
-function getIndexOfAllMosaic(tile_seleted: Tile, tiles_position, specificTile: string) {
-    const point: Point = tiles_position[specificTile].point;
-    const index = getIndexByPoint({ point: { x: point.x + 1, y: point.y + 1 } });
-    const rotation = tiles_position[specificTile].rotation;
-    const piecesTiles: Tesserae[] = pieces.find((e: Piece) => e.name === tile_seleted.name).tiles
-    const tiles: Mosaic[] = piecesTiles.find((e: Tesserae) => e.rotation === rotation).tiles;
-
-    return tiles.map((e: Mosaic) => ({ index: getTileIndexByPoint({ x: e.x, y: e.y }) + index, isBox: e.img.includes('box') }));
-}
-
-function checkColitionForRelease(tile_seleted: Tile, tiles_position, grid: Grid[24], specificTile: string) {
-    const mosaicIndex = getIndexOfAllMosaic(tile_seleted, tiles_position, specificTile)
-    let release = true;
-
-    for (let i = 0; i < mosaicIndex.length; i++) {
-        if (!mosaicIndex[i].isBox) {
-            if (grid[mosaicIndex[i].index] === undefined) release = false;
-            if (grid[mosaicIndex[i].index]?.hasGat === true) release = false;
-            if (grid[mosaicIndex[i].index]?.hasTile === true && grid[mosaicIndex[i].index]?.data !== tile_seleted.name) release = false;
-        }
+/*
+function ShowVictualGrid(newgrid) {
+    const matriz = [];
+    for (let i = 0; i < 5; i++) {
+        matriz.push(newgrid.slice(i * 5, (i + 1) * 5).map(m => m?.data));
     }
-
-    return release;
+    console.table(matriz);
 }
-
-function checkColitionWithGat(tile_seleted: Tile, tiles_position, grid: Grid[24], specificTile: string) {
-    const mosaicIndex = getIndexOfAllMosaic(tile_seleted, tiles_position, specificTile)
-    let gatsInBixes = 0;
-
-    for (let i = 0; i < mosaicIndex.length; i++) {
-        if (grid[mosaicIndex[i].index]?.hasGat === true) {
-            gatsInBixes = 1;
-        } else {
-            gatsInBixes = -1;
-        }
-    }
-
-    return gatsInBixes;
-}
+*/

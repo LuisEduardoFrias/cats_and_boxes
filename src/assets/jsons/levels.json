@@ -1,38 +1,878 @@
 [
+
     {
-        "lever": 1,
-        "movements": 5,
-        "gats_position": [
+        "movements": 4,
+        "cats_position": [
             {
-                "name": "gato1",
+                "name": "cat1",
                 "point": {
                     "x": 1,
                     "y": 5
                 }
             },
             {
-                "name": "gato2",
+                "name": "cat2",
                 "point": {
-                    "x": 2,
+                    "x": 1,
                     "y": 2
                 }
             },
             {
-                "name": "gato3",
+                "name": "cat3",
                 "point": {
                     "x": 3,
                     "y": 4
                 }
             },
             {
-                "name": "gato4",
+                "name": "cat4",
+                "point": {
+                    "x": 4,
+                    "y": 1
+                }
+            },
+            {
+                "name": "cat5",
+                "point": {
+                    "x": 5,
+                    "y": 5
+                }
+            }
+        ],
+        "tiles_position": {
+            "t": {
+                "rotation": 0,
+                "point": {
+                    "x": 0,
+                    "y": 0
+                }
+            },
+            "l": {
+                "rotation": 180,
+                "point": {
+                    "x": 2,
+                    "y": 2
+                }
+            },
+            "j": {
+                "rotation": 90,
+                "point": {
+                    "x": 2,
+                    "y": 0
+                }
+            },
+            "z": {
+                "rotation": 180,
+                "point": {
+                    "x": 0,
+                    "y": 2
+                }
+            }
+        }
+    },
+    {
+        "movements": 4,
+        "cats_position": [
+            {
+                "name": "cat1",
+                "point": {
+                    "x": 1,
+                    "y": 5
+                }
+            },
+            {
+                "name": "cat2",
+                "point": {
+                    "x": 2,
+                    "y": 3
+                }
+            },
+            {
+                "name": "cat3",
+                "point": {
+                    "x": 3,
+                    "y": 2
+                }
+            },
+            {
+                "name": "cat4",
+                "point": {
+                    "x": 4,
+                    "y": 1
+                }
+            },
+            {
+                "name": "cat5",
+                "point": {
+                    "x": 4,
+                    "y": 4
+                }
+            }
+        ],
+        "tiles_position": {
+            "t": {
+                "rotation": 0,
+                "point": {
+                    "x": 0,
+                    "y": 0
+                }
+            },
+            "l": {
+                "rotation": 270,
+                "point": {
+                    "x": 2,
+                    "y": 3
+                }
+            },
+            "j": {
+                "rotation": 180,
+                "point": {
+                    "x": 0,
+                    "y": 1
+                }
+            },
+            "z": {
+                "rotation": 270,
+                "point": {
+                    "x": 2,
+                    "y": 1
+                }
+            }
+        }
+    },
+    {
+        "movements": 4,
+        "cats_position": [
+            {
+                "name": "cat1",
+                "point": {
+                    "x": 1,
+                    "y": 5
+                }
+            },
+            {
+                "name": "cat2",
+                "point": {
+                    "x": 2,
+                    "y": 2
+                }
+            },
+            {
+                "name": "cat3",
+                "point": {
+                    "x": 4,
+                    "y": 1
+                }
+            },
+            {
+                "name": "cat4",
+                "point": {
+                    "x": 4,
+                    "y": 4
+                }
+            },
+            {
+                "name": "cat5",
+                "point": {
+                    "x": 5,
+                    "y": 2
+                }
+            }
+        ],
+        "tiles_position": {
+            "t": {
+                "rotation": 270,
+                "point": {
+                    "x": 2,
+                    "y": 0
+                }
+            },
+            "l": {
+                "rotation": 0,
+                "point": {
+                    "x": 0,
+                    "y": 0
+                }
+            },
+            "j": {
+                "rotation": 0,
+                "point": {
+                    "x": 3,
+                    "y": 2
+                }
+            },
+            "z": {
+                "rotation": 270,
+                "point": {
+                    "x": 0,
+                    "y": 2
+                }
+            }
+        }
+    },
+    {
+        "movements": 4,
+        "cats_position": [
+            {
+                "name": "cat1",
+                "point": {
+                    "x": 1,
+                    "y": 5
+                }
+            },
+            {
+                "name": "cat2",
+                "point": {
+                    "x": 3,
+                    "y": 2
+                }
+            },
+            {
+                "name": "cat3",
+                "point": {
+                    "x": 3,
+                    "y": 4
+                }
+            },
+            {
+                "name": "cat4",
+                "point": {
+                    "x": 4,
+                    "y": 2
+                }
+            },
+            {
+                "name": "cat5",
+                "point": {
+                    "x": 5,
+                    "y": 4
+                }
+            }
+        ],
+        "tiles_position": {
+            "t": {
+                "rotation": 180,
+                "point": {
+                    "x": 2,
+                    "y": 3
+                }
+            },
+            "l": {
+                "rotation": 0,
+                "point": {
+                    "x": 0,
+                    "y": 0
+                }
+            },
+            "j": {
+                "rotation": 0,
+                "point": {
+                    "x": 3,
+                    "y": 0
+                }
+            },
+            "z": {
+                "rotation": 0,
+                "point": {
+                    "x": 0,
+                    "y": 1
+                }
+            }
+        }
+    },
+    {
+        "movements": 4,
+        "cats_position": [
+            {
+                "name": "cat1",
+                "point": {
+                    "x": 1,
+                    "y": 3
+                }
+            },
+            {
+                "name": "cat2",
+                "point": {
+                    "x": 2,
+                    "y": 1
+                }
+            },
+            {
+                "name": "cat3",
+                "point": {
+                    "x": 3,
+                    "y": 2
+                }
+            },
+            {
+                "name": "cat4",
+                "point": {
+                    "x": 3,
+                    "y": 3
+                }
+            },
+            {
+                "name": "cat5",
+                "point": {
+                    "x": 5,
+                    "y": 2
+                }
+            }
+        ],
+        "tiles_position": {
+            "t": {
+                "rotation": 0,
+                "point": {
+                    "x": 2,
+                    "y": 0
+                }
+            },
+            "l": {
+                "rotation": 270,
+                "point": {
+                    "x": 0,
+                    "y": 3
+                }
+            },
+            "j": {
+                "rotation": 0,
+                "point": {
+                    "x": 0,
+                    "y": 1
+                }
+            },
+            "z": {
+                "rotation": 270,
+                "point": {
+                    "x": 2,
+                    "y": 2
+                }
+            }
+        }
+    },
+    {
+        "movements": 4,
+        "cats_position": [
+            {
+                "name": "cat1",
+                "point": {
+                    "x": 1,
+                    "y": 5
+                }
+            },
+            {
+                "name": "cat2",
+                "point": {
+                    "x": 2,
+                    "y": 2
+                }
+            },
+            {
+                "name": "cat3",
+                "point": {
+                    "x": 3,
+                    "y": 4
+                }
+            },
+            {
+                "name": "cat4",
+                "point": {
+                    "x": 4,
+                    "y": 3
+                }
+            },
+            {
+                "name": "cat5",
+                "point": {
+                    "x": 5,
+                    "y": 1
+                }
+            }
+        ],
+        "tiles_position": {
+            "t": {
+                "rotation": 180,
+                "point": {
+                    "x": 2,
+                    "y": 0
+                }
+            },
+            "l": {
+                "rotation": 180,
+                "point": {
+                    "x": 3,
+                    "y": 2
+                }
+            },
+            "j": {
+                "rotation": 270,
+                "point": {
+                    "x": 0,
+                    "y": 0
+                }
+            },
+            "z": {
+                "rotation": 180,
+                "point": {
+                    "x": 0,
+                    "y": 2
+                }
+            }
+        }
+    },
+    {
+        "movements": 4,
+        "cats_position": [
+            {
+                "name": "cat1",
+                "point": {
+                    "x": 1,
+                    "y": 3
+                }
+            },
+            {
+                "name": "cat2",
+                "point": {
+                    "x": 2,
+                    "y": 1
+                }
+            },
+            {
+                "name": "cat3",
+                "point": {
+                    "x": 3,
+                    "y": 2
+                }
+            },
+            {
+                "name": "cat4",
+                "point": {
+                    "x": 4,
+                    "y": 5
+                }
+            },
+            {
+                "name": "cat5",
+                "point": {
+                    "x": 5,
+                    "y": 2
+                }
+            }
+        ],
+        "tiles_position": {
+            "t": {
+                "rotation": 0,
+                "point": {
+                    "x": 2,
+                    "y": 0
+                }
+            },
+            "l": {
+                "rotation": 270,
+                "point": {
+                    "x": 0,
+                    "y": 3
+                }
+            },
+            "j": {
+                "rotation": 0,
+                "point": {
+                    "x": 0,
+                    "y": 1
+                }
+            },
+            "z": {
+                "rotation": 270,
+                "point": {
+                    "x": 2,
+                    "y": 2
+                }
+            }
+        }
+    },
+    {
+        "movements": 4,
+        "cats_position": [
+            {
+                "name": "cat1",
+                "point": {
+                    "x": 1,
+                    "y": 2
+                }
+            },
+            {
+                "name": "cat2",
+                "point": {
+                    "x": 2,
+                    "y": 1
+                }
+            },
+            {
+                "name": "cat3",
+                "point": {
+                    "x": 3,
+                    "y": 3
+                }
+            },
+            {
+                "name": "cat4",
+                "point": {
+                    "x": 4,
+                    "y": 5
+                }
+            },
+            {
+                "name": "cat5",
+                "point": {
+                    "x": 5,
+                    "y": 3
+                }
+            }
+        ],
+        "tiles_position": {
+            "t": {
+                "rotation": 180,
+                "point": {
+                    "x": 0,
+                    "y": 3
+                }
+            },
+            "l": {
+                "rotation": 90,
+                "point": {
+                    "x": 2,
+                    "y": 0
+                }
+            },
+            "j": {
+                "rotation": 270,
+                "point": {
+                    "x": 1,
+                    "y": 1
+                }
+            },
+            "z": {
+                "rotation": 270,
+                "point": {
+                    "x": 2,
+                    "y": 2
+                }
+            }
+        }
+    },
+    {
+        "movements": 4,
+        "cats_position": [
+            {
+                "name": "cat1",
+                "point": {
+                    "x": 1,
+                    "y": 4
+                }
+            },
+            {
+                "name": "cat2",
+                "point": {
+                    "x": 2,
+                    "y": 2
+                }
+            },
+            {
+                "name": "cat3",
+                "point": {
+                    "x": 4,
+                    "y": 1
+                }
+            },
+            {
+                "name": "cat4",
+                "point": {
+                    "x": 4,
+                    "y": 2
+                }
+            },
+            {
+                "name": "cat5",
+                "point": {
+                    "x": 5,
+                    "y": 4
+                }
+            }
+        ],
+        "tiles_position": {
+            "t": {
+                "rotation": 180,
+                "point": {
+                    "x": 2,
+                    "y": 3
+                }
+            },
+            "l": {
+                "rotation": 0,
+                "point": {
+                    "x": 0,
+                    "y": 0
+                }
+            },
+            "j": {
+                "rotation": 180,
+                "point": {
+                    "x": 2,
+                    "y": 0
+                }
+            },
+            "z": {
+                "rotation": 0,
+                "point": {
+                    "x": 0,
+                    "y": 2
+                }
+            }
+        }
+    },
+    {
+        "movements": 4,
+        "cats_position": [
+            {
+                "name": "cat1",
+                "point": {
+                    "x": 1,
+                    "y": 2
+                }
+            },
+            {
+                "name": "cat2",
+                "point": {
+                    "x": 1,
+                    "y": 5
+                }
+            },
+            {
+                "name": "cat3",
+                "point": {
+                    "x": 2,
+                    "y": 4
+                }
+            },
+            {
+                "name": "cat4",
+                "point": {
+                    "x": 3,
+                    "y": 1
+                }
+            },
+            {
+                "name": "cat5",
+                "point": {
+                    "x": 4,
+                    "y": 2
+                }
+            }
+        ],
+        "tiles_position": {
+            "t": {
+                "rotation": 270,
+                "point": {
+                    "x": 3,
+                    "y": 2
+                }
+            },
+            "l": {
+                "rotation": 180,
+                "point": {
+                    "x": 1,
+                    "y": 2
+                }
+            },
+            "j": {
+                "rotation": 0,
+                "point": {
+                    "x": 3,
+                    "y": 0
+                }
+            },
+            "z": {
+                "rotation": 0,
+                "point": {
+                    "x": 0,
+                    "y": 0
+                }
+            }
+        }
+    },
+    {
+        "movements": 4,
+        "cats_position": [
+            {
+                "name": "cat1",
+                "point": {
+                    "x": 2,
+                    "y": 1
+                }
+            },
+            {
+                "name": "cat2",
+                "point": {
+                    "x": 2,
+                    "y": 3
+                }
+            },
+            {
+                "name": "cat3",
+                "point": {
+                    "x": 3,
+                    "y": 3
+                }
+            },
+            {
+                "name": "cat4",
+                "point": {
+                    "x": 4,
+                    "y": 1
+                }
+            },
+            {
+                "name": "cat5",
+                "point": {
+                    "x": 5,
+                    "y": 3
+                }
+            }
+        ],
+        "tiles_position": {
+            "t": {
+                "rotation": 270,
+                "point": {
+                    "x": 0,
+                    "y": 0
+                }
+            },
+            "l": {
+                "rotation": 270,
+                "point": {
+                    "x": 0,
+                    "y": 3
+                }
+            },
+            "j": {
+                "rotation": 90,
+                "point": {
+                    "x": 2,
+                    "y": 0
+                }
+            },
+            "z": {
+                "rotation": 270,
+                "point": {
+                    "x": 2,
+                    "y": 2
+                }
+            }
+        }
+    },
+    {
+        "movements": 4,
+        "cats_position": [
+            {
+                "name": "cat1",
+                "point": {
+                    "x": 1,
+                    "y": 3
+                }
+            },
+            {
+                "name": "cat2",
+                "point": {
+                    "x": 2,
+                    "y": 1
+                }
+            },
+            {
+                "name": "cat3",
+                "point": {
+                    "x": 3,
+                    "y": 3
+                }
+            },
+            {
+                "name": "cat4",
+                "point": {
+                    "x": 4,
+                    "y": 5
+                }
+            },
+            {
+                "name": "cat5",
+                "point": {
+                    "x": 5,
+                    "y": 3
+                }
+            }
+        ],
+        "tiles_position": {
+            "t": {
+                "rotation": 0,
+                "point": {
+                    "x": 0,
+                    "y": 3
+                }
+            },
+            "l": {
+                "rotation": 90,
+                "point": {
+                    "x": 2,
+                    "y": 0
+                }
+            },
+            "j": {
+                "rotation": 180,
+                "point": {
+                    "x": 3,
+                    "y": 1
+                }
+            },
+            "z": {
+                "rotation": 90,
+                "point": {
+                    "x": 0,
+                    "y": 0
+                }
+            }
+        }
+    },
+    {
+        "movements": 5,
+        "cats_position": [
+            {
+                "name": "cat1",
+                "point": {
+                    "x": 1,
+                    "y": 5
+                }
+            },
+            {
+                "name": "cat2",
+                "point": {
+                    "x": 2,
+                    "y": 2
+                }
+            },
+            {
+                "name": "cat3",
+                "point": {
+                    "x": 3,
+                    "y": 4
+                }
+            },
+            {
+                "name": "cat4",
                 "point": {
                     "x": 5,
                     "y": 1
                 }
             },
             {
-                "name": "gato5",
+                "name": "cat5",
                 "point": {
                     "x": 5,
                     "y": 4
@@ -54,7 +894,7 @@
                     "y": 0
                 }
             },
-            "li": {
+            "j": {
                 "rotation": 0,
                 "point": {
                     "x": 0,
@@ -71,39 +911,38 @@
         }
     },
     {
-        "lever": 2,
         "movements": 6,
-        "gats_position": [
+        "cats_position": [
             {
-                "name": "gato1",
+                "name": "cat1",
                 "point": {
-                    "x": 1,
-                    "y": 2
+                    "x": 2,
+                    "y": 1
                 }
             },
             {
-                "name": "gato2",
+                "name": "cat2",
                 "point": {
                     "x": 2,
                     "y": 4
                 }
             },
             {
-                "name": "gato3",
+                "name": "cat3",
                 "point": {
                     "x": 3,
                     "y": 3
                 }
             },
             {
-                "name": "gato4",
+                "name": "cat4",
                 "point": {
                     "x": 5,
                     "y": 2
                 }
             },
             {
-                "name": "gato5",
+                "name": "cat5",
                 "point": {
                     "x": 5,
                     "y": 4
@@ -114,72 +953,66 @@
             "t": {
                 "rotation": 270,
                 "point": {
-                    "x": 1,
-                    "y": 1
+                    "x": 0,
+                    "y": 0
                 }
             },
             "l": {
-                "rotation": 180,
+                "rotation": 270,
                 "point": {
-                    "x": 1,
-                    "y": 4
+                    "x": 0,
+                    "y": 3
                 }
             },
-            "li": {
-                "rotation": 0,
+            "j": {
+                "rotation": 270,
                 "point": {
-                    "x": 3,
-                    "y": 1
+                    "x": 2,
+                    "y": 0
                 }
             },
             "z": {
-                "rotation": 90,
+                "rotation": 0,
                 "point": {
-                    "x": 3,
-                    "y": 2
+                    "x": 2,
+                    "y": 1
                 }
             }
         }
     },
     {
-        "lever": 3,
         "movements": 5,
-        "gats_position": [
+        "cats_position": [
             {
-                "img": "",
-                "name": "gato1",
+                "name": "cat1",
                 "point": {
                     "x": 1,
                     "y": 2
                 }
             },
             {
-                "img": "",
-                "name": "gato2",
+                "name": "cat2",
                 "point": {
                     "x": 3,
                     "y": 1
                 }
             },
             {
-                "img": "",
-                "name": "gato3",
+                "name": "cat3",
                 "point": {
                     "x": 3,
                     "y": 3
                 }
             },
             {
-                "img": "",
-                "name": "gato4",
+                "name": "cat4",
                 "point": {
                     "x": 3,
                     "y": 4
                 }
             },
             {
-                "img": "",
-                "name": "gato5",
+                "name": "cat5",
                 "point": {
                     "x": 5,
                     "y": 2
@@ -188,77 +1021,71 @@
         ],
         "tiles_position": {
             "t": {
-                "rotation": 180,
+                "rotation": 270,
                 "point": {
-                    "x": 3,
-                    "y": 4
+                    "x": 0,
+                    "y": 2
                 }
             },
             "l": {
-                "rotation": 0,
+                "rotation": 180,
                 "point": {
-                    "x": 1,
-                    "y": 1
+                    "x": 3,
+                    "y": 2
                 }
             },
-            "li": {
-                "rotation": 90,
+            "j": {
+                "rotation": 0,
                 "point": {
-                    "x": 1,
-                    "y": 3
+                    "x": 0,
+                    "y": 0
                 }
             },
             "z": {
-                "rotation": 90,
+                "rotation": 180,
                 "point": {
-                    "x": 3,
-                    "y": 1
+                    "x": 2,
+                    "y": 0
                 }
             }
         }
     },
     {
-        "lever": 4,
         "movements": 6,
-        "gats_position": [
+        "cats_position": [
             {
-                "img": "",
-                "name": "gato1",
+                "name": "cat1",
                 "point": {
                     "x": 1,
                     "y": 5
                 }
             },
             {
-                "img": "",
-                "name": "gato2",
+                "name": "cat2",
                 "point": {
-                    "x": 1,
-                    "y": 2
+                    "x": 2,
+                    "y": 1
                 }
             },
             {
-                "img": "",
-                "name": "gato3",
+                "name": "cat3",
                 "point": {
                     "x": 3,
                     "y": 3
                 }
             },
             {
-                "img": "",
-                "name": "gato4",
-                "point": {
-                    "x": 5,
-                    "y": 4
-                }
-            },
-            {
-                "img": "",
-                "name": "gato5",
+                "name": "cat4",
                 "point": {
                     "x": 5,
                     "y": 2
+                }
+            },
+            {
+                "name": "cat5",
+                "point": {
+                    "x": 5,
+                    "y": 4
                 }
             }
         ],
@@ -266,72 +1093,66 @@
             "t": {
                 "rotation": 180,
                 "point": {
-                    "x": 3,
-                    "y": 4
+                    "x": 2,
+                    "y": 3
                 }
             },
             "l": {
-                "rotation": 0,
+                "rotation": 270,
                 "point": {
-                    "x": 1,
-                    "y": 1
+                    "x": 0,
+                    "y": 2
                 }
             },
-            "li": {
-                "rotation": 90,
+            "j": {
+                "rotation": 180,
                 "point": {
-                    "x": 1,
-                    "y": 3
+                    "x": 3,
+                    "y": 0
                 }
             },
             "z": {
                 "rotation": 90,
                 "point": {
-                    "x": 3,
-                    "y": 1
+                    "x": 0,
+                    "y": 0
                 }
             }
         }
     },
     {
-        "lever": 5,
         "movements": 6,
-        "gats_position": [
+        "cats_position": [
             {
-                "img": "",
-                "name": "gato1",
+                "name": "cat1",
                 "point": {
                     "x": 1,
                     "y": 4
                 }
             },
             {
-                "img": "",
-                "name": "gato2",
+                "name": "cat2",
                 "point": {
                     "x": 2,
                     "y": 1
                 }
             },
             {
-                "img": "",
-                "name": "gato3",
+                "name": "cat3",
                 "point": {
                     "x": 2,
                     "y": 3
                 }
             },
             {
-                "img": "",
-                "name": "gato4",
+                "name": "cat4",
                 "point": {
                     "x": 4,
                     "y": 1
                 }
             },
             {
-                "img": "",
-                "name": "gato5",
+                "name": "cat5",
                 "point": {
                     "x": 5,
                     "y": 3
@@ -340,75 +1161,70 @@
         ],
         "tiles_position": {
             "t": {
-                "rotation": 180,
+                "rotation": 270,
                 "point": {
-                    "x": 3,
-                    "y": 4
+                    "x": 0,
+                    "y": 0
                 }
             },
             "l": {
-                "rotation": 0,
-                "point": {
-                    "x": 1,
-                    "y": 1
-                }
-            },
-            "li": {
-                "rotation": 90,
+                "rotation": 270,
                 "point": {
                     "x": 1,
                     "y": 3
                 }
             },
-            "z": {
+            "j": {
                 "rotation": 90,
                 "point": {
-                    "x": 3,
-                    "y": 1
+                    "x": 2,
+                    "y": 0
+                }
+            },
+            "z": {
+                "rotation": 270,
+                "point": {
+                    "x": 2,
+                    "y": 2
                 }
             }
         }
     },
     {
-        "lever": 6,
-        "gats_position": [
+        "movements": 7,
+        "cats_position": [
             {
-                "img": "",
-                "name": "gato1",
+                "name": "cat1",
                 "point": {
                     "x": 1,
                     "y": 4
                 }
             },
             {
-                "img": "",
-                "name": "gato2",
+                "name": "cat2",
                 "point": {
                     "x": 2,
                     "y": 1
                 }
             },
             {
-                "img": "",
-                "name": "gato3",
+                "name": "cat3",
                 "point": {
                     "x": 3,
                     "y": 4
                 }
             },
             {
-                "img": "",
-                "name": "gato4",
+                "name": "cat4",
                 "point": {
                     "x": 4,
                     "y": 2
                 }
             },
             {
-                "img": "",
-                "name": "gato5",
+                "name": "cat5",
                 "point": {
-                    "x": 4,
+                    "x": 5,
                     "y": 4
                 }
             }
@@ -417,148 +1233,136 @@
             "t": {
                 "rotation": 180,
                 "point": {
-                    "x": 3,
-                    "y": 4
+                    "x": 0,
+                    "y": 3
                 }
             },
             "l": {
                 "rotation": 0,
                 "point": {
-                    "x": 1,
-                    "y": 1
+                    "x": 3,
+                    "y": 2
                 }
             },
-            "li": {
-                "rotation": 90,
+            "j": {
+                "rotation": 180,
                 "point": {
-                    "x": 1,
-                    "y": 3
+                    "x": 0,
+                    "y": 0
                 }
             },
             "z": {
-                "rotation": 90,
+                "rotation": 180,
                 "point": {
-                    "x": 3,
-                    "y": 1
+                    "x": 1,
+                    "y": 0
                 }
             }
         }
     },
     {
-        "lever": 7,
+        "movements": 6,
+        "cats_position": [
+            {
+                "name": "cat1",
+                "point": {
+                    "x": 1,
+                    "y": 3
+                }
+            },
+            {
+                "name": "cat2",
+                "point": {
+                    "x": 2,
+                    "y": 1
+                }
+            },
+            {
+                "name": "cat3",
+                "point": {
+                    "x": 3,
+                    "y": 3
+                }
+            },
+            {
+                "name": "cat4",
+                "point": {
+                    "x": 4,
+                    "y": 1
+                }
+            },
+            {
+                "name": "cat5",
+                "point": {
+                    "x": 5,
+                    "y": 3
+                }
+            }
+        ],
+        "tiles_position": {
+            "t": {
+                "rotation": 0,
+                "point": {
+                    "x": 2,
+                    "y": 3
+                }
+            },
+            "l": {
+                "rotation": 270,
+                "point": {
+                    "x": 0,
+                    "y": 3
+                }
+            },
+            "j": {
+                "rotation": 0,
+                "point": {
+                    "x": 0,
+                    "y": 1
+                }
+            },
+            "z": {
+                "rotation": 90,
+                "point": {
+                    "x": 2,
+                    "y": 0
+                }
+            }
+        }
+    },
+    {
         "movements": 5,
-        "gats_position": [
+        "cats_position": [
             {
-                "img": "",
-                "name": "gato1",
+                "name": "cat1",
                 "point": {
                     "x": 1,
                     "y": 3
                 }
             },
             {
-                "img": "",
-                "name": "gato2",
-                "point": {
-                    "x": 2,
-                    "y": 1
-                }
-            },
-            {
-                "img": "",
-                "name": "gato3",
+                "name": "cat2",
                 "point": {
                     "x": 3,
-                    "y": 4
+                    "y": 3
                 }
             },
             {
-                "img": "",
-                "name": "gato4",
+                "name": "cat3",
                 "point": {
                     "x": 4,
                     "y": 1
                 }
             },
             {
-                "img": "",
-                "name": "gato5",
-                "point": {
-                    "x": 5,
-                    "y": 3
-                }
-            }
-        ],
-        "tiles_position": {
-            "t": {
-                "rotation": 180,
-                "point": {
-                    "x": 3,
-                    "y": 4
-                }
-            },
-            "l": {
-                "rotation": 0,
-                "point": {
-                    "x": 1,
-                    "y": 1
-                }
-            },
-            "li": {
-                "rotation": 90,
-                "point": {
-                    "x": 1,
-                    "y": 3
-                }
-            },
-            "z": {
-                "rotation": 90,
-                "point": {
-                    "x": 3,
-                    "y": 1
-                }
-            }
-        }
-    },
-    {
-        "lever": 8,
-        "movements": 6,
-        "gats_position": [
-            {
-                "img": "",
-                "name": "gato1",
-                "point": {
-                    "x": 1,
-                    "y": 3
-                }
-            },
-            {
-                "img": "",
-                "name": "gato2",
-                "point": {
-                    "x": 3,
-                    "y": 3
-                }
-            },
-            {
-                "img": "",
-                "name": "gato3",
-                "point": {
-                    "x": 4,
-                    "y": 1
-                }
-            },
-            {
-                "img": "",
-                "name": "gato4",
+                "name": "cat4",
                 "point": {
                     "x": 4,
                     "y": 5
                 }
             },
             {
-                "img": "",
-                "name": "gato5",
+                "name": "cat5",
                 "point": {
                     "x": 5,
                     "y": 3
@@ -567,74 +1371,68 @@
         ],
         "tiles_position": {
             "t": {
-                "rotation": 180,
+                "rotation": 0,
                 "point": {
-                    "x": 3,
-                    "y": 4
+                    "x": 0,
+                    "y": 0
                 }
             },
             "l": {
-                "rotation": 0,
+                "rotation": 270,
                 "point": {
-                    "x": 1,
-                    "y": 1
-                }
-            },
-            "li": {
-                "rotation": 90,
-                "point": {
-                    "x": 1,
+                    "x": 0,
                     "y": 3
                 }
             },
-            "z": {
+            "j": {
                 "rotation": 90,
                 "point": {
-                    "x": 3,
-                    "y": 1
+                    "x": 2,
+                    "y": 0
+                }
+            },
+            "z": {
+                "rotation": 270,
+                "point": {
+                    "x": 2,
+                    "y": 2
                 }
             }
         }
     },
     {
-        "lever": 9,
-        "movements": 6,
-        "gats_position": [
+        "movements": 8,
+        "cats_position": [
             {
-                "img": "",
-                "name": "gato1",
+                "name": "cat1",
                 "point": {
                     "x": 1,
                     "y": 2
                 }
             },
             {
-                "img": "",
-                "name": "gato2",
+                "name": "cat2",
                 "point": {
                     "x": 2,
                     "y": 3
                 }
             },
             {
-                "img": "",
-                "name": "gato3",
+                "name": "cat3",
                 "point": {
                     "x": 4,
                     "y": 2
                 }
             },
             {
-                "img": "",
-                "name": "gato4",
+                "name": "cat4",
                 "point": {
                     "x": 5,
                     "y": 2
                 }
             },
             {
-                "img": "",
-                "name": "gato5",
+                "name": "cat5",
                 "point": {
                     "x": 5,
                     "y": 4
@@ -643,74 +1441,68 @@
         ],
         "tiles_position": {
             "t": {
-                "rotation": 180,
+                "rotation": 270,
                 "point": {
-                    "x": 3,
-                    "y": 4
+                    "x": 0,
+                    "y": 2
                 }
             },
             "l": {
-                "rotation": 0,
+                "rotation": 270,
                 "point": {
-                    "x": 1,
-                    "y": 1
+                    "x": 2,
+                    "y": 3
                 }
             },
-            "li": {
-                "rotation": 90,
+            "j": {
+                "rotation": 270,
                 "point": {
                     "x": 1,
-                    "y": 3
+                    "y": 0
                 }
             },
             "z": {
                 "rotation": 90,
                 "point": {
-                    "x": 3,
+                    "x": 2,
                     "y": 1
                 }
             }
         }
     },
     {
-        "lever": 10,
         "movements": 6,
-        "gats_position": [
+        "cats_position": [
             {
-                "img": "",
-                "name": "gato1",
+                "name": "cat1",
                 "point": {
                     "x": 1,
                     "y": 2
                 }
             },
             {
-                "img": "",
-                "name": "gato2",
+                "name": "cat2",
                 "point": {
                     "x": 3,
                     "y": 1
                 }
             },
             {
-                "img": "",
-                "name": "gato3",
+                "name": "cat3",
                 "point": {
                     "x": 3,
                     "y": 3
                 }
             },
             {
-                "img": "",
-                "name": "gato4",
+                "name": "cat4",
                 "point": {
                     "x": 4,
                     "y": 5
                 }
             },
             {
-                "img": "",
-                "name": "gato5",
+                "name": "cat5",
                 "point": {
                     "x": 5,
                     "y": 4
@@ -719,74 +1511,68 @@
         ],
         "tiles_position": {
             "t": {
-                "rotation": 180,
+                "rotation": 90,
                 "point": {
                     "x": 3,
-                    "y": 4
+                    "y": 0
                 }
             },
             "l": {
-                "rotation": 0,
+                "rotation": 270,
                 "point": {
-                    "x": 1,
-                    "y": 1
-                }
-            },
-            "li": {
-                "rotation": 90,
-                "point": {
-                    "x": 1,
+                    "x": 0,
                     "y": 3
                 }
             },
-            "z": {
+            "j": {
                 "rotation": 90,
                 "point": {
-                    "x": 3,
-                    "y": 1
+                    "x": 1,
+                    "y": 2
+                }
+            },
+            "z": {
+                "rotation": 0,
+                "point": {
+                    "x": 0,
+                    "y": 0
                 }
             }
         }
     },
     {
-        "lever": 11,
-        "movements": 6,
-        "gats_position": [
+        "movements": 9,
+        "cats_position": [
             {
-                "img": "",
-                "name": "gato1",
+                "name": "cat1",
                 "point": {
                     "x": 1,
                     "y": 4
                 }
             },
             {
-                "img": "",
-                "name": "gato2",
+                "name": "cat2",
                 "point": {
                     "x": 2,
                     "y": 2
                 }
             },
             {
-                "img": "",
-                "name": "gato3",
+                "name": "cat3",
                 "point": {
                     "x": 4,
                     "y": 1
                 }
             },
             {
-                "img": "",
-                "name": "gato4",
+                "name": "cat4",
                 "point": {
                     "x": 5,
                     "y": 2
                 }
             },
             {
-                "img": "",
-                "name": "gato5",
+                "name": "cat5",
                 "point": {
                     "x": 5,
                     "y": 4
@@ -795,226 +1581,208 @@
         ],
         "tiles_position": {
             "t": {
-                "rotation": 180,
+                "rotation": 270,
                 "point": {
-                    "x": 3,
-                    "y": 4
+                    "x": 2,
+                    "y": 0
                 }
             },
             "l": {
                 "rotation": 0,
                 "point": {
-                    "x": 1,
-                    "y": 1
+                    "x": 0,
+                    "y": 0
                 }
             },
-            "li": {
-                "rotation": 90,
-                "point": {
-                    "x": 1,
-                    "y": 3
-                }
-            },
-            "z": {
-                "rotation": 90,
-                "point": {
-                    "x": 3,
-                    "y": 1
-                }
-            }
-        }
-    },
-    {
-        "lever": 12,
-        "movements": 6,
-        "gats_position": [
-            {
-                "img": "",
-                "name": "gato1",
-                "point": {
-                    "x": 1,
-                    "y": 1
-                }
-            },
-            {
-                "img": "",
-                "name": "gato2",
-                "point": {
-                    "x": 3,
-                    "y": 1
-                }
-            },
-            {
-                "img": "",
-                "name": "gato3",
-                "point": {
-                    "x": 3,
-                    "y": 2
-                }
-            },
-            {
-                "img": "",
-                "name": "gato4",
-                "point": {
-                    "x": 4,
-                    "y": 4
-                }
-            },
-            {
-                "img": "",
-                "name": "gato5",
-                "point": {
-                    "x": 5,
-                    "y": 2
-                }
-            }
-        ],
-        "tiles_position": {
-            "t": {
+            "j": {
                 "rotation": 180,
                 "point": {
-                    "x": 3,
-                    "y": 4
-                }
-            },
-            "l": {
-                "rotation": 0,
-                "point": {
                     "x": 1,
-                    "y": 1
-                }
-            },
-            "li": {
-                "rotation": 90,
-                "point": {
-                    "x": 1,
-                    "y": 3
+                    "y": 2
                 }
             },
             "z": {
-                "rotation": 90,
-                "point": {
-                    "x": 3,
-                    "y": 1
-                }
-            }
-        }
-    },
-    {
-        "lever": 13,
-        "movements": 6,
-        "gats_position": [
-            {
-                "img": "",
-                "name": "gato1",
-                "point": {
-                    "x": 1,
-                    "y": 4
-                }
-            },
-            {
-                "img": "",
-                "name": "gato2",
-                "point": {
-                    "x": 3,
-                    "y": 1
-                }
-            },
-            {
-                "img": "",
-                "name": "gato3",
-                "point": {
-                    "x": 3,
-                    "y": 2
-                }
-            },
-            {
-                "img": "",
-                "name": "gato4",
-                "point": {
-                    "x": 4,
-                    "y": 4
-                }
-            },
-            {
-                "img": "",
-                "name": "gato5",
-                "point": {
-                    "x": 5,
-                    "y": 2
-                }
-            }
-        ],
-        "tiles_position": {
-            "t": {
                 "rotation": 180,
                 "point": {
-                    "x": 3,
-                    "y": 4
-                }
-            },
-            "l": {
-                "rotation": 0,
-                "point": {
-                    "x": 1,
-                    "y": 1
-                }
-            },
-            "li": {
-                "rotation": 90,
-                "point": {
-                    "x": 1,
-                    "y": 3
-                }
-            },
-            "z": {
-                "rotation": 90,
-                "point": {
-                    "x": 3,
-                    "y": 1
+                    "x": 2,
+                    "y": 2
                 }
             }
         }
     },
     {
-        "lever": 14,
-        "movements": 6,
-        "gats_position": [
+        "movements": 8,
+        "cats_position": [
             {
-                "img": "",
-                "name": "gato1",
-                "point": {
-                    "x": 1,
-                    "y": 3
-                }
-            },
-            {
-                "img": "",
-                "name": "gato2",
+                "name": "cat1",
                 "point": {
                     "x": 1,
                     "y": 5
                 }
             },
             {
-                "img": "",
-                "name": "gato3",
+                "name": "cat2",
+                "point": {
+                    "x": 3,
+                    "y": 1
+                }
+            },
+            {
+                "name": "cat3",
                 "point": {
                     "x": 3,
                     "y": 2
                 }
             },
             {
-                "img": "",
-                "name": "gato4",
+                "name": "cat4",
                 "point": {
                     "x": 4,
                     "y": 4
                 }
             },
             {
-                "img": "",
-                "name": "gato5",
+                "name": "cat5",
+                "point": {
+                    "x": 5,
+                    "y": 2
+                }
+            }
+        ],
+        "tiles_position": {
+            "t": {
+                "rotation": 180,
+                "point": {
+                    "x": 1,
+                    "y": 3
+                }
+            },
+            "l": {
+                "rotation": 0,
+                "point": {
+                    "x": 0,
+                    "y": 0
+                }
+            },
+            "j": {
+                "rotation": 0,
+                "point": {
+                    "x": 3,
+                    "y": 2
+                }
+            },
+            "z": {
+                "rotation": 0,
+                "point": {
+                    "x": 0,
+                    "y": 1
+                }
+            }
+        }
+    },
+    {
+        "movements": 9,
+        "cats_position": [
+            {
+                "name": "cat1",
+                "point": {
+                    "x": 1,
+                    "y": 4
+                }
+            },
+            {
+                "name": "cat2",
+                "point": {
+                    "x": 3,
+                    "y": 1
+                }
+            },
+            {
+                "name": "cat3",
+                "point": {
+                    "x": 3,
+                    "y": 2
+                }
+            },
+            {
+                "name": "cat4",
+                "point": {
+                    "x": 4,
+                    "y": 4
+                }
+            },
+            {
+                "name": "cat5",
+                "point": {
+                    "x": 5,
+                    "y": 2
+                }
+            }
+        ],
+        "tiles_position": {
+            "t": {
+                "rotation": 270,
+                "point": {
+                    "x": 0,
+                    "y": 0
+                }
+            },
+            "l": {
+                "rotation": 0,
+                "point": {
+                    "x": 3,
+                    "y": 0
+                }
+            },
+            "j": {
+                "rotation": 90,
+                "point": {
+                    "x": 2,
+                    "y": 3
+                }
+            },
+            "z": {
+                "rotation": 0,
+                "point": {
+                    "x": 0,
+                    "y": 2
+                }
+            }
+        }
+    },
+    {
+        "movements": 7,
+        "cats_position": [
+            {
+                "name": "cat1",
+                "point": {
+                    "x": 1,
+                    "y": 3
+                }
+            },
+            {
+                "name": "cat2",
+                "point": {
+                    "x": 1,
+                    "y": 5
+                }
+            },
+            {
+                "name": "cat3",
+                "point": {
+                    "x": 3,
+                    "y": 2
+                }
+            },
+            {
+                "name": "cat4",
+                "point": {
+                    "x": 4,
+                    "y": 4
+                }
+            },
+            {
+                "name": "cat5",
                 "point": {
                     "x": 5,
                     "y": 3
@@ -1023,74 +1791,68 @@
         ],
         "tiles_position": {
             "t": {
-                "rotation": 180,
+                "rotation": 90,
                 "point": {
-                    "x": 3,
-                    "y": 4
+                    "x": 0,
+                    "y": 2
                 }
             },
             "l": {
-                "rotation": 0,
+                "rotation": 270,
                 "point": {
-                    "x": 1,
-                    "y": 1
-                }
-            },
-            "li": {
-                "rotation": 90,
-                "point": {
-                    "x": 1,
+                    "x": 2,
                     "y": 3
                 }
             },
-            "z": {
-                "rotation": 90,
+            "j": {
+                "rotation": 270,
                 "point": {
-                    "x": 3,
-                    "y": 1
+                    "x": 0,
+                    "y": 0
+                }
+            },
+            "z": {
+                "rotation": 0,
+                "point": {
+                    "x": 2,
+                    "y": 0
                 }
             }
         }
     },
     {
-        "lever": 15,
-        "movements": 6,
-        "gats_position": [
+        "movements": 8,
+        "cats_position": [
             {
-                "img": "",
-                "name": "gato1",
+                "name": "cat1",
                 "point": {
                     "x": 1,
                     "y": 5
                 }
             },
             {
-                "img": "",
-                "name": "gato2",
+                "name": "cat2",
                 "point": {
                     "x": 2,
                     "y": 2
                 }
             },
             {
-                "img": "",
-                "name": "gato3",
+                "name": "cat3",
                 "point": {
                     "x": 3,
                     "y": 4
                 }
             },
             {
-                "img": "",
-                "name": "gato4",
+                "name": "cat4",
                 "point": {
                     "x": 4,
                     "y": 1
                 }
             },
             {
-                "img": "",
-                "name": "gato5",
+                "name": "cat5",
                 "point": {
                     "x": 5,
                     "y": 5
@@ -1099,74 +1861,68 @@
         ],
         "tiles_position": {
             "t": {
-                "rotation": 180,
+                "rotation": 270,
                 "point": {
                     "x": 3,
-                    "y": 4
+                    "y": 2
                 }
             },
             "l": {
-                "rotation": 0,
+                "rotation": 90,
                 "point": {
-                    "x": 1,
+                    "x": 2,
                     "y": 1
                 }
             },
-            "li": {
-                "rotation": 90,
+            "j": {
+                "rotation": 270,
                 "point": {
-                    "x": 1,
-                    "y": 3
+                    "x": 0,
+                    "y": 0
                 }
             },
             "z": {
-                "rotation": 90,
+                "rotation": 180,
                 "point": {
-                    "x": 3,
-                    "y": 1
+                    "x": 0,
+                    "y": 2
                 }
             }
         }
     },
     {
-        "lever": 16,
-        "movements": 6,
-        "gats_position": [
+        "movements": 7,
+        "cats_position": [
             {
-                "img": "",
-                "name": "gato1",
+                "name": "cat1",
                 "point": {
                     "x": 2,
                     "y": 1
                 }
             },
             {
-                "img": "",
-                "name": "gato2",
+                "name": "cat2",
                 "point": {
                     "x": 2,
                     "y": 4
                 }
             },
             {
-                "img": "",
-                "name": "gato3",
+                "name": "cat3",
                 "point": {
                     "x": 3,
                     "y": 3
                 }
             },
             {
-                "img": "",
-                "name": "gato4",
+                "name": "cat4",
                 "point": {
                     "x": 4,
                     "y": 1
                 }
             },
             {
-                "img": "",
-                "name": "gato5",
+                "name": "cat5",
                 "point": {
                     "x": 5,
                     "y": 3
@@ -1175,74 +1931,68 @@
         ],
         "tiles_position": {
             "t": {
-                "rotation": 180,
+                "rotation": 270,
                 "point": {
-                    "x": 3,
-                    "y": 4
+                    "x": 0,
+                    "y": 0
                 }
             },
             "l": {
-                "rotation": 0,
+                "rotation": 270,
                 "point": {
-                    "x": 1,
-                    "y": 1
-                }
-            },
-            "li": {
-                "rotation": 90,
-                "point": {
-                    "x": 1,
+                    "x": 0,
                     "y": 3
                 }
             },
-            "z": {
+            "j": {
                 "rotation": 90,
                 "point": {
-                    "x": 3,
-                    "y": 1
+                    "x": 2,
+                    "y": 0
+                }
+            },
+            "z": {
+                "rotation": 270,
+                "point": {
+                    "x": 2,
+                    "y": 2
                 }
             }
         }
     },
     {
-        "lever": 17,
-        "movements": 6,
-        "gats_position": [
+        "movements": 10,
+        "cats_position": [
             {
-                "img": "",
-                "name": "gato1",
+                "name": "cat1",
                 "point": {
                     "x": 1,
                     "y": 5
                 }
             },
             {
-                "img": "",
-                "name": "gato2",
+                "name": "cat2",
                 "point": {
                     "x": 2,
                     "y": 2
                 }
             },
             {
-                "img": "",
-                "name": "gato3",
+                "name": "cat3",
                 "point": {
                     "x": 3,
                     "y": 1
                 }
             },
             {
-                "img": "",
-                "name": "gato4",
+                "name": "cat4",
                 "point": {
                     "x": 3,
                     "y": 4
                 }
             },
             {
-                "img": "",
-                "name": "gato5",
+                "name": "cat5",
                 "point": {
                     "x": 5,
                     "y": 4
@@ -1253,72 +2003,66 @@
             "t": {
                 "rotation": 180,
                 "point": {
-                    "x": 3,
-                    "y": 4
+                    "x": 2,
+                    "y": 3
                 }
             },
             "l": {
                 "rotation": 0,
                 "point": {
-                    "x": 1,
-                    "y": 1
+                    "x": 0,
+                    "y": 0
                 }
             },
-            "li": {
-                "rotation": 90,
+            "j": {
+                "rotation": 0,
                 "point": {
-                    "x": 1,
-                    "y": 3
+                    "x": 3,
+                    "y": 0
                 }
             },
             "z": {
-                "rotation": 90,
+                "rotation": 180,
                 "point": {
-                    "x": 3,
-                    "y": 1
+                    "x": 0,
+                    "y": 2
                 }
             }
         }
     },
     {
-        "lever": 18,
-        "movements": 6,
-        "gats_position": [
+        "movements": 10,
+        "cats_position": [
             {
-                "img": "",
-                "name": "gato1",
+                "name": "cat1",
                 "point": {
                     "x": 1,
-                    "y": 1
+                    "y": 5
                 }
             },
             {
-                "img": "",
-                "name": "gato2",
+                "name": "cat2",
                 "point": {
                     "x": 2,
                     "y": 1
                 }
             },
             {
-                "img": "",
-                "name": "gato3",
+                "name": "cat3",
                 "point": {
                     "x": 3,
                     "y": 3
                 }
             },
             {
-                "img": "",
-                "name": "gato4",
+                "name": "cat4",
                 "point": {
                     "x": 4,
                     "y": 2
                 }
             },
             {
-                "img": "",
-                "name": "gato5",
+                "name": "cat5",
                 "point": {
                     "x": 5,
                     "y": 4
@@ -1327,74 +2071,68 @@
         ],
         "tiles_position": {
             "t": {
-                "rotation": 180,
+                "rotation": 270,
                 "point": {
-                    "x": 3,
-                    "y": 4
+                    "x": 0,
+                    "y": 0
                 }
             },
             "l": {
-                "rotation": 0,
-                "point": {
-                    "x": 1,
-                    "y": 1
-                }
-            },
-            "li": {
                 "rotation": 90,
                 "point": {
-                    "x": 1,
-                    "y": 3
+                    "x": 2,
+                    "y": 0
+                }
+            },
+            "j": {
+                "rotation": 180,
+                "point": {
+                    "x": 3,
+                    "y": 2
                 }
             },
             "z": {
-                "rotation": 90,
+                "rotation": 270,
                 "point": {
-                    "x": 3,
-                    "y": 1
+                    "x": 0,
+                    "y": 2
                 }
             }
         }
     },
     {
-        "lever": 19,
-        "movements": 6,
-        "gats_position": [
+        "movements": 12,
+        "cats_position": [
             {
-                "img": "",
-                "name": "gato1",
+                "name": "cat1",
                 "point": {
                     "x": 1,
-                    "y": 1
+                    "y": 5
                 }
             },
             {
-                "img": "",
-                "name": "gato2",
+                "name": "cat2",
                 "point": {
                     "x": 1,
                     "y": 2
                 }
             },
             {
-                "img": "",
-                "name": "gato3",
+                "name": "cat3",
                 "point": {
                     "x": 3,
                     "y": 4
                 }
             },
             {
-                "img": "",
-                "name": "gato4",
+                "name": "cat4",
                 "point": {
                     "x": 4,
                     "y": 5
                 }
             },
             {
-                "img": "",
-                "name": "gato5",
+                "name": "cat5",
                 "point": {
                     "x": 5,
                     "y": 1
@@ -1403,74 +2141,68 @@
         ],
         "tiles_position": {
             "t": {
-                "rotation": 180,
+                "rotation": 90,
                 "point": {
                     "x": 3,
-                    "y": 4
+                    "y": 2
                 }
             },
             "l": {
-                "rotation": 0,
-                "point": {
-                    "x": 1,
-                    "y": 1
-                }
-            },
-            "li": {
                 "rotation": 90,
                 "point": {
-                    "x": 1,
-                    "y": 3
+                    "x": 0,
+                    "y": 0
+                }
+            },
+            "j": {
+                "rotation": 0,
+                "point": {
+                    "x": 0,
+                    "y": 2
                 }
             },
             "z": {
-                "rotation": 90,
+                "rotation": 0,
                 "point": {
-                    "x": 3,
-                    "y": 1
+                    "x": 2,
+                    "y": 0
                 }
             }
         }
     },
     {
-        "lever": 20,
-        "movements": 6,
-        "gats_position": [
+        "movements": 9,
+        "cats_position": [
             {
-                "img": "",
-                "name": "gato1",
-                "point": {
-                    "x": 1,
-                    "y": 1
-                }
-            },
-            {
-                "img": "",
-                "name": "gato2",
+                "name": "cat1",
                 "point": {
                     "x": 1,
                     "y": 2
                 }
             },
             {
-                "img": "",
-                "name": "gato3",
+                "name": "cat2",
+                "point": {
+                    "x": 1,
+                    "y": 5
+                }
+            },
+            {
+                "name": "cat3",
                 "point": {
                     "x": 3,
                     "y": 2
                 }
             },
             {
-                "img": "",
-                "name": "gato4",
+                "name": "cat4",
                 "point": {
                     "x": 4,
                     "y": 1
                 }
             },
             {
-                "img": "",
-                "name": "gato5",
+                "name": "cat5",
                 "point": {
                     "x": 4,
                     "y": 4
@@ -1479,150 +2211,138 @@
         ],
         "tiles_position": {
             "t": {
-                "rotation": 180,
+                "rotation": 0,
                 "point": {
-                    "x": 3,
-                    "y": 4
+                    "x": 0,
+                    "y": 0
                 }
             },
             "l": {
-                "rotation": 0,
+                "rotation": 180,
                 "point": {
-                    "x": 1,
-                    "y": 1
+                    "x": 3,
+                    "y": 0
                 }
             },
-            "li": {
+            "j": {
                 "rotation": 90,
                 "point": {
-                    "x": 1,
+                    "x": 2,
                     "y": 3
                 }
             },
             "z": {
                 "rotation": 90,
                 "point": {
-                    "x": 3,
-                    "y": 1
+                    "x": 0,
+                    "y": 2
                 }
             }
         }
     },
     {
-        "lever": 21,
-        "movements": 6,
-        "gats_position": [
+        "movements": 7,
+        "cats_position": [
             {
-                "img": "",
-                "name": "gato1",
+                "name": "cat1",
                 "point": {
                     "x": 1,
                     "y": 2
                 }
             },
             {
-                "img": "",
-                "name": "gato2",
+                "name": "cat2",
                 "point": {
                     "x": 2,
                     "y": 2
                 }
             },
             {
-                "img": "",
-                "name": "gato3",
+                "name": "cat3",
                 "point": {
                     "x": 4,
                     "y": 1
                 }
             },
             {
-                "img": "",
-                "name": "gato4",
+                "name": "cat4",
                 "point": {
                     "x": 4,
                     "y": 5
                 }
             },
             {
-                "img": "",
-                "name": "gato5",
+                "name": "cat5",
                 "point": {
-                    "x": 4,
+                    "x": 5,
                     "y": 2
                 }
             }
         ],
         "tiles_position": {
             "t": {
-                "rotation": 180,
+                "rotation": 90,
                 "point": {
                     "x": 3,
-                    "y": 4
+                    "y": 2
                 }
             },
             "l": {
-                "rotation": 0,
-                "point": {
-                    "x": 1,
-                    "y": 1
-                }
-            },
-            "li": {
                 "rotation": 90,
                 "point": {
-                    "x": 1,
-                    "y": 3
+                    "x": 0,
+                    "y": 0
+                }
+            },
+            "j": {
+                "rotation": 180,
+                "point": {
+                    "x": 0,
+                    "y": 2
                 }
             },
             "z": {
-                "rotation": 90,
+                "rotation": 180,
                 "point": {
-                    "x": 3,
-                    "y": 1
+                    "x": 1,
+                    "y": 2
                 }
             }
         }
     },
     {
-        "lever": 22,
-        "movements": 6,
-        "gats_position": [
+        "movements": 9,
+        "cats_position": [
             {
-                "img": "",
-                "name": "gato1",
+                "name": "cat1",
                 "point": {
                     "x": 1,
                     "y": 2
                 }
             },
             {
-                "img": "",
-                "name": "gato2",
+                "name": "cat2",
                 "point": {
                     "x": 2,
                     "y": 2
                 }
             },
             {
-                "img": "",
-                "name": "gato3",
+                "name": "cat3",
                 "point": {
                     "x": 3,
                     "y": 4
                 }
             },
             {
-                "img": "",
-                "name": "gato4",
+                "name": "cat4",
                 "point": {
                     "x": 4,
                     "y": 1
                 }
             },
             {
-                "img": "",
-                "name": "gato5",
+                "name": "cat5",
                 "point": {
                     "x": 5,
                     "y": 2
@@ -1633,72 +2353,66 @@
             "t": {
                 "rotation": 180,
                 "point": {
-                    "x": 3,
-                    "y": 4
-                }
-            },
-            "l": {
-                "rotation": 0,
-                "point": {
-                    "x": 1,
-                    "y": 1
-                }
-            },
-            "li": {
-                "rotation": 90,
-                "point": {
-                    "x": 1,
+                    "x": 2,
                     "y": 3
                 }
             },
-            "z": {
+            "l": {
                 "rotation": 90,
                 "point": {
-                    "x": 3,
+                    "x": 0,
+                    "y": 0
+                }
+            },
+            "j": {
+                "rotation": 180,
+                "point": {
+                    "x": 0,
+                    "y": 2
+                }
+            },
+            "z": {
+                "rotation": 270,
+                "point": {
+                    "x": 2,
                     "y": 1
                 }
             }
         }
     },
     {
-        "lever": 23,
-        "movements": 6,
-        "gats_position": [
+        "movements": 11,
+        "cats_position": [
             {
-                "img": "",
-                "name": "gato1",
+                "name": "cat1",
                 "point": {
                     "x": 1,
                     "y": 2
                 }
             },
             {
-                "img": "",
-                "name": "gato2",
+                "name": "cat2",
                 "point": {
                     "x": 1,
                     "y": 5
                 }
             },
             {
-                "img": "",
-                "name": "gato3",
+                "name": "cat3",
                 "point": {
                     "x": 2,
                     "y": 1
                 }
             },
             {
-                "img": "",
-                "name": "gato4",
+                "name": "cat4",
                 "point": {
                     "x": 3,
                     "y": 3
                 }
             },
             {
-                "img": "",
-                "name": "gato5",
+                "name": "cat5",
                 "point": {
                     "x": 5,
                     "y": 3
@@ -1709,72 +2423,66 @@
             "t": {
                 "rotation": 180,
                 "point": {
-                    "x": 3,
-                    "y": 4
+                    "x": 2,
+                    "y": 3
                 }
             },
             "l": {
-                "rotation": 0,
+                "rotation": 90,
+                "point": {
+                    "x": 2,
+                    "y": 0
+                }
+            },
+            "j": {
+                "rotation": 270,
                 "point": {
                     "x": 1,
                     "y": 1
-                }
-            },
-            "li": {
-                "rotation": 90,
-                "point": {
-                    "x": 1,
-                    "y": 3
                 }
             },
             "z": {
                 "rotation": 90,
                 "point": {
-                    "x": 3,
-                    "y": 1
+                    "x": 0,
+                    "y": 2
                 }
             }
         }
     },
     {
-        "lever": 24,
-        "movements": 6,
-        "gats_position": [
+        "movements": 10,
+        "cats_position": [
             {
-                "img": "",
-                "name": "gato1",
+                "name": "cat1",
                 "point": {
                     "x": 1,
                     "y": 2
                 }
             },
             {
-                "img": "",
-                "name": "gato2",
+                "name": "cat2",
                 "point": {
                     "x": 1,
                     "y": 4
                 }
             },
             {
-                "img": "",
-                "name": "gato3",
+                "name": "cat3",
                 "point": {
                     "x": 3,
                     "y": 5
                 }
             },
             {
-                "img": "",
-                "name": "gato4",
+                "name": "cat4",
                 "point": {
                     "x": 4,
                     "y": 1
                 }
             },
             {
-                "img": "",
-                "name": "gato5",
+                "name": "cat5",
                 "point": {
                     "x": 5,
                     "y": 4
@@ -1783,74 +2491,68 @@
         ],
         "tiles_position": {
             "t": {
-                "rotation": 180,
+                "rotation": 0,
                 "point": {
-                    "x": 3,
-                    "y": 4
+                    "x": 0,
+                    "y": 0
                 }
             },
             "l": {
-                "rotation": 0,
+                "rotation": 90,
                 "point": {
-                    "x": 1,
+                    "x": 2,
                     "y": 1
                 }
             },
-            "li": {
-                "rotation": 90,
+            "j": {
+                "rotation": 180,
                 "point": {
-                    "x": 1,
-                    "y": 3
+                    "x": 3,
+                    "y": 2
                 }
             },
             "z": {
-                "rotation": 90,
+                "rotation": 0,
                 "point": {
-                    "x": 3,
-                    "y": 1
+                    "x": 0,
+                    "y": 2
                 }
             }
         }
     },
     {
-        "lever": 25,
-        "movements": 6,
-        "gats_position": [
+        "movements": 13,
+        "cats_position": [
             {
-                "img": "",
-                "name": "gato1",
+                "name": "cat1",
                 "point": {
                     "x": 1,
                     "y": 2
                 }
             },
             {
-                "img": "",
-                "name": "gato2",
+                "name": "cat2",
                 "point": {
                     "x": 2,
                     "y": 4
                 }
             },
             {
-                "img": "",
-                "name": "gato3",
+                "name": "cat3",
                 "point": {
                     "x": 3,
                     "y": 4
                 }
             },
             {
-                "img": "",
-                "name": "gato4",
+                "name": "cat4",
                 "point": {
                     "x": 4,
                     "y": 1
                 }
             },
             {
-                "img": "",
-                "name": "gato5",
+                "name": "cat5",
                 "point": {
                     "x": 5,
                     "y": 3
@@ -1859,74 +2561,68 @@
         ],
         "tiles_position": {
             "t": {
-                "rotation": 180,
+                "rotation": 0,
                 "point": {
-                    "x": 3,
-                    "y": 4
+                    "x": 0,
+                    "y": 0
                 }
             },
             "l": {
                 "rotation": 0,
                 "point": {
-                    "x": 1,
-                    "y": 1
+                    "x": 0,
+                    "y": 2
                 }
             },
-            "li": {
-                "rotation": 90,
+            "j": {
+                "rotation": 270,
                 "point": {
-                    "x": 1,
-                    "y": 3
+                    "x": 2,
+                    "y": 1
                 }
             },
             "z": {
-                "rotation": 90,
+                "rotation": 0,
                 "point": {
-                    "x": 3,
-                    "y": 1
+                    "x": 2,
+                    "y": 2
                 }
             }
         }
     },
     {
-        "lever": 26,
-        "movements": 6,
-        "gats_position": [
+        "movements": 13,
+        "cats_position": [
             {
-                "img": "",
-                "name": "gato1",
+                "name": "cat1",
                 "point": {
                     "x": 1,
                     "y": 2
                 }
             },
             {
-                "img": "",
-                "name": "gato2",
+                "name": "cat2",
                 "point": {
                     "x": 1,
                     "y": 5
                 }
             },
             {
-                "img": "",
-                "name": "gato3",
+                "name": "cat3",
                 "point": {
                     "x": 2,
                     "y": 2
                 }
             },
             {
-                "img": "",
-                "name": "gato4",
+                "name": "cat4",
                 "point": {
                     "x": 4,
                     "y": 1
                 }
             },
             {
-                "img": "",
-                "name": "gato5",
+                "name": "cat5",
                 "point": {
                     "x": 4,
                     "y": 3
@@ -1935,74 +2631,68 @@
         ],
         "tiles_position": {
             "t": {
-                "rotation": 180,
+                "rotation": 90,
                 "point": {
                     "x": 3,
-                    "y": 4
+                    "y": 0
                 }
             },
             "l": {
-                "rotation": 0,
-                "point": {
-                    "x": 1,
-                    "y": 1
-                }
-            },
-            "li": {
                 "rotation": 90,
                 "point": {
-                    "x": 1,
+                    "x": 0,
+                    "y": 0
+                }
+            },
+            "j": {
+                "rotation": 270,
+                "point": {
+                    "x": 2,
                     "y": 3
                 }
             },
             "z": {
-                "rotation": 90,
+                "rotation": 180,
                 "point": {
-                    "x": 3,
-                    "y": 1
+                    "x": 0,
+                    "y": 2
                 }
             }
         }
     },
     {
-        "lever": 27,
-        "movements": 6,
-        "gats_position": [
+        "movements": 13,
+        "cats_position": [
             {
-                "img": "",
-                "name": "gato1",
+                "name": "cat1",
                 "point": {
                     "x": 1,
                     "y": 4
                 }
             },
             {
-                "img": "",
-                "name": "gato2",
+                "name": "cat2",
                 "point": {
                     "x": 2,
                     "y": 2
                 }
             },
             {
-                "img": "",
-                "name": "gato3",
+                "name": "cat3",
                 "point": {
                     "x": 3,
                     "y": 3
                 }
             },
             {
-                "img": "",
-                "name": "gato4",
+                "name": "cat4",
                 "point": {
                     "x": 4,
                     "y": 1
                 }
             },
             {
-                "img": "",
-                "name": "gato5",
+                "name": "cat5",
                 "point": {
                     "x": 5,
                     "y": 2
@@ -2011,74 +2701,68 @@
         ],
         "tiles_position": {
             "t": {
-                "rotation": 180,
+                "rotation": 270,
                 "point": {
                     "x": 3,
-                    "y": 4
+                    "y": 1
                 }
             },
             "l": {
                 "rotation": 0,
                 "point": {
-                    "x": 1,
-                    "y": 1
+                    "x": 0,
+                    "y": 0
                 }
             },
-            "li": {
+            "j": {
                 "rotation": 90,
                 "point": {
-                    "x": 1,
+                    "x": 2,
                     "y": 3
                 }
             },
             "z": {
-                "rotation": 90,
+                "rotation": 0,
                 "point": {
-                    "x": 3,
-                    "y": 1
+                    "x": 0,
+                    "y": 2
                 }
             }
         }
     },
     {
-        "lever": 28,
-        "movements": 6,
-        "gats_position": [
+        "movements": 16,
+        "cats_position": [
             {
-                "img": "",
-                "name": "gato1",
+                "name": "cat1",
                 "point": {
                     "x": 1,
                     "y": 5
                 }
             },
             {
-                "img": "",
-                "name": "gato2",
+                "name": "cat2",
                 "point": {
                     "x": 2,
                     "y": 1
                 }
             },
             {
-                "img": "",
-                "name": "gato3",
+                "name": "cat3",
                 "point": {
                     "x": 2,
                     "y": 4
                 }
             },
             {
-                "img": "",
-                "name": "gato4",
+                "name": "cat4",
                 "point": {
                     "x": 4,
                     "y": 3
                 }
             },
             {
-                "img": "",
-                "name": "gato5",
+                "name": "cat5",
                 "point": {
                     "x": 5,
                     "y": 3
@@ -2087,74 +2771,68 @@
         ],
         "tiles_position": {
             "t": {
-                "rotation": 180,
+                "rotation": 270,
                 "point": {
-                    "x": 3,
-                    "y": 4
+                    "x": 0,
+                    "y": 0
                 }
             },
             "l": {
-                "rotation": 0,
-                "point": {
-                    "x": 1,
-                    "y": 1
-                }
-            },
-            "li": {
                 "rotation": 90,
                 "point": {
-                    "x": 1,
+                    "x": 2,
+                    "y": 0
+                }
+            },
+            "j": {
+                "rotation": 90,
+                "point": {
+                    "x": 2,
                     "y": 3
                 }
             },
             "z": {
-                "rotation": 90,
+                "rotation": 180,
                 "point": {
-                    "x": 3,
+                    "x": 1,
                     "y": 1
                 }
             }
         }
     },
     {
-        "lever": 29,
-        "movements": 6,
-        "gats_position": [
+        "movements": 17,
+        "cats_position": [
             {
-                "img": "",
-                "name": "gato1",
+                "name": "cat1",
                 "point": {
                     "x": 1,
                     "y": 2
                 }
             },
             {
-                "img": "",
-                "name": "gato2",
+                "name": "cat2",
                 "point": {
                     "x": 3,
                     "y": 4
                 }
             },
             {
-                "img": "",
-                "name": "gato3",
+                "name": "cat3",
                 "point": {
                     "x": 3,
                     "y": 5
                 }
             },
             {
-                "img": "",
-                "name": "gato4",
+                "name": "cat4",
                 "point": {
                     "x": 4,
                     "y": 1
                 }
             },
             {
-                "img": "",
-                "name": "gato5",
+                "name": "cat5",
                 "point": {
                     "x": 5,
                     "y": 4
@@ -2163,74 +2841,68 @@
         ],
         "tiles_position": {
             "t": {
-                "rotation": 180,
+                "rotation": 0,
                 "point": {
-                    "x": 3,
-                    "y": 4
+                    "x": 0,
+                    "y": 0
                 }
             },
             "l": {
                 "rotation": 0,
                 "point": {
-                    "x": 1,
-                    "y": 1
+                    "x": 3,
+                    "y": 2
                 }
             },
-            "li": {
+            "j": {
                 "rotation": 90,
                 "point": {
-                    "x": 1,
-                    "y": 3
+                    "x": 2,
+                    "y": 0
                 }
             },
             "z": {
-                "rotation": 90,
+                "rotation": 180,
                 "point": {
-                    "x": 3,
-                    "y": 1
+                    "x": 0,
+                    "y": 2
                 }
             }
         }
     },
     {
-        "lever": 30,
-        "movements": 6,
-        "gats_position": [
+        "movements": 18,
+        "cats_position": [
             {
-                "img": "",
-                "name": "gato1",
+                "name": "cat1",
                 "point": {
                     "x": 1,
                     "y": 2
                 }
             },
             {
-                "img": "",
-                "name": "gato2",
+                "name": "cat2",
                 "point": {
                     "x": 4,
                     "y": 1
                 }
             },
             {
-                "img": "",
-                "name": "gato3",
+                "name": "cat3",
                 "point": {
                     "x": 4,
                     "y": 2
                 }
             },
             {
-                "img": "",
-                "name": "gato4",
+                "name": "cat4",
                 "point": {
                     "x": 4,
                     "y": 5
                 }
             },
             {
-                "img": "",
-                "name": "gato5",
+                "name": "cat5",
                 "point": {
                     "x": 5,
                     "y": 4
@@ -2239,74 +2911,68 @@
         ],
         "tiles_position": {
             "t": {
-                "rotation": 180,
-                "point": {
-                    "x": 3,
-                    "y": 4
-                }
-            },
-            "l": {
-                "rotation": 0,
-                "point": {
-                    "x": 1,
-                    "y": 1
-                }
-            },
-            "li": {
                 "rotation": 90,
                 "point": {
                     "x": 1,
-                    "y": 3
+                    "y": 0
+                }
+            },
+            "l": {
+                "rotation": 180,
+                "point": {
+                    "x": 3,
+                    "y": 0
+                }
+            },
+            "j": {
+                "rotation": 180,
+                "point": {
+                    "x": 0,
+                    "y": 2
                 }
             },
             "z": {
                 "rotation": 90,
                 "point": {
-                    "x": 3,
-                    "y": 1
+                    "x": 1,
+                    "y": 2
                 }
             }
         }
     },
     {
-        "lever": 31,
-        "movements": 6,
-        "gats_position": [
+        "movements": 26,
+        "cats_position": [
             {
-                "img": "",
-                "name": "gato1",
+                "name": "cat1",
                 "point": {
                     "x": 1,
                     "y": 2
                 }
             },
             {
-                "img": "",
-                "name": "gato2",
+                "name": "cat2",
                 "point": {
                     "x": 3,
                     "y": 1
                 }
             },
             {
-                "img": "",
-                "name": "gato3",
+                "name": "cat3",
                 "point": {
                     "x": 3,
                     "y": 3
                 }
             },
             {
-                "img": "",
-                "name": "gato4",
+                "name": "cat4",
                 "point": {
                     "x": 4,
                     "y": 5
                 }
             },
             {
-                "img": "",
-                "name": "gato5",
+                "name": "cat5",
                 "point": {
                     "x": 5,
                     "y": 2
@@ -2317,72 +2983,66 @@
             "t": {
                 "rotation": 180,
                 "point": {
-                    "x": 3,
-                    "y": 4
+                    "x": 0,
+                    "y": 3
                 }
             },
             "l": {
                 "rotation": 0,
                 "point": {
-                    "x": 1,
-                    "y": 1
+                    "x": 3,
+                    "y": 0
                 }
             },
-            "li": {
+            "j": {
                 "rotation": 90,
                 "point": {
-                    "x": 1,
-                    "y": 3
+                    "x": 2,
+                    "y": 2
                 }
             },
             "z": {
-                "rotation": 90,
+                "rotation": 0,
                 "point": {
-                    "x": 3,
-                    "y": 1
+                    "x": 0,
+                    "y": 0
                 }
             }
         }
     },
     {
-        "lever": 32,
-        "movements": 6,
-        "gats_position": [
+        "movements": 33,
+        "cats_position": [
             {
-                "img": "",
-                "name": "gato1",
+                "name": "cat1",
                 "point": {
                     "x": 1,
                     "y": 2
                 }
             },
             {
-                "img": "",
-                "name": "gato2",
+                "name": "cat2",
                 "point": {
                     "x": 1,
                     "y": 5
                 }
             },
             {
-                "img": "",
-                "name": "gato3",
+                "name": "cat3",
                 "point": {
                     "x": 3,
                     "y": 4
                 }
             },
             {
-                "img": "",
-                "name": "gato4",
+                "name": "cat4",
                 "point": {
                     "x": 5,
                     "y": 1
                 }
             },
             {
-                "img": "",
-                "name": "gato5",
+                "name": "cat5",
                 "point": {
                     "x": 5,
                     "y": 4
@@ -2391,20 +3051,20 @@
         ],
         "tiles_position": {
             "t": {
-                "rotation": 180,
+                "rotation": 90,
                 "point": {
-                    "x": 3,
-                    "y": 4
-                }
-            },
-            "l": {
-                "rotation": 0,
-                "point": {
-                    "x": 1,
+                    "x": 0,
                     "y": 1
                 }
             },
-            "li": {
+            "l": {
+                "rotation": 90,
+                "point": {
+                    "x": 0,
+                    "y": 0
+                }
+            },
+            "j": {
                 "rotation": 90,
                 "point": {
                     "x": 1,
@@ -2412,10 +3072,10 @@
                 }
             },
             "z": {
-                "rotation": 90,
+                "rotation": 0,
                 "point": {
-                    "x": 3,
-                    "y": 1
+                    "x": 2,
+                    "y": 0
                 }
             }
         }

@@ -8,6 +8,11 @@
     transform: translateZ(90px);
     background-color: #ffffff40;
     backdrop-filter: blur(0px);
+}
+
+.next-menu-content {
+    width: 100%;
+    height: 100%;
     
     display: flex;
     flex-direction: column;

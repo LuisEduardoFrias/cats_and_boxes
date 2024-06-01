@@ -6,20 +6,21 @@ import { Grid } from "../models/Grid"
 import { Tile } from "../models/Tile"
 import NextMenu from "../components/NextMenu"
 import GameMenu from "../components/GameMenu"
-import DrawnGats from "../components/DrawnGats"
+import DrawnCats from "../components/DrawnCats"
 import DrawnTiles from "../components/DrawnTiles"
 import DrawnBoard from "../components/DrawnBoard"
+import WindowSound from "../components/WindowSound"
 import { useSubscribeState } from "../subscribe_state/index"
 import { handleDragStart, handleDragMove, handleDragOver, handleDragEnd, } from "../helpers/playFunctionHelper"
 import "../styles/screens/play.css"
 
 export default function Play() {
-    const [{ level, gatsInBixes, movements, menuGame, confetti }, dispatch] = useSubscribeState(['level', 'gatsInBixes', 'movements', 'menuGame', 'confetti'])
+    const [{ level, catsInBoxes, movements, menuGame, confetti }, dispatch] = useSubscribeState(['level', 'catsInBoxes', 'movements', 'menuGame', 'confetti'])
 
     const topMovements = levels[level].movements;
 
     const playMain = useMemo(() =>
-        <>
+        <WindowSound src={"../assets/sound/next_lever.wav"}>
             <DndContext
                 collisionDetection={closestCenter}
                 onDragStart={handleDragStart}
@@ -29,24 +30,26 @@ export default function Play() {
             >
                 <DrawnBoard tile_size={1} >
                     <DrawnTiles />
-                    <DrawnGats level={level} />
+                    <DrawnCats level={level} />
                 </DrawnBoard>
             </DndContext>
-        </>, [level]
+        </WindowSound>, [level]
     )
 
     return (
         <div className="play">
             <div className="play-header">
-                <button tabindex={0} className="btn" onClick={() => dispatch({ type: "ChangeStateViewMenuGame", isShow: true })} ><img src="images/menu.png" atl="image of menu arrow" /></button>
+                <button tabindex={0} className="btn" onClick={() => dispatch({ type: "ShowMenuOfGame", isShow: true })} >
+                    <img src="images/menu.png" atl="image of menu arrow" />
+                </button>
                 <div>
                     <div>
                         <label>Level</label>
-                        <label>{level + 1}</label>
+                        <label>{level}</label>
                     </div>
                     <div>
-                        <label>Gats in box</label>
-                        <label>{gatsInBixes}</label>
+                        <label>Gats in boxes</label>
+                        <label>{catsInBoxes.length}</label>
                     </div>
                     <div>
                         <label>Movements</label>
@@ -55,7 +58,8 @@ export default function Play() {
                 </div>
             </div>
             <div className="play-main">
-                {confetti && <NextMenu level={level + 1} />}
+                {confetti && <NextMenu level={level + 1} />
+                }
                 {menuGame && <GameMenu />}
                 {playMain}
             </div>

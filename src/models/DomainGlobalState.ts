@@ -1,10 +1,11 @@
 import { Tile } from './Tile'
 import { Grid } from './Grid'
+import { CatInBox } from './CatInBox'
 
 export type DomainGlobalState = {
-    grid: (Grid & null)[25],
-    lever: number | null,
-    gatsInBixes:number, 
-    movements:number,
+    virtualGrid: (Grid & null)[25],
+    level: number | null,
+    catsInBoxes: CatInBox[],
+    movements: number,
     tiles_position: [Tile, Tile, Tile, Tile] | undefined,
 }

@@ -1,32 +1,38 @@
 //
+import { InterfaceGlobalState } from "./models/InterfaceGlobalState"
+import { DomainGlobalState } from "./models/DomainGlobalState"
+import useInitialize from "./subscribe_state/index"
 import levels from "./assets/jsons/levels.json"
-import { levelState } from "./models/Level"
 import intefaceReducer from "./reducers/interfaceReducer"
 import domainReducer from "./reducers/domainReducer"
-import { DomainGlobalState } from "./models/DomainGlobalState"
-import { InterfaceGlobalState } from "./models/InterfaceGlobalState"
+import { levelState } from "./models/Level"
+import { selectAll } from "./models/SelectAll"
 import Game from "./screens/Game"
-import useInitialize from "./subscribe_state/index"
 import './App.css'
 
 const domInitialState: DomainGlobalState = {
-    grid: [],
+    virtualGrid: [],
     level: null,
     movements: 0,
-    gatsInBixes: 0,
+    catsInBoxes: [],
     tiles_position: undefined,
 }
 
 const intInitialState: InterfaceGlobalState = {
     tile_seleted: undefined,
     levels: levels.map((_, i) => ({ level: i, state: i <= 1 ? levelState.activated : levelState.desactivated })),
-    edited_grids: [],
+    shadow_in_grid: [],
+    boxChangeImg: [],
     confetti: false,
     release: true,
+    sound: { volume: 40, muted: false },
+    music: { volume: 40, muted: false },
     menuGame: false,
-    viewlevels: false,
-    viewPlay: false,
-    viewSetting: false
+    levelsView: false,
+    playView: false,
+    settingView: false,
+    tutorialView: false,
+    selectAll: selectAll.none,
 }
 
 const initialState: DomainGlobalState & InterfaceGlobalState = {
@@ -35,6 +41,7 @@ const initialState: DomainGlobalState & InterfaceGlobalState = {
 }
 
 function reducer(state: DomainGlobalState & InterfaceGlobalState, actions: any) {
+
     let result = domainReducer(state, actions)
 
     if (!result)
@@ -45,7 +52,7 @@ function reducer(state: DomainGlobalState & InterfaceGlobalState, actions: any) 
     else
         return result;
 }
-
+//
 export default function App() {
     useInitialize(reducer, initialState);
     return (<Game />)

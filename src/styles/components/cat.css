@@ -1,4 +1,4 @@
-.gat-container {
+.cat-container {
     width: 64px;
     height: 64px;
     transform: translateZ(60px);
@@ -7,6 +7,6 @@
     place-content: center;
 }
 
-.gat-img {
+.cat-img {
     filter: drop-shadow(2px 2px 2px black);
 }

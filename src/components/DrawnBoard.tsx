@@ -1,5 +1,6 @@
 import { useDroppable } from '@dnd-kit/core';
 import { Children } from "react"
+import { selectAll } from "../models/SelectAll"
 import { useSubscribeState } from "../subscribe_state/index"
 import "../styles/components/board.css"
 
@@ -10,8 +11,8 @@ type TBoardProps = {
 
 export default function DrawnBoard({ children, tile_size = 1 }: TBoardProps) {
 
-    const [{ edited_grids }] = useSubscribeState(["edited_grids"])
-
+    const [{ shadow_in_grid, selectAll: selectAllforfilter }] = useSubscribeState(["shadow_in_grid", "selectAll"])
+    
     if (tile_size < 1 || tile_size > 3) {
         tile_size = 1;
     }
@@ -26,26 +27,29 @@ export default function DrawnBoard({ children, tile_size = 1 }: TBoardProps) {
         gridTemplateRows: `repeat(5, ${size * tile_size}px)`
     }
 
+    const filter = selectAllforfilter !== selectAll.none ? "blur(10px)" : "blur(0px)";
+
     return (
         <div className="board" style={board_style} >
-            {grid.map((_, index) => <Droppable key={index} id={index} is_back={checkGrid(index, edited_grids)} size={size} tile_size={tile_size} />)}
+            {grid.map((_, index) => <Droppable key={index} filter={filter} id={index} is_back={checkGrid(index, shadow_in_grid)} size={size} tile_size={tile_size} />)}
             {children}
         </div>
     )
 }
 
-function checkGrid(index: number, edited_grids: number[]): boolean {
-    return edited_grids.find(e => e === index) === undefined ? false : true;
+function checkGrid(index: number, shadow_in_grid: number[]): boolean {
+    return shadow_in_grid?.find(e => e === index) === undefined ? false : true;
 }
 
 type TDroppable = {
     id: number,
     size: number,
     tile_size: 1 | 2 | 3,
-    is_back: boolean
+    is_back: boolean,
+    filter: string,
 }
 
-function Droppable({ id, size, tile_size, is_back }: TDroppable) {
+function Droppable({ id, size, tile_size, is_back, filter }: TDroppable) {
 
     const { rect, node, over, isOver, setNodeRef } = useDroppable({
         id, data: {
@@ -63,6 +67,7 @@ function Droppable({ id, size, tile_size, is_back }: TDroppable) {
     });
 
     const style = {
+        filter: filter,
         width: `${size * tile_size}px`,
         height: `${size * tile_size}px`,
         backgroundColor: is_back ? 'black' : "",

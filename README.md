@@ -11,8 +11,7 @@
  ¿Puedes ayudarlos a encontrar su escondite favorito?
  
  # ¿Cómo se juega?
- 
-   1 - Selecciona un desafío.
-   2 - Mueve las piezas de caja de una en una para que cada gato se esconda en una caja de cartón.
-   3 - Has encontrado la solución cuando todos los gatos están escondidos dentro de una caja de cartón."
+ * 1 - Selecciona un desafío.
+ * 2 - Mueve las piezas de caja de una en una para que cada gato se esconda en una caja de cartón.
+ * 3 - Has encontrado la solución cuando todos los gatos están escondidos dentro de una caja de cartón."
 

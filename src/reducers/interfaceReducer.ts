@@ -47,7 +47,7 @@ export default function intefaceReducer(state: GetBox, actions: Action) {
                 confetti: false,
                 tile_seleted: undefined,
                 level: actions.isShow ? 4 : 0,
-                levels: actions.levels,
+                levels: actions.levels ?? state.levels,
                 ...levelBuildHelper(actions.isShow ? 4 : 0)
             }
 

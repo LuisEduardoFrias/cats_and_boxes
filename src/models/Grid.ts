@@ -2,7 +2,7 @@ import {Point} from "./point"
 
 export type Grid = {
     point:Point,
-    hasGat:boolean,
+    hasCat:boolean,
     hasShadow:boolean,
     hasTile:boolean,
     hasBox: boolean,

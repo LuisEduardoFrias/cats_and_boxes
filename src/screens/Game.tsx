@@ -17,12 +17,13 @@ export default function Game() {
         <div className="game">
             <header>
                 <h1 className="game-text-logo font-effect-shadow-multiple" >
-                    GATS & BOXES
+                    CATS & BOXES
                 </h1>
             </header>
             <main>
                 <OpenClose notInitialize={true} dependecies={[levelsView, settingView, playView, tutorialView]}>
-                    {(!playView && !tutorialView) &&
+                    {
+                        (!playView && !tutorialView) &&
                         <WindowSound src="/sound/music.mp3" >
                             {(!playView && !settingView && !levelsView && !tutorialView) &&
                                 <Menu />
@@ -41,6 +42,7 @@ export default function Game() {
                             <Tutorial />
                         </WindowSound>
                     }
+
                 </OpenClose>
             </main >
             {confetti && <img src={`/images/confetti.gif`} className="game-confetti" alt="image of confetti" />}

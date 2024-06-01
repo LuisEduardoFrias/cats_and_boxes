@@ -1,10 +1,13 @@
-import { getTileIndexByPoint, getIndexByPoint } from "../helpers/gridFunctionHelper.ts"
-import { pieceShadowPosition } from "../helpers/playFunctionHelper.ts"
+/***/
 import pieces from "../assets/jsons/pieces.json"
-import { Tile } from "../models/Tile.ts"
-import { Grid } from "../models/Grid.ts"
+import levels from "../assets/jsons/levels.json"
+import { Grid } from "../models/Grid"
+import { Tile } from "../models/Tile"
+import { Level, levelState } from "../models/Level.ts"
+import { pieceShadowPosition } from "../helpers/playFunctionHelper.ts"
+import { getTileIndexByPoint, getIndexByPoint } from "../helpers/gridFunctionHelper"
 
-export function handleCollisionWithGats(pieces, gats_position, seleted_tile, tile_name) {
+export function handleCollisionWithGats(pieces, cats_position, seleted_tile, tile_name) {
 
     //alert("colition-pieces: " + JSON.stringify(pieces, null, 2))
     const piece_index = pieces.findIndex(e => e.name === tile_name);
@@ -15,12 +18,12 @@ export function handleCollisionWithGats(pieces, gats_position, seleted_tile, til
         const box_x = (seleted_tile.point.x + boxes[j].x) - 1;
         const box_y = (seleted_tile.point.y + boxes[j].y) - 1;
 
-        for (let i = 0; i < gats_position.length; i++) {
-            if (gats_position[i].point.x == box_x && gats_position[i].point.y == box_y) {
-                pieces[piece_index].pieces[index].tiles.filter(e => e.img.includes("box"))[j].has_gat = true;
+        for (let i = 0; i < cats_position.length; i++) {
+            if (cats_position[i].point.x == box_x && cats_position[i].point.y == box_y) {
+                pieces[piece_index].pieces[index].tiles.filter(e => e.img.includes("box"))[j].has_cat = true;
                 break
             } else {
-                pieces[piece_index].pieces[index].tiles.filter(e => e.img.includes("box"))[j].has_gat = false;
+                pieces[piece_index].pieces[index].tiles.filter(e => e.img.includes("box"))[j].has_cat = false;
             }
         }
     }
@@ -28,7 +31,7 @@ export function handleCollisionWithGats(pieces, gats_position, seleted_tile, til
     return pieces;
 }
 
-//verifica las colicionde de cajas y gatos para cambiar la imagen
+//verifica las colicionde de cajas y cats para cambiar la imagen
 export function checkBoxesThatChangeImage(tile_selected, tiles_position, virtualGrid, boxChangedImg) {
 
     const mosaicIndex = getIndexOfAllMosaic(tile_selected.name, tiles_position);
@@ -38,24 +41,24 @@ export function checkBoxesThatChangeImage(tile_selected, tiles_position, virtual
     for (let i = 0; i < mosaicIndex.length; i++) {
         const gridItem = virtualGrid[mosaicIndex[i].index];
 
-        if (gridItem?.hasGat === true && mosaicIndex[i].isBox) {
+        if (gridItem?.hasCat === true && mosaicIndex[i].isBox) {
 
             let newImg = undefined;
 
-            if (gridItem.data.includes("gato1")) {
-                newImg = "gatInBox1"
+            if (gridItem.data.includes("cat1")) {
+                newImg = "catInBox1"
             }
-            else if (gridItem.data.includes("gato2")) {
-                newImg = "gatInBox2"
+            else if (gridItem.data.includes("cat2")) {
+                newImg = "catInBox2"
             }
-            else if (gridItem.data.includes("gato3")) {
-                newImg = "gatInBox3"
+            else if (gridItem.data.includes("cat3")) {
+                newImg = "catInBox3"
             }
-            else if (gridItem.data.includes("gato4")) {
-                newImg = "gatInBox4"
+            else if (gridItem.data.includes("cat4")) {
+                newImg = "catInBox4"
             }
-            else if (gridItem.data.includes("gato5")) {
-                newImg = "gatInBox5"
+            else if (gridItem.data.includes("cat5")) {
+                newImg = "catInBox5"
             }
 
             const index = boxChangedImg.findIndex(e => e.indexBox === mosaicIndex[i].index)
@@ -72,8 +75,6 @@ export function checkBoxesThatChangeImage(tile_selected, tiles_position, virtual
         if (index !== -1)
             boxChangedImg.splice(index, 1);
     }
-
-    // alert("boxes: " + JSON.stringify(boxChangedImg))
 
     return boxChangedImg;
 }
@@ -131,14 +132,14 @@ export function checkCollisionsForPartDeselection(tile_selected_name: string, ti
 
         const gridItem = virtualGrid[mosaicIndex[i]?.index];
 
-        console.log("colicion: " + JSON.stringify(gridItem, null, 2) + " -mosaic: " + JSON.stringify(mosaicIndex[i]?.index, null, 2))
-        if (gridItem?.hasTile === true || (gridItem?.hasGat === true && !mosaicIndex[i].isBox)) {
+        ////console.log("colicion: " + JSON.stringify(gridItem, null, 2) + " -mosaic: " + JSON.stringify(mosaicIndex[i]?.index, null, 2))
+        if (gridItem?.hasTile === true || (gridItem?.hasCat === true && !mosaicIndex[i].isBox)) {
             release = false;
             break
         }
 
         if (gridItem === undefined) {
-            console.log("colicion 2do: " + JSON.stringify(gridItem, null, 2))
+            ////console.log("colicion 2do: " + JSON.stringify(gridItem, null, 2))
             release = false;
             break;
         }
@@ -146,10 +147,109 @@ export function checkCollisionsForPartDeselection(tile_selected_name: string, ti
     return release;
 }
 
-function ShowVictualGrid(newgrid) {
+export function completedLevel(level: number, levels: Level[]) {
+    const confetti = true;
+    levels[level - 1] = { level: level - 1, state: levelState.completed };
+
+    const index = levels.findIndex(e => e.state === levelState.desactivated)
+    levels[index] = { level: levels[index].level, state: levelState.activated };
+
+    return confetti;
+}
+
+export function insertPieceInVictualGrid(virtualGrid: Grid[25], tile_seleted: Tile) {
+    //add tiles position in the victual virtualGrid
+
+    const index = getIndexByPoint({ point: { x: tile_seleted.point.x + 1, y: tile_seleted.point.y + 1 } });
+
+    const piecesTiles: Tesserae[] = pieces.find((e: Piece) => e.name === tile_seleted.name).tiles
+    const tiles: Mosaic[] = piecesTiles.find((e: Tesserae) => e.rotation === tile_seleted.rotation).tiles;
+    const indexs = tiles.map((e: Mosaic) => getTileIndexByPoint({ x: e.x, y: e.y }));
+
+    indexs.forEach((i: number) => {
+        if (virtualGrid[index + (i)]?.hasCat === true) {
+            //add
+            virtualGrid[index + (i)] = {
+                point: virtualGrid[index + (i)].point,
+                hasCat: true,
+                hasShadow: false,
+                hasTile: true,
+                hasBox: false,
+                data: `${virtualGrid[index + (i)].data}-${tile_seleted.name}`
+            }
+        }
+        else {
+            //remove
+            virtualGrid[index + (i)] = {
+                point: tile_seleted.point,
+                hasCat: false,
+                hasShadow: false,
+                hasTile: true,
+                hasBox: false,
+                data: tile_seleted.name
+            }
+        }
+    })
+
+    return virtualGrid;
+}
+
+export function removePieceForGrid(virtualGrid: Grid[25], tile_name: string) {
+    //remove piece of the virtualGrid
+    return virtualGrid.map((gd: Grid) => {
+        if (gd?.data.includes(tile_name)) {
+            if (gd?.hasCat) {
+                gd.hasTile = false;
+                gd.data = gd.data.replace(`-${tile_name}`, "")
+                return gd;
+            } else {
+                return null;
+            }
+        }
+        else {
+            return gd;
+        }
+    })
+}
+
+export function checkCatAndBoxCollisions(tile_selected_name, catsInBoxes, tiles_position, virtualGrid) {
+    let newcatsInBoxes = structuredClone(catsInBoxes);
+    const mosaicIndex = getIndexOfAllMosaic(tile_selected_name, tiles_position);
+    const newMosaicIndex = mosaicIndex.filter(e => e.isBox === true);
+
+    let gpiMatched = false; // Variable para controlar si se encontró al menos una coincidencia
+
+    virtualGrid.filter(vg => vg?.hasCat === true)
+        .forEach(vg => {
+            const gpi = getIndexByPoint(vg);
+            newMosaicIndex.forEach(mi => {
+                if (gpi === mi.index) {
+                    gpiMatched = true; // Se encontró una coincidencia
+                    if (!newcatsInBoxes.some(obj => obj.cat === vg.data)) {
+                        newcatsInBoxes.push({ cat: vg.data, box: tile_selected_name });
+                    }
+                }
+            });
+
+            // Si no se encontró coincidencia, eliminar el objeto
+            if (!gpiMatched) {
+                const indexToRemove = newcatsInBoxes.findIndex(obj => obj.cat === vg.data && obj.box === tile_selected_name);
+                if (indexToRemove !== -1) {
+                    newcatsInBoxes.splice(indexToRemove, 1);
+                }
+            }
+
+            // Reiniciar la variable para la próxima iteración
+            gpiMatched = false;
+        });
+
+    return newcatsInBoxes;
+}
+
+export function ShowVictualGrid(newgrid) {
     const matriz = [];
     for (let i = 0; i < 5; i++) {
         matriz.push(newgrid.slice(i * 5, (i + 1) * 5).map(m => m?.data));
     }
-    console.table(matriz);
+    ////console.table(matriz);
 }

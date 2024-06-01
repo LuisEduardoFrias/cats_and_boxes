@@ -5,14 +5,14 @@ import { Point } from "../models/Point.ts"
 import { Grid } from "../models/Grid.ts"
 
 //add element position in the victual virtualGrid
-export function insertGatsTilesPositionsInGridHelper(level: number): (Grid & null)[] {
+export function insertCatsTilesPositionsInGridHelper(level: number): (Grid & null)[] {
     const virtualGrid: (Grid & null)[] = new Array(25).fill(null)
     //add gats position in the victual virtualGrid
 
-    levels[level].gats_position.forEach(e =>
+    levels[level].cats_position.forEach(e =>
         virtualGrid[getIndexByPoint(e)] = {
             point: e.point,
-            hasGat: true,
+            hasCat: true,
             hasShadow: false,
             hasTile: false,
             hasBox: false,
@@ -31,7 +31,7 @@ export function insertGatsTilesPositionsInGridHelper(level: number): (Grid & nul
         indexs.forEach((i: number) => {
             virtualGrid[index + (i)] = {
                 point: levels[level].tiles_position[key].point,
-                hasGat: false,
+                hasCat: false,
                 hasShadow: false,
                 hasTile: true,
                 hasBox: false,

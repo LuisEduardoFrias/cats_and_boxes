@@ -1,7 +1,7 @@
 //
 import Point from "./point"
 
-export type Gat = {
+export type Cat = {
     name: string,
     point: Point
 }

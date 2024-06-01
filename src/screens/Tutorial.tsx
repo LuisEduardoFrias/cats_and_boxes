@@ -1,6 +1,7 @@
 /***/
 import { useMemo } from 'react'
-import levels from "../assets/jsons/levels.json"
+import levelsJson from "../assets/jsons/levels.json"
+import { levelState } from "../models/Level"
 import game_decription from "../assets/jsons/game_description.json"
 import { DndContext, closestCenter } from '@dnd-kit/core'
 import { Grid } from "../models/Grid"
@@ -9,7 +10,7 @@ import { selectAll } from "../models/SelectAll"
 import { Toolt, arrow } from "../models/Tooltip";
 import NextMenu from "../components/NextMenu"
 import GameMenu from "../components/GameMenu"
-import DrawnGats from "../components/DrawnGats"
+import DrawnCats from "../components/DrawnCats"
 import Tooltip from "../components/Tooltip"
 import DrawnTiles from "../components/DrawnTiles"
 import DrawnBoard from "../components/DrawnBoard"
@@ -21,9 +22,9 @@ import "../styles/screens/play.css"
 import "../styles/screens/tutorial.css"
 
 export default function Tutorial() {
-    const [{ level, gatsInBixes, movements, menuGame, confetti }, dispatch] = useSubscribeState(['level', 'gatsInBixes', 'movements', 'menuGame', 'confetti'])
+    const [{ level, levels, catsInBoxes, movements, menuGame, confetti }, dispatch] = useSubscribeState(['level', 'levels', 'catsInBoxes', 'movements', 'menuGame', 'confetti'])
 
-    const topMovements = levels[level].movements;
+    const topMovements = levelsJson[level].movements;
 
     const tooltips: Toolt[] = [
         {
@@ -175,7 +176,7 @@ export default function Tutorial() {
             point: { x: 20, y: 40 },
             arrow: arrow.top_left,
             fn: () => {
-                dispatch({ type: "ShowGameMenu", isShow: true })
+                dispatch({ type: "ShowMenuOfGame", isShow: true })
             }
         },
         {
@@ -324,7 +325,10 @@ export default function Tutorial() {
             arrow: arrow.none,
             exit: true,
             fn: () => {
-                dispatch({ type: "GoToTutorialView", isShow: false })
+                const _levels = levels.map((e) => ({ ...e, state: levelState.desactivated }));
+                _levels[0] = { ..._levels[0], state: levelState.actived }
+                _levels[1] = { ..._levels[1], state: levelState.actived }
+                dispatch({ type: "GoToTutorialView", isShow: false, levels: _levels })
             }
         },
         //
@@ -341,7 +345,7 @@ export default function Tutorial() {
             >
                 <DrawnBoard tile_size={1} >
                     <DrawnTiles />
-                    <DrawnGats level={level} />
+                    <DrawnCats level={level} />
                 </DrawnBoard>
             </DndContext>
         </WindowSound>, [level]
@@ -360,7 +364,7 @@ export default function Tutorial() {
                     </div>
                     <div>
                         <label>Gats in boxes</label>
-                        <label>{gatsInBixes.length}</label>
+                        <label>{catsInBoxes.length}</label>
                     </div>
                     <div>
                         <label>Movements</label>

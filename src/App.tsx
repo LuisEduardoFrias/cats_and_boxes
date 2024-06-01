@@ -1,20 +1,20 @@
 //
+import { InterfaceGlobalState } from "./models/InterfaceGlobalState"
+import { DomainGlobalState } from "./models/DomainGlobalState"
+import useInitialize from "./subscribe_state/index"
 import levels from "./assets/jsons/levels.json"
-import { levelState } from "./models/Level"
 import intefaceReducer from "./reducers/interfaceReducer"
 import domainReducer from "./reducers/domainReducer"
+import { levelState } from "./models/Level"
 import { selectAll } from "./models/SelectAll"
-import { DomainGlobalState } from "./models/DomainGlobalState"
-import { InterfaceGlobalState } from "./models/InterfaceGlobalState"
 import Game from "./screens/Game"
-import useInitialize from "./subscribe_state/index"
 import './App.css'
 
 const domInitialState: DomainGlobalState = {
     virtualGrid: [],
     level: null,
     movements: 0,
-    gatsInBixes: [],
+    catsInBoxes: [],
     tiles_position: undefined,
 }
 
@@ -41,6 +41,7 @@ const initialState: DomainGlobalState & InterfaceGlobalState = {
 }
 
 function reducer(state: DomainGlobalState & InterfaceGlobalState, actions: any) {
+
     let result = domainReducer(state, actions)
 
     if (!result)
@@ -51,7 +52,7 @@ function reducer(state: DomainGlobalState & InterfaceGlobalState, actions: any) 
     else
         return result;
 }
-
+//
 export default function App() {
     useInitialize(reducer, initialState);
     return (<Game />)

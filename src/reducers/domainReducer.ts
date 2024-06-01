@@ -1,5 +1,5 @@
 /***/
-import levels from "../assets/jsons/levels.json"
+//import levelsJson from "../assets/jsons/levels.json"
 import { Point } from "../models/Point"
 import { Grid } from "../models/Grid"
 import { Tile } from "../models/Tile"

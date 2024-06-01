@@ -325,10 +325,14 @@ export default function Tutorial() {
             arrow: arrow.none,
             exit: true,
             fn: () => {
-                const _levels = levels.map((e) => ({ ...e, state: levelState.desactivated }));
-                _levels[0] = { ..._levels[0], state: levelState.actived }
-                _levels[1] = { ..._levels[1], state: levelState.actived }
-                dispatch({ type: "GoToTutorialView", isShow: false, levels: _levels })
+                try {
+                    const _levels = levels.map((e) => ({ ...e, state: levelState.desactivated }));
+                    _levels[0] = { ..._levels[0], state: levelState.activated }
+                    _levels[1] = { ..._levels[1], state: levelState.activated }
+                    dispatch({ type: "GoToTutorialView", isShow: false, levels: _levels, level: 0 })
+                } catch (err) {
+                    alert("tu sabe: " + JSON.stringify(err))
+                }
             }
         },
         //

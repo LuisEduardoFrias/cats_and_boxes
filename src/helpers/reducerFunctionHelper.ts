@@ -1,6 +1,6 @@
 /***/
 import pieces from "../assets/jsons/pieces.json"
-import levels from "../assets/jsons/levels.json"
+//import levelsJson from "../assets/jsons/levels.json"
 import { Grid } from "../models/Grid"
 import { Tile } from "../models/Tile"
 import { Level, levelState } from "../models/Level.ts"
@@ -148,13 +148,13 @@ export function checkCollisionsForPartDeselection(tile_selected_name: string, ti
 }
 
 export function completedLevel(level: number, levels: Level[]) {
-    const confetti = true;
-    levels[level - 1] = { level: level - 1, state: levelState.completed };
+        const confetti = true;
+        levels[level - 1] = { level: level - 1, state: levelState.completed };
 
-    const index = levels.findIndex(e => e.state === levelState.desactivated)
-    levels[index] = { level: levels[index].level, state: levelState.activated };
+        const index = levels.findIndex(e => e.state === levelState.desactivated)
+        levels[index] = { level: levels[index].level, state: levelState.activated };
 
-    return confetti;
+        return confetti;
 }
 
 export function insertPieceInVictualGrid(virtualGrid: Grid[25], tile_seleted: Tile) {
